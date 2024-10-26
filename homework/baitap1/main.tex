@@ -1,0 +1,201 @@
+\documentclass{article}
+\usepackage[utf8]{vietnam}
+\usepackage[utf8]{inputenc}
+\usepackage{anyfontsize,fontsize}
+\changefontsize[13pt]{13pt}
+\usepackage{commath}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage{slashed,cancel}
+\usepackage{indentfirst}
+\usepackage{pdfpages}
+\usepackage{graphicx}
+\usepackage{nccmath}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amsmath,systeme,bbold}
+\usepackage[thinc]{esdiff}
+\usepackage{hyperref}
+\usepackage{bm,physics}
+\usepackage{fancyhdr}
+%footnote
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}%
+\fancyhf{}%
+\fancyfoot[L]{Vật lý Lý thuyết}%
+\fancyfoot[C]{\hspace{4cm} \thepage}%
+
+\usepackage{tikz-feynman}
+
+
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	total={170mm,257mm},
+	left=20mm,
+	top=20mm,
+}
+
+
+\newcommand{\image}[2]{
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.5\textwidth]{pic/#1}
+		\caption{#2}
+	\end{figure}
+}
+\renewcommand{\l}{\ell}
+\newcommand{\dps}{\displaystyle}
+
+\newcommand{\f}[2]{\dfrac{#1}{#2}}
+\newcommand{\at}[2]{\bigg\rvert_{#1}^{#2} }
+
+
+\renewcommand{\baselinestretch}{1.5}
+
+
+\title{\Huge{BTVN 1}}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=red,
+	filecolor=magenta,      
+	urlcolor=cyan,
+	pdftitle={QM3},
+	pdfpagemode=FullScreen,
+}
+
+\urlstyle{same}
+
+\begin{document}
+\setlength{\parindent}{20pt}
+\newpage
+\author{TRẦN KHÔI NGUYÊN \\ VẬT LÝ LÝ THUYẾT}
+\maketitle
+
+\section{Quy tắc lọc lựa}
+Ma trận lưỡng cực điện được cho bởi phương trình:
+\begin{align}
+	M_{12} = - \boldsymbol{\mu}_{12} \cdot \boldsymbol{{\varepsilon}}_0,
+\end{align}
+với
+\begin{align}
+	\boldsymbol{\mu}_{12} = -e \left( \bra{2}x\ket{1} \hat{\textbf{\textsc{i}}} + \bra{2}y\ket{1} \hat{\textbf{\textsc{j}}} + \bra{2}z\ket{1} \hat{\textbf{\textsc{k}}} \right)
+\end{align}
+là moment lưỡng cực điện của sự chuyển dời từ trạng thái $1\rightarrow 2$. Khi có quá nhiều trạng thái cần phải tính toán, quy tắc lọc lựa sẽ cho phép chúng ta kết luận rằng một số thành phần phần tử ma trận nhất định là bằng \textit{không} mà không cần phải tính toán một cách chính xác.
+
+Quy tắc lọc lựa lưỡng cực điện liên quan tới các bộ số lượng tử $l,m,s$ và $m_s$, được tổng hợp trong bảng dưới.
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{c | c}
+		\hline
+		Số lượng tử  & Quy tắc lọc lựa                      \\ [0.6ex]
+		\hline
+		Tính chẵn/slẻ & Thay đổi                             \\
+		$\l$         & $\Delta l = l' - l = \pm 1$          \\
+		$m$          & $\Delta m = m' - m = 0$ hoặc $\pm 1$ \\
+		$s$          & $\Delta s = s' - s = 0 $             \\
+		$m_s$        & $\Delta m_s = m_s' - m_s = 0$        \\
+		\hline
+	\end{tabular}
+	\caption{Quy tắc lọc lựa lượng cực điện cho nguyên tử một electron(hydrogen-like atom).}
+\end{table}
+\newpage
+\noindent Quy tắc:
+\image{selectionrule.png}{Phân rã cho phép cho bốn mức Bohr trong nguyên tử Hydro[Griffiths, David J., and Darrell F. Schroeter. 2018. Introduction to Quantum Mechanics. 3rd ed.]}
+
+
+Sự chuyển dời tuân theo quy tắc lọc lựa lưỡng cực điện được gọi là \textbf{chuyển dời cho phép}, trong khi những chuyển dời không tuân theo quy tắc thì đươc gọi là \textbf{chuyển dời cấm}.
+
+\subsection{Dẫn ra chi tiết quy tắc lọc lựa}
+
+\section{Laser}(Light Amplification by
+ Stimulated Emission of Radiation)
+\subsection{Phát xạ cưỡng bức (Stimulated Emission)}
+Nếu như một hạt đang ở trạng thái ``cao hơn'', tạm gọi là trạng thái \textit{upper}, được chiếu bởi một nguồn sáng, hạt đó có thể chuyển dời xuống vị trí ``thấp hơn'' - \textit{lower}, xác suất chuyển dời từ \textit{upper} $\rightarrow$ \textit{lower} là như nhau đối với xác suất chuyển dời từ \textit{lower} $\rightarrow$ \textit{upper}. Quá trình này được gọi là \textbf{Phát xạ cưỡng bức} hay \textbf{Phát xạ cảm ứng}.
+\image{stimulatedemission.png}{Phát xạ cưỡng bức [Griffiths, David J., and Darrell F. Schroeter. 2018. Introduction to Quantum Mechanics. 3rd ed.]}
+
+Trường điện từ \textit{nhận} thêm năng lượng $\hbar \omega_0$ từ nguyên tử; chúng ta nói rằng một photon đi và và \textit{hai} photon bị bức ra - photon đi vào cộng với một photon từ quá trình chuyển dời được gây ra bởi photon đi vào(Hình 2). Điều này làm tăng khả năng khuếch đại, nếu như có rất nhiều nguyên tử, tất cả trong số đó đều đang ở trạng thái \textit{upper} được cảm ứng bởi một photon bay tới, một chuỗi phản ứng sẽ xảy ra. Photon bay vào tạo ra hai photon, hai photon đó tạo ra một bốn photon, và cứ thế. Chúng ta sẽ có một lượng lớn photon bay ra, tất cả chúng đều có cùng tần số. Đây chính là nguyên lý đằng sau Laser.
+\subsection{Dao động Laser}
+\image{fig4.8.png}{Sơ đồ nguyên lý của máy dao động Laser [Fox, Mark, 2006 Quantum Optics: An Introduction]}
+
+Laser bao gồm một \textbf{buồng cộng hưởng} và hai gương đầu cuối được gọi là \textbf{gương bán mạ} và \textbf{gương phản xạ toàn phần} có độ phản xạ lần lượt là $R_1$ và $R_2$. Ánh sáng bật lại giữa hai gương đầu-cuối và được khuếch đại mỗi khi được truyền qua buồng cộng hưởng.
+
+Khuếch đại ánh sáng sảy ra khi có buồng cộng hưởng được đo bởi hệ số khuếch đại $\gamma(\omega)$ định nghĩa bởi:
+\begin{align}
+	\f{d I}{d z} = \gamma(\omega) I(z),
+\end{align}
+với	$I$ là cường độ quang, $\omega$ là tần số góc của ánh sáng, và $z$ là hướng chuyền của chùm tia. Lấy tích phân của phương trình (3) ta được:
+\begin{align}
+	I(z) = I_0 e^{\gamma z}.
+\end{align}
+Ý nghĩa vật lý: phương trình (4) cho thấy cường độ ánh sáng tăng theo hàm exponential bên trong buồng cộng hưởng.
+
+Xét trường hợp chùm tia sáng là gần cộng hưởng với sự chuyển dời của nguyên tử với tần số góc là $\omega_0$. Chùm tia sẽ cảm ứng với cả hấp thụ và phát xạ cưỡng bức. Để xuất hiện khuếch đại, chúng ta ràng buộc rằng tốc độ phát xạ cưỡng bức phải lớn hơn tốc độ hấp thụ để cho photon trong chùm tia được tăng lên mỗi khi được truyền qua buồng cộng hưởng:
+\begin{align}
+	B_{21}^{\omega} N_2 u(\omega) & > B_{12}^{\omega} N_1 u(\omega) \\
+	\Rightarrow N_2               & > \f{g_2}{g_1}N_1
+\end{align}
+Khi xảy ra cân bằng nhiệt, tỉ lệ giữa $N_2,N_1$ được cho bởi phương trình Boltzmann
+\begin{align*}
+	\f{N_1}{N_2} = e^{\frac{\hbar \omega}{k_B T}},
+\end{align*}
+điều này có nghĩa là sẽ không bao giờ thõa mãn được phương trình (6), và cường độ ánh sáng phân rã bằng cường độ ánh sáng truyền qua bởi vì tốc độ hấp thụ	lớn hơn tốc độ phát xạ cưỡng bức. Từ đó phương trình (6) chỉ đúng khi và chỉ khi điều kiện không cân bằng. Điều này có thể quan sát được bằng cách ``bơm'' năng lượng vào buồng cộng hưởng để kích thích số lượng lớn nguyên tử đạt được trnạg thái kích thích.
+
+\subsection{Tính chất của Laser}
+Laser được phân ra thành các loại dựa trên chất hóa học bên trong buồng cộng hưởng, đó là laser rắn, laser lỏng, laser khí. Hai đặc điểm chung cho tất cả các loại laser là tính định hướng của chùm tia và độ đơn sắc cao. Ngoài ra còn có cường độ lớn, có tính hợp cao.
+
+\section{Bài tập}
+\subsection{Problem 4.2}
+Toán tử chẵn/lẻ:
+\begin{align*}
+	\hat{\Pi} \psi(x) = \psi(-x).
+\end{align*}
+Xét ba chiều:
+\begin{align*}
+	\hat{\Pi} \psi(\mathbf{r}) = \psi(-\mathbf{r}).
+\end{align*}
+Ta biết toán tử moment lưỡng cực $\hat{\textbf{p}}_e$ tỉ lệ với $\mathbf{r}$. Khi tác động toán tử chẵn/lẻ lên $\hat{\textbf{p}}_e$ ta được:
+\begin{align*}
+	\hat{\Pi}^{\dagger} \hat{\textbf{p}}_e \hat{\Pi} = - \hat{\textbf{p}}_e.
+\end{align*}
+Ta viết lại trạng thái $\ket{2},\ket{1}$ dưới dạng bộ số lượng tử và có được:
+\begin{align*}
+	\boldsymbol{\mu}_{12}
+	 & = \bra{n'\l'm'} \hat{\textbf{p}}_e \ket{n\l m}                                   \\
+	 & =  - \bra{n'\l'm'}  \hat{\Pi}^{\dagger} \hat{\textbf{p}}_e \hat{\Pi} \ket{n\l m} \\
+	 & =  - \bra{n'\l'm'}  (-1)^{\l'} \hat{\textbf{p}}_e (-1)^{\l} \ket{n\l m} \\
+	 & =  (-1)^{\l' + \l + 1} \bra{n'\l'm'}   \hat{\textbf{p}}_e \ket{n\l m}, \\
+\end{align*}
+dấu ``$=$'' xảy ra khi và chỉ khi $ (-1)^{\l' + \l + 1} = 1 \Rightarrow \l + \l' = odd \Rightarrow \l \neq \l'$ DPCM .
+
+\subsection{Problem 4.3}
+Hàm sóng cho nguyên tử Hydro được viết dưới dạng:
+\begin{align*}
+	\psi (r,\theta,\varphi) = F(r,\theta) exp(i m_{\l} \varphi ),
+\end{align*}
+với $ m_{\l}$ là số lượng tử từ.\\
+Ta có đẳng thức sau:
+\begin{align*}
+	[ \hat{L}_i, r_i ] = i\hbar \epsilon_{ijk} r_{k},
+\end{align*}
+trong đó $\epsilon_{ijk}$ là kí hiệu Levi-Civita.
+\begin{align*}
+	[ \hat{L}_z, z ] = 0, \quad
+	[ \hat{L}_z, x \pm iy ] = \pm (x \pm iy)\hbar.
+\end{align*}
+Từ đó ta có mối liên hệ:
+\begin{align*}
+	\bra{\l'm'} [ \hat{L}_z, z ] \ket{\l m} = (m' - m) \hbar \bra{\l'm'} z \ket{\l m}
+\end{align*}
+
+
+
+
+
+
+
+
+\end{document}
