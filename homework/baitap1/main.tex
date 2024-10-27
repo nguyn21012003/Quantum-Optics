@@ -117,10 +117,10 @@ Ta dễ thấy dạng hình ``quốc dân'' của phân bố Gauss:
 
 hoặc cũng có thể là Lorentz(Hình 3).
 
-Giá trị trung tâm được xác định bởi 
+Giá trị trung tâm được xác định bởi
 \begin{align*}
 	\hbar\omega_0 = E_2 - E_1.
-\end{align*} 
+\end{align*}
 và được chuẩn hóa:
 \begin{align*}
 	\int_{0}^{\infty}g_\omega(\omega)d\omega = 1.
@@ -166,7 +166,7 @@ Trường điện từ \textit{nhận} thêm năng lượng $\hbar \omega_0$ t�
 
 Laser bao gồm một \textbf{buồng cộng hưởng} và hai gương đầu cuối được gọi là \textbf{gương bán mạ} và \textbf{gương phản xạ toàn phần} có độ phản xạ lần lượt là $R_1$ và $R_2$. Ánh sáng bật lại giữa hai gương đầu-cuối và được khuếch đại mỗi khi được truyền qua buồng cộng hưởng.
 
-Khuếch đại ánh sáng sảy ra khi có buồng cộng hưởng được đo bởi hệ số khuếch đại $\gamma(\omega)$ định nghĩa bởi:
+Khuếch đại ánh sáng xảy ra khi có buồng cộng hưởng được đo bởi hệ số khuếch đại $\gamma(\omega)$ định nghĩa bởi:
 \begin{align}
 	\f{d I}{d z} = \gamma(\omega) I(z),
 \end{align}
@@ -185,7 +185,7 @@ Khi xảy ra cân bằng nhiệt, tỉ lệ giữa $N_2,N_1$ được cho bởi 
 \begin{align*}
 	\f{N_1}{N_2} = e^{\frac{\hbar \omega}{k_B T}},
 \end{align*}
-điều này có nghĩa là sẽ không bao giờ thõa mãn được phương trình (6), và cường độ ánh sáng phân rã bằng cường độ ánh sáng truyền qua bởi vì tốc độ hấp thụ	lớn hơn tốc độ phát xạ cưỡng bức. Từ đó phương trình (6) chỉ đúng khi và chỉ khi điều kiện không cân bằng. Điều này có thể quan sát được bằng cách ``bơm'' năng lượng vào buồng cộng hưởng để kích thích số lượng lớn nguyên tử đạt được trnạg thái kích thích.
+điều này có nghĩa là sẽ không bao giờ thõa mãn được phương trình (6), và cường độ ánh sáng phân rã bằng cường độ ánh sáng truyền qua bởi vì tốc độ hấp thụ	lớn hơn tốc độ phát xạ cưỡng bức. Từ đó phương trình (6) chỉ đúng khi và chỉ khi điều kiện không cân bằng. Điều này có thể quan sát được bằng cách ``bơm'' năng lượng vào buồng cộng hưởng để kích thích số lượng lớn nguyên tử đạt được trạng thái kích thích.
 
 \subsection{Tính chất của Laser}
 Laser được phân ra thành các loại dựa trên chất hóa học bên trong buồng cộng hưởng, đó là laser rắn, laser lỏng, laser khí. Hai đặc điểm chung cho tất cả các loại laser là tính định hướng của chùm tia và độ đơn sắc cao. Ngoài ra còn có cường độ lớn, có tính hợp cao.
@@ -208,9 +208,9 @@ Ta viết lại trạng thái $\ket{2},\ket{1}$ dưới dạng bộ số lượn
 \begin{align*}
 	\boldsymbol{\mu}_{12}
 	 & = \bra{n'\l'm'} \hat{\textbf{p}}_e \ket{n\l m}                                   \\
-	 & =  - \bra{n'\l'm'}  \hat{\Pi}^{\dagger} \hat{\textbf{p}}_e \hat{\Pi} \ket{n\l m} \\
-	 & =  - \bra{n'\l'm'}  (-1)^{\l'} \hat{\textbf{p}}_e (-1)^{\l} \ket{n\l m}          \\
-	 & =  (-1)^{\l' + \l + 1} \bra{n'\l'm'}   \hat{\textbf{p}}_e \ket{n\l m},           
+	 & =  - \bra{n'\l'm'}  \hat{\Pi}^{\dagger} \hat{\mathbf{p}}_e \hat{\Pi} \ket{n\l m} \\
+	 & =  - \bra{n'\l'm'}  (-1)^{\l'} \hat{\mathbf{p}}_e (-1)^{\l} \ket{n\l m}          \\
+	 & =(-1)^{\l' + \l + 1} \bra{n'\l'm'}   \hat{\mathbf{p}}_e \ket{n\l m},
 \end{align*}
 dấu ``$=$'' xảy ra khi và chỉ khi $ (-1)^{\l' + \l + 1} = 1 \Rightarrow \l + \l' = odd \Rightarrow \l \neq \l'$ DPCM .
 
@@ -266,67 +266,67 @@ Sử dụng kí hiệu Dirac cho hàm sóng (8) và để cho phép tính đư�
 \subsection*{Problem 4.4}
 \begin{enumerate}[label=(\alph*)]
 	\item Ta có cường độ ánh sáng tỉ lệ với bình phương biên độ của điện trường
-	\begin{align}
-		\langle I \rangle \propto  \langle \mathcal{E}(t)^2 \rangle.
-	\end{align}
-	Từ 
-	\begin{align}
-		I(t) = I(0) \exp(-t/\tau),
-	\end{align}
-	chúng ta có thể suy ra rằng
-	\begin{align}
-		\abs{\mathcal{E}(t)}^2 = \abs{\mathcal{E}_0}^2 \exp(-t/\tau).
-	\end{align}
-	Bên cạnh đó, ta có thể khai triển phương trình (11) dưới dạng hàm $\cos$
-	\begin{align}
-		\mathcal{E}(t) = \mathcal{E}_0 \cos(\omega_0 t) \exp(-t/2\tau)
-	\end{align}
-	mà vẫn thỏa mãn điều kiện rằng cường độ $I(t)$ tỉ lệ với bình phương biên độ điện trường.
-	\begin{itemize}
-		\item Với $t<0, \mathcal{E}(t) = 0$, bởi vì chùm tia sáng vẫn chưa được bức xạ ra.
-		\item Với $t \geq 0$, trường điện có công thức là (12), mô tả tính chất dao động của sóng ánh sáng với biên độ giảm dần theo hàm $\exp$, phù hợp với cường độ ánh sáng đã cho. Để tìm phổ phát xạ, chúng ta thực hiện phép biến đổi Fourier của điện trường.
-	\end{itemize}
+	      \begin{align}
+		      \langle I \rangle \propto  \langle \mathcal{E}(t)^2 \rangle.
+	      \end{align}
+	      Từ
+	      \begin{align}
+		      I(t) = I(0) \exp(-t/\tau),
+	      \end{align}
+	      chúng ta có thể suy ra rằng
+	      \begin{align}
+		      \abs{\mathcal{E}(t)}^2 = \abs{\mathcal{E}_0}^2 \exp(-t/\tau).
+	      \end{align}
+	      Bên cạnh đó, ta có thể khai triển phương trình (11) dưới dạng hàm $\cos$
+	      \begin{align}
+		      \mathcal{E}(t) = \mathcal{E}_0 \cos(\omega_0 t) \exp(-t/2\tau)
+	      \end{align}
+	      mà vẫn thỏa mãn điều kiện rằng cường độ $I(t)$ tỉ lệ với bình phương biên độ điện trường.
+	      \begin{itemize}
+		      \item Với $t<0, \mathcal{E}(t) = 0$, bởi vì chùm tia sáng vẫn chưa được bức xạ ra.
+		      \item Với $t \geq 0$, trường điện có công thức là (12), mô tả tính chất dao động của sóng ánh sáng với biên độ giảm dần theo hàm $\exp$, phù hợp với cường độ ánh sáng đã cho. Để tìm phổ phát xạ, chúng ta thực hiện phép biến đổi Fourier của điện trường.
+	      \end{itemize}
 	\item Trường điện với $t \geq 0$ được cho bởi công thức
-	\begin{align*}
-		\mathcal{E}(t) 
-		& = \mathcal{E}_0 \cos(\omega_0 t) \exp(-t/2\tau) \\
-		& = \f{\mathcal{E}_0}{2} \cos(\omega_0 t) \exp(-t/2\tau)
-	\end{align*}
-	Phép biển đổi Fourier cho $\mathcal{E}(t)$ là
-	\begin{align}
-		\mathcal{E}(\omega) = \f{1}{\sqrt{2}} \int_{-\infty}^{+\infty} \mathcal{E}(t) e^{i\omega t} dt.
-	\end{align} 
-	Khi $\mathcal{E}(t) = 0$, với $t < 0$, phương trình (13) trở thành
-	\begin{align}
-		\mathcal{E}(\omega)
-		&= \f{1}{\sqrt{2}} \int_{0}^{+\infty} \left( \f{\mathcal{E}_0}{2} e^{i(\omega_0 - \omega)t - t/2\tau} + \f{\mathcal{E}_0}{2} e^{-i(\omega_0 + \omega)t - t/2\tau} \right) dt \nonumber \\
-		& = \frac{\mathcal{E}_0}{2\sqrt{2\pi}} \left( \frac{1}{1/2\tau - i(\omega_0 - \omega)} + \frac{1}{1/2\tau + i(\omega_0 + \omega)} \right).
-	\end{align}
-	Giả sử rằng $\omega_0 \gg 1/\tau$,
-	\begin{align*}
-		\mathcal{E}(\omega) \approx \frac{\mathcal{E}_0}{2\sqrt{2\pi}} \cdot \frac{1}{1/2\tau - i(\omega_0 - \omega)}.
-	\end{align*}(ĐPCM)
+	      \begin{align*}
+		      \mathcal{E}(t)
+		       & = \mathcal{E}_0 \cos(\omega_0 t) \exp(-t/2\tau)        \\
+		       & = \f{\mathcal{E}_0}{2} \cos(\omega_0 t) \exp(-t/2\tau)
+	      \end{align*}
+	      Phép biển đổi Fourier cho $\mathcal{E}(t)$ là
+	      \begin{align}
+		      \mathcal{E}(\omega) = \f{1}{\sqrt{2}} \int_{-\infty}^{+\infty} \mathcal{E}(t) e^{i\omega t} dt.
+	      \end{align}
+	      Khi $\mathcal{E}(t) = 0$, với $t < 0$, phương trình (13) trở thành
+	      \begin{align}
+		      \mathcal{E}(\omega)
+		       & = \f{1}{\sqrt{2}} \int_{0}^{+\infty} \left( \f{\mathcal{E}_0}{2} e^{i(\omega_0 - \omega)t - t/2\tau} + \f{\mathcal{E}_0}{2} e^{-i(\omega_0 + \omega)t - t/2\tau} \right) dt \nonumber \\
+		       & = \frac{\mathcal{E}_0}{2\sqrt{2\pi}} \left( \frac{1}{1/2\tau - i(\omega_0 - \omega)} + \frac{1}{1/2\tau + i(\omega_0 + \omega)} \right).
+	      \end{align}
+	      Giả sử rằng $\omega_0 \gg 1/\tau$,
+	      \begin{align*}
+		      \mathcal{E}(\omega) \approx \frac{\mathcal{E}_0}{2\sqrt{2\pi}} \cdot \frac{1}{1/2\tau - i(\omega_0 - \omega)}.
+	      \end{align*}(ĐPCM)
 	\item  Cường độ ánh sáng tỉ lệ với bình phương biên độ, nên ta có
-	\begin{align}
-		I(\omega) \propto |\mathcal{E}(\omega)|^2 = \left|\frac{\mathcal{E}_0}{2\sqrt{2\pi}} \cdot \frac{1}{1/2\tau - i(\omega_0 - \omega)}\right|^2.
-	\end{align}
-	Ta có thể nói rằng
-	\begin{align}
-		I(\omega) \propto \f{1}{(\omega - \omega_0)^2 + (1/2\tau)^2},
-	\end{align}
-	điều này hoàn toàn đúng so với công thức được cho.
+	      \begin{align}
+		      I(\omega) \propto |\mathcal{E}(\omega)|^2 = \left|\frac{\mathcal{E}_0}{2\sqrt{2\pi}} \cdot \frac{1}{1/2\tau - i(\omega_0 - \omega)}\right|^2.
+	      \end{align}
+	      Ta có thể nói rằng
+	      \begin{align}
+		      I(\omega) \propto \f{1}{(\omega - \omega_0)^2 + (1/2\tau)^2},
+	      \end{align}
+	      điều này hoàn toàn đúng so với công thức được cho.
 \end{enumerate}
 \subsection*{Problem 4.6}
 Ta biết khối lượng nguyên tử của $M_{Na} = 23$ và bán kính nguyên tử $r_{Na} \approxeq 0.2nm = 0.2\times 10^{-10}$, tiết diện tán xạ đàn hồi $\sigma_s$ là
 \begin{align}
 	\sigma_s = \pi (r_{Na})^2 = 4\pi \times 10^{-20} (m^2)
-\end{align}  
+\end{align}
 Ở ĐKTC, $T = 273 K$ và $P = 100k Pa$. Thời gian tán xạ đàn hồi là
 \begin{align*}
-	\tau_{\text{collision}} 
-	&= \f{1}{\sigma_s P} \left( \f{\pi m k_{\text{B} T}}{8} \right)^{1/2} \\
-	& = \f{1}{4\pi \times 10^{-20 } \times 100\times10^{3}} \left( \f{\pi \frac{23}{N_A} \times 10^{-3} \times 1.38\times 10^{-23} \times 273 }{8} \right)^{1/2}\\
-	& \approx 5.9 \times 10^{-10} (s)
+	\tau_{\text{collision}}
+	 & = \f{1}{\sigma_s P} \left( \f{\pi m k_{\text{B} T}}{8} \right)^{1/2}                                                                                       \\
+	 & = \f{1}{4\pi \times 10^{-20 } \times 100\times10^{3}} \left( \f{\pi \frac{23}{N_A} \times 10^{-3} \times 1.38\times 10^{-23} \times 273 }{8} \right)^{1/2} \\
+	 & \approx 5.9 \times 10^{-10} (s)
 \end{align*}
 
 
