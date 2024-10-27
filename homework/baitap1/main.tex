@@ -14,7 +14,7 @@
 \usepackage{nccmath}
 \usepackage{mathtools}
 \usepackage{amsfonts}
-\usepackage{amsmath,systeme,bbold}
+\usepackage{amsmath,systeme,bbold,enumitem}
 \usepackage[thinc]{esdiff}
 \usepackage{hyperref}
 \usepackage{bm,physics}
@@ -45,6 +45,7 @@
 		\caption{#2}
 	\end{figure}
 }
+
 \renewcommand{\l}{\ell}
 \newcommand{\dps}{\displaystyle}
 
@@ -62,7 +63,7 @@
 	linkcolor=red,
 	filecolor=magenta,      
 	urlcolor=cyan,
-	pdftitle={QM3},
+	pdftitle={QO},
 	pdfpagemode=FullScreen,
 }
 
@@ -77,7 +78,7 @@
 \section{Quy tắc lọc lựa}
 Ma trận lưỡng cực điện được cho bởi phương trình:
 \begin{align}
-	M_{12} = - \boldsymbol{\mu}_{12} \cdot \boldsymbol{{\varepsilon}}_0,
+	M_{12} = - \boldsymbol{\mu}_{12} \cdot \boldsymbol{{ \mathcal{E} }}_0,
 \end{align}
 với
 \begin{align}
@@ -93,26 +94,68 @@ Quy tắc lọc lựa lưỡng cực điện liên quan tới các bộ số lư
 		\hline
 		Số lượng tử  & Quy tắc lọc lựa                      \\ [0.6ex]
 		\hline
-		Tính chẵn/slẻ & Thay đổi                             \\
-		$\l$         & $\Delta l = l' - l = \pm 1$          \\
+		Tính chẵn/lẻ & Thay đổi                             \\
+		$\l$         & $\Delta \l = \l' - \l = \pm 1$       \\
 		$m$          & $\Delta m = m' - m = 0$ hoặc $\pm 1$ \\
 		$s$          & $\Delta s = s' - s = 0 $             \\
 		$m_s$        & $\Delta m_s = m_s' - m_s = 0$        \\
 		\hline
 	\end{tabular}
-	\caption{Quy tắc lọc lựa lượng cực điện cho nguyên tử một electron(hydrogen-like atom).}
+	\caption{Quy tắc lọc lựa lưỡng cực điện cho nguyên tử một electron(hydrogen-like atom).}
 \end{table}
 \newpage
 \noindent Quy tắc:
 \image{selectionrule.png}{Phân rã cho phép cho bốn mức Bohr trong nguyên tử Hydro[Griffiths, David J., and Darrell F. Schroeter. 2018. Introduction to Quantum Mechanics. 3rd ed.]}
 
-
 Sự chuyển dời tuân theo quy tắc lọc lựa lưỡng cực điện được gọi là \textbf{chuyển dời cho phép}, trong khi những chuyển dời không tuân theo quy tắc thì đươc gọi là \textbf{chuyển dời cấm}.
 
-\subsection{Dẫn ra chi tiết quy tắc lọc lựa}
+\section{Dáng điệu phổ}
+
+Xét một ``vạch phổ'', như thường được quan sát trong các môn thực nghiệm. Những tưởng ``vạch'' ấy chỉ đơn giản là một vạch theo nghĩa toán học, tức chỉ một giá trị hoàn toàn xác định. Tuy nhiên, thực tế ``vạch'' ấy lại là một tập hợp nhiều giá trị xung quanh một giá trị nào đấy, tạo nên một ``phân bố'' có dạng hình chuông, gọi là hàm ``spectral lineshape'' $g_\omega(\omega)$.
+Ta dễ thấy dạng hình ``quốc dân'' của phân bố Gauss:
+\image{gauss.jpg}{Phân bố Gauss}
+
+hoặc cũng có thể là Lorentz(Hình 3).
+
+Giá trị trung tâm được xác định bởi 
+\begin{align*}
+	\hbar\omega_0 = E_2 - E_1.
+\end{align*} 
+và được chuẩn hóa:
+\begin{align*}
+	\int_{0}^{\infty}g_\omega(\omega)d\omega = 1.
+\end{align*}
+
+\image{cauchy.png}{Phân bố Lorentz}
+
+Đại lượng quan trọng nhất cần được xác định là Full Width at Half Maximum (FWHM), tức độ rộng tại phân nửa độ cao cực đại, cho ta biết độ rộng của phổ.\\
+Thường có ba nguyên nhân ảnh hưởng đến độ rộng phổ:
+\begin{itemize}
+	\item Thời gian sống (lifetime (natural) broadening)
+	\item Va chạm (collisional (pressure) broadening)
+	\item Doppler
+\end{itemize}
+\subsection{Lifetime broadening}
+Ta đã biết liên hệ giữa hệ số Einstein A và thời gian sống $\tau$. Thời gian sống này liên hệ với năng lượng bức xạ (tức sự mở rộng của phổ) qua Bất định Heisenberg $$\Delta E\Delta t \geq \hbar$$
+và $$\Delta E = \hbar\Delta\omega$$
+nên $$\Delta \omega=\frac{\Delta E}{\hbar} \leq \frac{1}{\tau}$$
+Ta có hàm mô tả dạng phổ $$g(\omega) = \frac{\Delta\omega}{2\pi} \frac{1}{(\omega - \omega_0)^2 + (\Delta\omega/2)^2}$$
+và dáng hình của nó:
+\image{g(w).png}{Phân bố Lorentz. Công thức được cho bởi $g(\omega)$.}
+\subsection{Collisional broadening}
+Các phân tử có thể va đập, với nhau và với thành bình, khiến thời gian ``sống'' bị giảm đi (năng lượng bị mất nhanh hơn).\\
+Bằng thống kê, ta có: $$\tau_{\text{collision}} \sim \frac{1}{\sigma_s P} \left( \frac{\pi m k_B T}{8} \right)^{1/2}$$ với $\sigma_s$ là tiết diện va chạm và P là áp suất. Khi ấy, collisional broadening còn được gọi là pressure broadening.\\
+Trong trường hợp này, thời gian sống thường là rất ngắn, dẫn đến độ rộng phổ thật lớn so với trường hợp ``natural''.\\
+Vậy nên ta có thể khắc phục bằng cách giảm thiểu áp suất P, đó là lí do ta sử dụng các đèn áp suất thấp trong khảo sát phổ.\\
+\image{pbroad.png}{Cơ chế Dobler broadening.}
+\subsection{Doppler broadening}
+Việc các hạt nguyên tử di chuyển lại gần hay ra xa khỏi máy đo cũng ảnh hưởng đến phổ, khi ta xét hiệu ứng Doppler là đáng kể. \\
+Khi hạt di chuyển lại gần máy đo, ta có $$\omega=\omega_0\left(1+\frac{v_x}{c}\right)$$
+Số hạt di chuyển với vận tốc $v_x$ đến $v_x+dv_x$ được cho bởi cơ học thống kê: $$N(v_x) = N_0 \left( \frac{2k_B T}{\pi m} \right)^{1/2} \exp \left( -\frac{m v_x^2}{2k_B T} \right)$$ với FWHM được cho bởi $$\Delta \omega_{\text{Doppler}} = 2 \omega_0 \left( \frac{(2 \ln 2) k_B T}{mc^2} \right)^{1/2} = \frac{4 \pi}{\lambda} \left( \frac{(2 \ln 2) k_B T}{m} \right)^{1/2}$$
 
 \section{Laser}(Light Amplification by
- Stimulated Emission of Radiation)
+ Stimulated Emission of Radiation) \\
+Từ ``laser'' là từ viết tắt của cụm từ ``Light Amplification by Stimulated Emission of Radiation'' (khuếch đại ánh sáng bằng phát xạ kích thích). Laser hoạt động lần đầu tiên được chứng minh vào năm 1960, và từ đó, laser đã trở thành công cụ thiết yếu trong quang học phi tuyến và lượng tử. Trong phần này, chúng ta sẽ đưa ra một cái nhìn tổng quan ngắn gọn về các nguyên lý vật lý cơ bản của hoạt động laser, và sau đó mô tả ngắn gọn các đặc tính chính của các loại laser thường được sử dụng trong phòng thí nghiệm.
 \subsection{Phát xạ cưỡng bức (Stimulated Emission)}
 Nếu như một hạt đang ở trạng thái ``cao hơn'', tạm gọi là trạng thái \textit{upper}, được chiếu bởi một nguồn sáng, hạt đó có thể chuyển dời xuống vị trí ``thấp hơn'' - \textit{lower}, xác suất chuyển dời từ \textit{upper} $\rightarrow$ \textit{lower} là như nhau đối với xác suất chuyển dời từ \textit{lower} $\rightarrow$ \textit{upper}. Quá trình này được gọi là \textbf{Phát xạ cưỡng bức} hay \textbf{Phát xạ cảm ứng}.
 \image{stimulatedemission.png}{Phát xạ cưỡng bức [Griffiths, David J., and Darrell F. Schroeter. 2018. Introduction to Quantum Mechanics. 3rd ed.]}
@@ -148,7 +191,7 @@ Khi xảy ra cân bằng nhiệt, tỉ lệ giữa $N_2,N_1$ được cho bởi 
 Laser được phân ra thành các loại dựa trên chất hóa học bên trong buồng cộng hưởng, đó là laser rắn, laser lỏng, laser khí. Hai đặc điểm chung cho tất cả các loại laser là tính định hướng của chùm tia và độ đơn sắc cao. Ngoài ra còn có cường độ lớn, có tính hợp cao.
 
 \section{Bài tập}
-\subsection{Problem 4.2}
+\subsection*{Problem 4.2}
 Toán tử chẵn/lẻ:
 \begin{align*}
 	\hat{\Pi} \psi(x) = \psi(-x).
@@ -166,30 +209,203 @@ Ta viết lại trạng thái $\ket{2},\ket{1}$ dưới dạng bộ số lượn
 	\boldsymbol{\mu}_{12}
 	 & = \bra{n'\l'm'} \hat{\textbf{p}}_e \ket{n\l m}                                   \\
 	 & =  - \bra{n'\l'm'}  \hat{\Pi}^{\dagger} \hat{\textbf{p}}_e \hat{\Pi} \ket{n\l m} \\
-	 & =  - \bra{n'\l'm'}  (-1)^{\l'} \hat{\textbf{p}}_e (-1)^{\l} \ket{n\l m} \\
-	 & =  (-1)^{\l' + \l + 1} \bra{n'\l'm'}   \hat{\textbf{p}}_e \ket{n\l m}, \\
+	 & =  - \bra{n'\l'm'}  (-1)^{\l'} \hat{\textbf{p}}_e (-1)^{\l} \ket{n\l m}          \\
+	 & =  (-1)^{\l' + \l + 1} \bra{n'\l'm'}   \hat{\textbf{p}}_e \ket{n\l m},           
 \end{align*}
 dấu ``$=$'' xảy ra khi và chỉ khi $ (-1)^{\l' + \l + 1} = 1 \Rightarrow \l + \l' = odd \Rightarrow \l \neq \l'$ DPCM .
 
-\subsection{Problem 4.3}
+\subsection*{Problem 4.3}
 Hàm sóng cho nguyên tử Hydro được viết dưới dạng:
-\begin{align*}
-	\psi (r,\theta,\varphi) = F(r,\theta) exp(i m_{\l} \varphi ),
-\end{align*}
+\begin{align}
+	\psi (r,\theta,\varphi) = F(r,\theta) e^{i m_{\l} \varphi },
+\end{align}
 với $ m_{\l}$ là số lượng tử từ.\\
-Ta có đẳng thức sau:
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|l  l|}
+		\hline
+		$Y_{0}^{0} = \left(\frac{1}{4\pi}\right)^{1/2}$                                  & $Y_{2}^{\pm 2} = \left(\frac{15}{32\pi}\right)^{1/2} \sin^2\theta e^{\pm 2i\varphi}$                     \\
+		$Y_{1}^{0} = \left(\frac{3}{4\pi}\right)^{1/2}\cos\theta$                        & $Y_{2}^{0} = \left(\frac{7}{16\pi}\right)^{1/2} (5\cos^3\theta - 3 \cos\theta)$                          \\
+		$Y_{1}^{\pm1} = \mp\left(\frac{3}{8\pi}\right)^{1/2}\sin\theta e^{\pm i\varphi}$ & $Y_{3}^{\pm 2} = \mp\left(\frac{21}{64\pi}\right)^{1/2} \sin\theta (5\cos^2\theta - 1)e^{\pm 2i\varphi}$ \\
+		$Y_{2}^{0} = \left(\frac{5}{16\pi}\right)^{1/2}(3\cos^2 \theta - 1)$             & $Y_{3}^{\pm3} = \left(\frac{105}{32\pi}\right)^{1/2} \sin^2\theta\cos\theta e^{\pm 3i\varphi}$           \\
+		\hline
+	\end{tabular}
+	\caption{Một số hàm điều hòa cầu $Y_{l}^{m}(\theta,\varphi)$.}
+\end{table}\\
+Từ Bảng 2, ta xây dựng công thức tổng quát cho (7):
+\begin{align}
+	\psi_{l}^{m_{\l}} (r,\theta,\varphi) = F(r,\theta) e^{i m_{\l} \varphi }.
+\end{align}
+Sử dụng toán tử quay $\hat{R}_n(\phi)(n = x, y ,z)$ tác động lên (8), ta có trị riêng của $\hat{R}_z(\phi)$:
 \begin{align*}
-	[ \hat{L}_i, r_i ] = i\hbar \epsilon_{ijk} r_{k},
+	\hat{R}_z(\phi) \psi_{l}^{m_{\l}} (r,\theta,\varphi) = \psi_{l}^{m_{\l}}(r,\theta,\varphi') = e^{-2i\pi m_\l \phi}\psi_{l}^{m_{\l}}(r,\theta,\varphi),
 \end{align*}
-trong đó $\epsilon_{ijk}$ là kí hiệu Levi-Civita.
+và
 \begin{align*}
-	[ \hat{L}_z, z ] = 0, \quad
-	[ \hat{L}_z, x \pm iy ] = \pm (x \pm iy)\hbar.
+	 & \hat{R}^{\dagger}_z(\phi)\hat{R}_z(\phi) = 1,                                  \\
+	 & \hat{R}^{\dagger}_z(\phi) z \hat{R}_z(\phi) = z,                               \\
+	 & \hat{R}^{\dagger}_z(\phi) (x\pm iy) \hat{R}_z(\phi) = e^{\mp 2i\pi} (x\pm iy).
 \end{align*}
-Từ đó ta có mối liên hệ:
+Sử dụng kí hiệu Dirac cho hàm sóng (8) và để cho phép tính được gọn gàng ta đặt $\ket{\psi_{l}^{m_{\l}} (r,\theta,\varphi)} = \ket{m_\l}$, tính các thành phần ma trận sau:
+\begin{enumerate}[label=(\alph*), left=0pt, itemindent=*, align=left]
+	\item
+	      \begin{align*}
+		      \bra{m'_\l} \hat{z} \ket{m_\l}
+		       & = \bra{m'_\l} \hat{R}^{\dagger}_z(\phi)\hat{R}_z(\phi) \hat{z} \hat{R}^{\dagger}_z(\phi)\hat{R}_z(\phi)\ket{m_\l} \\
+		       & = e^{2i\pi m'_\l \phi} e^{-2i\pi m_\l \phi} \bra{m'_\l} \hat{z} \ket{m_\l}.
+	      \end{align*}
+	      Để dấu ``='' xảy ra thì $m'_\l - m_\l = 0$  (ĐPCM).
+	\item[(b),(c),(d)]
+		\begin{align*}
+			\bra{m'_\l} \hat{z} \ket{m_\l}
+			 & = \bra{m'_\l} \hat{R}^{\dagger}_z(\phi)\hat{R}_z(\phi) (\hat{x} \pm i\hat{y}) \hat{R}^{\dagger}_z(\phi)\hat{R}_z(\phi)\ket{m_\l} \\
+			 & = e^{2i\pi m'_\l \phi} e^{-2i\pi m_\l \phi} e^{\mp 2i\pi} \bra{m'_\l} \hat{x} \pm i\hat{y} \ket{m_\l}.
+		\end{align*}
+		Để dấu ``='' xảy ra thì,  $m'_\l - m_\l \mp 1= 0$ (ĐPCM).
+\end{enumerate}
+\subsection*{Problem 4.4}
+\begin{enumerate}[label=(\alph*)]
+	\item Ta có cường độ ánh sáng tỉ lệ với bình phương biên độ của điện trường
+	\begin{align}
+		\langle I \rangle \propto  \langle \mathcal{E}(t)^2 \rangle.
+	\end{align}
+	Từ 
+	\begin{align}
+		I(t) = I(0) \exp(-t/\tau),
+	\end{align}
+	chúng ta có thể suy ra rằng
+	\begin{align}
+		\abs{\mathcal{E}(t)}^2 = \abs{\mathcal{E}_0}^2 \exp(-t/\tau).
+	\end{align}
+	Bên cạnh đó, ta có thể khai triển phương trình (11) dưới dạng hàm $\cos$
+	\begin{align}
+		\mathcal{E}(t) = \mathcal{E}_0 \cos(\omega_0 t) \exp(-t/2\tau)
+	\end{align}
+	mà vẫn thỏa mãn điều kiện rằng cường độ $I(t)$ tỉ lệ với bình phương biên độ điện trường.
+	\begin{itemize}
+		\item Với $t<0, \mathcal{E}(t) = 0$, bởi vì chùm tia sáng vẫn chưa được bức xạ ra.
+		\item Với $t \geq 0$, trường điện có công thức là (12), mô tả tính chất dao động của sóng ánh sáng với biên độ giảm dần theo hàm $\exp$, phù hợp với cường độ ánh sáng đã cho. Để tìm phổ phát xạ, chúng ta thực hiện phép biến đổi Fourier của điện trường.
+	\end{itemize}
+	\item Trường điện với $t \geq 0$ được cho bởi công thức
+	\begin{align*}
+		\mathcal{E}(t) 
+		& = \mathcal{E}_0 \cos(\omega_0 t) \exp(-t/2\tau) \\
+		& = \f{\mathcal{E}_0}{2} \cos(\omega_0 t) \exp(-t/2\tau)
+	\end{align*}
+	Phép biển đổi Fourier cho $\mathcal{E}(t)$ là
+	\begin{align}
+		\mathcal{E}(\omega) = \f{1}{\sqrt{2}} \int_{-\infty}^{+\infty} \mathcal{E}(t) e^{i\omega t} dt.
+	\end{align} 
+	Khi $\mathcal{E}(t) = 0$, với $t < 0$, phương trình (13) trở thành
+	\begin{align}
+		\mathcal{E}(\omega)
+		&= \f{1}{\sqrt{2}} \int_{0}^{+\infty} \left( \f{\mathcal{E}_0}{2} e^{i(\omega_0 - \omega)t - t/2\tau} + \f{\mathcal{E}_0}{2} e^{-i(\omega_0 + \omega)t - t/2\tau} \right) dt \nonumber \\
+		& = \frac{\mathcal{E}_0}{2\sqrt{2\pi}} \left( \frac{1}{1/2\tau - i(\omega_0 - \omega)} + \frac{1}{1/2\tau + i(\omega_0 + \omega)} \right).
+	\end{align}
+	Giả sử rằng $\omega_0 \gg 1/\tau$,
+	\begin{align*}
+		\mathcal{E}(\omega) \approx \frac{\mathcal{E}_0}{2\sqrt{2\pi}} \cdot \frac{1}{1/2\tau - i(\omega_0 - \omega)}.
+	\end{align*}(ĐPCM)
+	\item  Cường độ ánh sáng tỉ lệ với bình phương biên độ, nên ta có
+	\begin{align}
+		I(\omega) \propto |\mathcal{E}(\omega)|^2 = \left|\frac{\mathcal{E}_0}{2\sqrt{2\pi}} \cdot \frac{1}{1/2\tau - i(\omega_0 - \omega)}\right|^2.
+	\end{align}
+	Ta có thể nói rằng
+	\begin{align}
+		I(\omega) \propto \f{1}{(\omega - \omega_0)^2 + (1/2\tau)^2},
+	\end{align}
+	điều này hoàn toàn đúng so với công thức được cho.
+\end{enumerate}
+\subsection*{Problem 4.6}
+Ta biết khối lượng nguyên tử của $M_{Na} = 23$ và bán kính nguyên tử $r_{Na} \approxeq 0.2nm = 0.2\times 10^{-10}$, tiết diện tán xạ đàn hồi $\sigma_s$ là
+\begin{align}
+	\sigma_s = \pi (r_{Na})^2 = 4\pi \times 10^{-20} (m^2)
+\end{align}  
+Ở ĐKTC, $T = 273 K$ và $P = 100k Pa$. Thời gian tán xạ đàn hồi là
 \begin{align*}
-	\bra{\l'm'} [ \hat{L}_z, z ] \ket{\l m} = (m' - m) \hbar \bra{\l'm'} z \ket{\l m}
+	\tau_{\text{collision}} 
+	&= \f{1}{\sigma_s P} \left( \f{\pi m k_{\text{B} T}}{8} \right)^{1/2} \\
+	& = \f{1}{4\pi \times 10^{-20 } \times 100\times10^{3}} \left( \f{\pi \frac{23}{N_A} \times 10^{-3} \times 1.38\times 10^{-23} \times 273 }{8} \right)^{1/2}\\
+	& \approx 5.9 \times 10^{-10} (s)
 \end{align*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
