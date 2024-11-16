@@ -1,0 +1,201 @@
+\documentclass{article}
+\usepackage[utf8]{vietnam}
+\usepackage[utf8]{inputenc}
+\usepackage{anyfontsize,fontsize}
+\changefontsize[13pt]{13pt}
+\usepackage{commath}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage{slashed,cancel}
+\usepackage{indentfirst}
+\usepackage{pdfpages}
+\usepackage{graphicx}
+\usepackage{nccmath}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amsmath,systeme}
+\usepackage{esdiff}
+\usepackage{hyperref}
+\usepackage{bm,physics}
+\usepackage{fancyhdr}
+%footnote
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}%
+\fancyhf{}%
+\fancyfoot[L]{Vật lý Lý thuyết}%
+\fancyfoot[C]{\hspace{4cm} \thepage}%
+\usepackage[d]{esvect}
+
+
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	total={170mm,257mm},
+	left=20mm,
+	top=20mm,
+}
+
+
+\newcommand{\image}[1]{
+	\begin{center}
+		\includegraphics[width=0.5\textwidth]{pic/#1}
+	\end{center}
+}
+\renewcommand{\l}{\ell}
+\newcommand{\dps}{\displaystyle}
+
+\newcommand{\f}[2]{\dfrac{#1}{#2}}
+\newcommand{\at}[2]{\bigg\rvert_{#1}^{#2} }
+
+
+\renewcommand{\baselinestretch}{2.0}
+
+
+\title{\Huge{BÀI TẬP VỀ NHÀ 2}}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=red,
+	filecolor=magenta,      
+	urlcolor=cyan,
+	pdftitle={QO},
+	pdfpagemode=FullScreen,
+}
+
+\urlstyle{same}
+
+\begin{document}
+\setlength{\parindent}{20pt}
+\newpage
+\author{TRẦN KHÔI NGUYÊN \\ VẬT LÝ LÝ THUYẾT}
+\maketitle
+%\subsection*{``Photon statistics'' nào cho loại ánh sáng nào?}
+%\begin{enumerate}
+%	\item[(a)] \textbf{Coherent light}\\
+%	Xét trường ánh sáng ``cohenrent'' có biên đọ $E_0$, tần số $\omega$, và pha $\varphi$, với trường điện có phương trình là
+%	\begin{align*}
+%		\mathcal{E}(x,t) = \mathcal{E}_0 \sin(kx - \omega t + \varphi).
+%	\end{align*}
+%	Cường độ $I \propto $ bình phương biên độ và là hằng số nếu $E_0$ và $\varphi$ không phụ thuộc vào thời gian(trường hợp coherent hoàn toàn) $\rightarrow$ không có thăng giáng cường độ, và thông lượng photon là không đổi theo thời gian. Trong thời gian cực ngắn, ta vẫn luôn có sự thăng giáng thống kê do bản chất rời rạc của photon.\\
+%	Xét chùm tia có công suất $P$ không đổi. Số photon trung bình trong đoạn dài $L$(tức là trong khoảng thời gian $T=L/c$) của chùm tia này được cho bởi công thức
+%	\begin{align*}
+%		\overline{n} = \Phi \f{L}{c},
+%	\end{align*}
+%	với $\Phi \equiv \f{P}{\hbar \omega}$(photon / s) là thông lượng. Ta giả định rằng $L$ phải đủ lớn, để trong mỗi đoạn chia $dL$ ta nhận được số nguyên lần photon. $N$ cũng phải là đủ lớn
+%\end{enumerate}
+
+\subsection*{Chứng minh rằng $(\Delta n)^2 = \dps\sum_{n} (n - \overline{n}) P_{\omega}(n) = \overline{n} + \overline{n}^2$}
+Giải: \\
+Đặt $x \equiv \exp(-\f{\hbar \omega}{k_B T})$, mà từ công thức (5.20) Mark Fox, ta biết $P(\omega)$ có dạng
+\begin{align*}
+	P_{\omega}(n)
+	 & = \f{\exp(-E_{n} / k_B T)}{\sum_{n = 0}^{\infty}(\exp(-E_{n} / k_B T)}                   \\
+	 & = \f{\exp(-n \hbar \omega / k_B T)}{\sum_{n = 0}^{\infty}(\exp(n \hbar \omega / k_B T)}, \\
+	 & = \f{x^{n}}{\sum_{n = 0}^{\infty} x^{n}}. \tag{1}
+\end{align*}
+Ta xét chuỗi hình học
+\begin{align*}
+	\sum_{n = 0}^{\infty} x^{n} = \f{1 - x^n}{1 - x} \tag{2},
+\end{align*}
+khi $x<1$, thì (2) trở thành
+\begin{align*}
+	\sum_{n = 0}^{\infty} x^{n} = \f{1}{1 - x}, \tag{3}
+\end{align*}
+dẫn đến ta có thể viết lại $P_{\omega}(n)$
+\begin{align*}
+	P_{\omega}(n)
+	 & = x^{n} (1-x)                                                                               \\
+	 & \equiv \left( 1 - \exp(-\hbar \omega / k_B T) \right) \exp(-n\hbar \omega / k_B T). \tag{4}
+\end{align*}
+Số photon trung bình được cho bởi
+\begin{align*}
+	\overline{n}
+	 & = \sum_{n = 0}^{\infty} n P_{\omega}(n)                                                                                \\
+	 & = \sum_{n = 0}^{\infty} n x^{n} (1-x)                                                                                  \\
+	 & = (1 - x) x \f{d}{dx} \left( \sum_{n = 0}^{\infty} x^{n} \right) (\text{Tại vì đạo hàm thì số bậc của $x$ là $n - 1$}) \\
+	 & = (1 - x) x \f{d}{dx} \left(\f{1}{1 - x}\right) \\
+	 & = (1 - x) x \f{1}{(1 - x)^2} \\
+	 & = \f{x}{1 - x} \\
+	 & = \f{\exp(-\f{\hbar \omega}{k_B T})}{1 - \exp(-\f{\hbar \omega}{k_B T})} = \f{1}{\exp(\f{\hbar \omega}{k_B T}) - 1} . \tag{5}
+\end{align*}
+Phương trình (5) dẫn đến được
+\begin{align*}
+	x = \f{\overline{n}}{\overline{n} + 1},
+\end{align*}
+ta thay vô phương trình $P_{\omega}(n) = x^{n} (1-x)$, và được
+\begin{align*}
+	P_{\omega}(n)
+	& = \left(1 - \f{\overline{n}}{\overline{n} + 1}\right) \left(\f{\overline{n}}{\overline{n} + 1}\right)^{n}  \\
+	& = \left(\f{1}{\overline{n} + 1}\right)\left(\f{\overline{n}}{\overline{n} + 1}\right)^{n} .
+\end{align*}
+Độ lệch chuẩn Var($n$) $\equiv \Delta n$
+\begin{align*}
+	(\Delta n)^2 
+	&= \sum_{n = 0}^{\infty}(n - \overline{n})^2 P_{\omega}(n) \\
+	&= \sum_{n = 0}^{\infty}(n^2 - 2n\overline{n} + \overline{n}^2) x^{n} (1-x) \\
+	&= \sum_{n = 0}^{\infty}n^2 x^{n} (1-x) - \sum_{n = 0}^{\infty}2n\overline{n} x^{n} (1-x) + \sum_{n = 0}^{\infty}\overline{n}^2 x^{n} (1-x) \\
+	&= (1-x)\sum_{n = 0}^{\infty}n^2 x^{n} - 2\overline{n}(1-x)\underbracket{\sum_{n = 0}^{\infty}n x^{n}}_{\frac{x}{(1 - x)^2}}  +\, \overline{n}^2(1-x) \underbracket{\sum_{n = 0}^{\infty} x^{n}}_{\frac{1}{1 - x}}. \tag{6}
+\end{align*}
+Xét số hạng đầu tiên $(1-x)\sum_{n = 0}^{\infty}n^2 x^{n}$, ta có
+\begin{align*}
+	\f{d}{dx} \left( \sum_{n = 0}^{\infty} x^{n} \right) 
+	&= \sum_{n = 0}^{\infty} n x^{n-1} \\
+	\Rightarrow \f{d^2}{dx^2} \left( \sum_{n = 0}^{\infty} x^{n} \right)
+	&= \f{d}{dx} \left( \sum_{n = 0}^{\infty} n x^{n-1} \right) \\
+	\f{d^2}{dx^2} \left( \sum_{n = 0}^{\infty} x^{n} \right) &= \sum_{n = 0}^{\infty} n(n-1) x^{n-2} \\
+	\f{d^2}{dx^2} \left( \sum_{n = 0}^{\infty} x^{n} \right) &= \sum_{n = 0}^{\infty} (n^2-n) x^{n-2}. \tag{7}
+\end{align*}
+Nhân 2 vế của (6) cho $x^2$ ta được
+\begin{align*}
+	x^2 \f{d^2}{dx^2} \left( \sum_{n = 0}^{\infty} x^{n} \right) &= \sum_{n = 0}^{\infty} (n^2-n) x^{n} 
+	= \sum_{n = 0}^{\infty} n^2 x^{n} - \sum_{n = 0}^{\infty} nx^{n} \\
+	\Rightarrow \sum_{n = 0}^{\infty} n^2 x^{n} 
+	&= x^2 \f{d^2}{dx^2} \left( \sum_{n = 0}^{\infty} x^{n} \right) + \sum_{n = 0}^{\infty} nx^{n} \\
+	&= x^2 \f{d^2}{dx^2} \left( \sum_{n = 0}^{\infty} x^{n} \right) + x \f{d}{dx} \left( \sum_{n = 0}^{\infty} x^{n} \right) .(DPCM) \tag{8} 
+\end{align*}
+Thay vô (6) ta được
+\begin{align*}
+	(\Delta n)^2 
+	&= (1-x) \left[x^2 \f{d^2}{dx^2} \left( \sum_{n = 0}^{\infty} x^{n} \right) + x \f{d}{dx} \left( \sum_{n = 0}^{\infty} x^{n} \right)\right] - \f{2\overline{n}(1-x)x}{(1 - x)^2} + \overline{n}^2 \\
+	&= (1-x) \left[x^2 \f{d^2}{dx^2} \left( \f{1}{1 - x} \right) + x \f{d}{dx} \left( \f{1}{1 - x} \right)\right] - \f{2\overline{n}(1-x)x}{(1 - x)^2} + \overline{n}^2 \\
+	&= (1-x) \left[\f{2x^2}{(1-x)^3} + \f{x}{(1 - x)^2}\right] - \f{2\overline{n}(1-x)x}{(1 - x)^2} + \overline{n}^2 \\
+	&= \left[2 \overline{n}^2 + \overline{n}\right] - 2 \overline{n}^2 + \overline{n}^2 \\
+	&= \overline{n} + \overline{n}^2 (DPCM).\tag{9}
+\end{align*}
+
+\subsection*{Chứng minh rằng $\langle \Delta E^2 \rangle = k_B T^2 \f{\partial \langle E \rangle}{T}$}
+
+\subsection*{Chứng minh rằng $D(\omega) = \frac{\omega^2}{\pi^2 c^3}$}
+Giải:\\
+Mỗi trạng thái $\mathbf{k}$ trong mạng có 1 cặp trạng thái 1 hạt.
+\begin{align*}
+	\begin{cases}
+		\text{2 trạng thái chiếm thể tích :} \; \left(\f{2\pi}{L}\right)^3 \\
+		\text{? số trạng thái chiếm thể tích :} \; d\mathbf{k} \\
+	\end{cases}
+\end{align*}
+số trạng thái trong $d\mathbf{k}$ là 
+\begin{align*}
+	D(k)dk = 2  \left(\f{L}{2\pi}\right)^3 d\mathbf{k} = \f{2V}{(2\pi)^3} 4\pi k^2 dk = \f{V}{\pi^2}k^2,
+\end{align*}
+mà
+\begin{align*}
+	D(\omega) D\omega &= D(k) dk\\
+	\Rightarrow D(\omega) &= \f{D(k)}{d\omega / dk}.
+\end{align*}
+Đặt $\omega = ck$ ta có được
+\begin{align*}
+	g(\omega) = \f{\omega^2}{\pi^2 c^3} (DPCM).
+\end{align*}
+
+
+
+
+
+
+
+
+
+
+\end{document}
