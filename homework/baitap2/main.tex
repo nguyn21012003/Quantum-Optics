@@ -111,12 +111,12 @@ dẫn đến ta có thể viết lại $P_{\omega}(n)$
 Số photon trung bình được cho bởi
 \begin{align*}
 	\overline{n}
-	 & = \sum_{n = 0}^{\infty} n P_{\omega}(n)                                                                                \\
-	 & = \sum_{n = 0}^{\infty} n x^{n} (1-x)                                                                                  \\
-	 & = (1 - x) x \f{d}{dx} \left( \sum_{n = 0}^{\infty} x^{n} \right) (\text{Tại vì đạo hàm thì số bậc của $x$ là $n - 1$}) \\
-	 & = (1 - x) x \f{d}{dx} \left(\f{1}{1 - x}\right) \\
-	 & = (1 - x) x \f{1}{(1 - x)^2} \\
-	 & = \f{x}{1 - x} \\
+	 & = \sum_{n = 0}^{\infty} n P_{\omega}(n)                                                                                       \\
+	 & = \sum_{n = 0}^{\infty} n x^{n} (1-x)                                                                                         \\
+	 & = (1 - x) x \f{d}{dx} \left( \sum_{n = 0}^{\infty} x^{n} \right) (\text{Tại vì đạo hàm thì số bậc của $x$ là $n - 1$})        \\
+	 & = (1 - x) x \f{d}{dx} \left(\f{1}{1 - x}\right)                                                                               \\
+	 & = (1 - x) x \f{1}{(1 - x)^2}                                                                                                  \\
+	 & = \f{x}{1 - x}                                                                                                                \\
 	 & = \f{\exp(-\f{\hbar \omega}{k_B T})}{1 - \exp(-\f{\hbar \omega}{k_B T})} = \f{1}{\exp(\f{\hbar \omega}{k_B T}) - 1} . \tag{5}
 \end{align*}
 Phương trình (5) dẫn đến được
@@ -126,42 +126,43 @@ Phương trình (5) dẫn đến được
 ta thay vô phương trình $P_{\omega}(n) = x^{n} (1-x)$, và được
 \begin{align*}
 	P_{\omega}(n)
-	& = \left(1 - \f{\overline{n}}{\overline{n} + 1}\right) \left(\f{\overline{n}}{\overline{n} + 1}\right)^{n}  \\
-	& = \left(\f{1}{\overline{n} + 1}\right)\left(\f{\overline{n}}{\overline{n} + 1}\right)^{n} .
+	 & = \left(1 - \f{\overline{n}}{\overline{n} + 1}\right) \left(\f{\overline{n}}{\overline{n} + 1}\right)^{n} \\
+	 & = \left(\f{1}{\overline{n} + 1}\right)\left(\f{\overline{n}}{\overline{n} + 1}\right)^{n} .
 \end{align*}
-Độ lệch chuẩn Var($n$) $\equiv \Delta n$
+Phương sai Var($n$) $\equiv \Delta n$
 \begin{align*}
-	(\Delta n)^2 
-	&= \sum_{n = 0}^{\infty}(n - \overline{n})^2 P_{\omega}(n) \\
-	&= \sum_{n = 0}^{\infty}(n^2 - 2n\overline{n} + \overline{n}^2) x^{n} (1-x) \\
-	&= \sum_{n = 0}^{\infty}n^2 x^{n} (1-x) - \sum_{n = 0}^{\infty}2n\overline{n} x^{n} (1-x) + \sum_{n = 0}^{\infty}\overline{n}^2 x^{n} (1-x) \\
-	&= (1-x)\sum_{n = 0}^{\infty}n^2 x^{n} - 2\overline{n}(1-x)\underbracket{\sum_{n = 0}^{\infty}n x^{n}}_{\frac{x}{(1 - x)^2}}  +\, \overline{n}^2(1-x) \underbracket{\sum_{n = 0}^{\infty} x^{n}}_{\frac{1}{1 - x}}. \tag{6}
+	(\Delta n)^2
+	 & = \sum_{n = 0}^{\infty}(n - \overline{n})^2 P_{\omega}(n)                                                                                                                                                                  \\
+	 & = \sum_{n = 0}^{\infty}(n^2 - 2n\overline{n} + \overline{n}^2) x^{n} (1-x)                                                                                                                                                 \\
+	 & = \sum_{n = 0}^{\infty}n^2 x^{n} (1-x) - \sum_{n = 0}^{\infty}2n\overline{n} x^{n} (1-x) + \sum_{n = 0}^{\infty}\overline{n}^2 x^{n} (1-x)                                                                                 \\
+	 & = (1-x)\sum_{n = 0}^{\infty}n^2 x^{n} - 2\overline{n}(1-x)\underbracket{\sum_{n = 0}^{\infty}n x^{n}}_{\frac{x}{(1 - x)^2}}  +\, \overline{n}^2(1-x) \underbracket{\sum_{n = 0}^{\infty} x^{n}}_{\frac{1}{1 - x}}. \tag{6}
 \end{align*}
 Xét số hạng đầu tiên $(1-x)\sum_{n = 0}^{\infty}n^2 x^{n}$, ta có
 \begin{align*}
-	\f{d}{dx} \left( \sum_{n = 0}^{\infty} x^{n} \right) 
-	&= \sum_{n = 0}^{\infty} n x^{n-1} \\
+	\f{d}{dx} \left( \sum_{n = 0}^{\infty} x^{n} \right)
+	                                                         & = \sum_{n = 0}^{\infty} n x^{n-1}                          \\
 	\Rightarrow \f{d^2}{dx^2} \left( \sum_{n = 0}^{\infty} x^{n} \right)
-	&= \f{d}{dx} \left( \sum_{n = 0}^{\infty} n x^{n-1} \right) \\
-	\f{d^2}{dx^2} \left( \sum_{n = 0}^{\infty} x^{n} \right) &= \sum_{n = 0}^{\infty} n(n-1) x^{n-2} \\
-	\f{d^2}{dx^2} \left( \sum_{n = 0}^{\infty} x^{n} \right) &= \sum_{n = 0}^{\infty} (n^2-n) x^{n-2}. \tag{7}
+	                                                         & = \f{d}{dx} \left( \sum_{n = 0}^{\infty} n x^{n-1} \right) \\
+	\f{d^2}{dx^2} \left( \sum_{n = 0}^{\infty} x^{n} \right) & = \sum_{n = 0}^{\infty} n(n-1) x^{n-2}                     \\
+	\f{d^2}{dx^2} \left( \sum_{n = 0}^{\infty} x^{n} \right) & = \sum_{n = 0}^{\infty} (n^2-n) x^{n-2}. \tag{7}
 \end{align*}
 Nhân 2 vế của (6) cho $x^2$ ta được
 \begin{align*}
-	x^2 \f{d^2}{dx^2} \left( \sum_{n = 0}^{\infty} x^{n} \right) &= \sum_{n = 0}^{\infty} (n^2-n) x^{n} 
-	= \sum_{n = 0}^{\infty} n^2 x^{n} - \sum_{n = 0}^{\infty} nx^{n} \\
-	\Rightarrow \sum_{n = 0}^{\infty} n^2 x^{n} 
-	&= x^2 \f{d^2}{dx^2} \left( \sum_{n = 0}^{\infty} x^{n} \right) + \sum_{n = 0}^{\infty} nx^{n} \\
-	&= x^2 \f{d^2}{dx^2} \left( \sum_{n = 0}^{\infty} x^{n} \right) + x \f{d}{dx} \left( \sum_{n = 0}^{\infty} x^{n} \right) .(DPCM) \tag{8} 
+	x^2 \f{d^2}{dx^2} \left( \sum_{n = 0}^{\infty} x^{n} \right)
+	 & = \sum_{n = 0}^{\infty} (n^2-n) x^{n}
+	= \sum_{n = 0}^{\infty} n^2 x^{n} - \sum_{n = 0}^{\infty} nx^{n}                                                                           \\
+	\Rightarrow \sum_{n = 0}^{\infty} n^2 x^{n}
+	 & = x^2 \f{d^2}{dx^2} \left( \sum_{n = 0}^{\infty} x^{n} \right) + \sum_{n = 0}^{\infty} nx^{n}                                           \\
+	 & = x^2 \f{d^2}{dx^2} \left( \sum_{n = 0}^{\infty} x^{n} \right) + x \f{d}{dx} \left( \sum_{n = 0}^{\infty} x^{n} \right) .(DPCM) \tag{8}
 \end{align*}
 Thay vô (6) ta được
 \begin{align*}
-	(\Delta n)^2 
-	&= (1-x) \left[x^2 \f{d^2}{dx^2} \left( \sum_{n = 0}^{\infty} x^{n} \right) + x \f{d}{dx} \left( \sum_{n = 0}^{\infty} x^{n} \right)\right] - \f{2\overline{n}(1-x)x}{(1 - x)^2} + \overline{n}^2 \\
-	&= (1-x) \left[x^2 \f{d^2}{dx^2} \left( \f{1}{1 - x} \right) + x \f{d}{dx} \left( \f{1}{1 - x} \right)\right] - \f{2\overline{n}(1-x)x}{(1 - x)^2} + \overline{n}^2 \\
-	&= (1-x) \left[\f{2x^2}{(1-x)^3} + \f{x}{(1 - x)^2}\right] - \f{2\overline{n}(1-x)x}{(1 - x)^2} + \overline{n}^2 \\
-	&= \left[2 \overline{n}^2 + \overline{n}\right] - 2 \overline{n}^2 + \overline{n}^2 \\
-	&= \overline{n} + \overline{n}^2 (DPCM).\tag{9}
+	(\Delta n)^2
+	 & = (1-x) \left[x^2 \f{d^2}{dx^2} \left( \sum_{n = 0}^{\infty} x^{n} \right) + x \f{d}{dx} \left( \sum_{n = 0}^{\infty} x^{n} \right)\right] - \f{2\overline{n}(1-x)x}{(1 - x)^2} + \overline{n}^2 \\
+	 & = (1-x) \left[x^2 \f{d^2}{dx^2} \left( \f{1}{1 - x} \right) + x \f{d}{dx} \left( \f{1}{1 - x} \right)\right] - \f{2\overline{n}(1-x)x}{(1 - x)^2} + \overline{n}^2                               \\
+	 & = (1-x) \left[\f{2x^2}{(1-x)^3} + \f{x}{(1 - x)^2}\right] - \f{2\overline{n}(1-x)x}{(1 - x)^2} + \overline{n}^2                                                                                  \\
+	 & = \left[2 \overline{n}^2 + \overline{n}\right] - 2 \overline{n}^2 + \overline{n}^2                                                                                                               \\
+	 & = \overline{n} + \overline{n}^2 (DPCM).\tag{9}
 \end{align*}
 
 \subsection*{Chứng minh rằng $\langle \Delta E^2 \rangle = k_B T^2 \f{\partial \langle E \rangle}{T}$}
@@ -172,17 +173,17 @@ Mỗi trạng thái $\mathbf{k}$ trong mạng có 1 cặp trạng thái 1 hạt.
 \begin{align*}
 	\begin{cases}
 		\text{2 trạng thái chiếm thể tích :} \; \left(\f{2\pi}{L}\right)^3 \\
-		\text{? số trạng thái chiếm thể tích :} \; d\mathbf{k} \\
+		\text{? số trạng thái chiếm thể tích :} \; d\mathbf{k}             \\
 	\end{cases}
 \end{align*}
-số trạng thái trong $d\mathbf{k}$ là 
+số trạng thái trong $d\mathbf{k}$ là
 \begin{align*}
 	D(k)dk = 2  \left(\f{L}{2\pi}\right)^3 d\mathbf{k} = \f{2V}{(2\pi)^3} 4\pi k^2 dk = \f{V}{\pi^2}k^2,
 \end{align*}
 mà
 \begin{align*}
-	D(\omega) D\omega &= D(k) dk\\
-	\Rightarrow D(\omega) &= \f{D(k)}{d\omega / dk}.
+	D(\omega) D\omega     & = D(k) dk                 \\
+	\Rightarrow D(\omega) & = \f{D(k)}{d\omega / dk}.
 \end{align*}
 Đặt $\omega = ck$ ta có được
 \begin{align*}
@@ -191,12 +192,85 @@ mà
 
 \subsection*{Bài tập trong Mark Fox}
 \subsubsection*{5.1}
-Ta có bước sóng $\lambda = 633$ nm, với công suất là $P = 0.01$ pW, với hiệu suất lượng tử là $\eta = 30\% $ với khoảng thời gian là $\tau = 10$ ms
+Ta có bước sóng $\lambda = 633$ nm, với công suất là $P = 0.01$ pW, với hiệu suất lượng tử là $\eta = 30\% $ với khoảng thời gian là $T = 10$ ms
 \begin{enumerate}
-	\item[(a)] Tốc độ đếm $\mathcal{R} = \f{\eta P}{\hbar \omega} = 0.03 \f{0.01^{-12}}{\hbar \frac{2\pi c}{\lambda}} = 9553.174$ count/s
-	\item[(b)] Tốc độ đếm trung bình $\Phi = $
+	\item[(a)] Tốc độ đếm $\mathcal{R} = \f{\eta P}{\hbar \omega} = 0.3 \f{0.01^{-12}}{\hbar \frac{2\pi c}{\lambda}} = 9553.174$ count/s
+	\item[(b)] Tốc độ đếm trung bình $N(T)= \eta \f{PT}{\hbar \omega} = 0.3 \times \mathcal{R}\times 0.01 =$
+	\item[(c)] Ta đã giả sử rằng photon detected count có thống kê Poissonian, và đã biết là $\overline{n} = N$, do đó $\Delta n = \sqrt{\overline{n}}$
+\end{enumerate}
+\subsubsection*{5.4}
+Tính số photon trung bình cho từng mode tại nguồn là đèn Tungsten có bước sóng $\lambda =$ 500 nm, tại $T = $ 2000 K là nhiệt độ cần để có được $\overline{n} = 1$ tại bước sóng $\lambda$. Nhiệt độ tại bước sóng là $\lambda^{'} = 10 \mu$m. Từ công thức Plank
+\begin{align*}
+	\overline{n} = \f{1}{\exp(\frac{\hbar \omega}{k_{B} T}) - 1} = \frac{1}{\exp(\frac{hc}{\lambda k_{B} T}) - 1} = \f{1}{\exp(\frac{hc}{500\times 10^{-9} 1.38 \times 10^{-23} 2000}) - 1} \approx 5.548 \times 10^{-7}. %\text{photon}
+\end{align*}
+Để $\overline{n} = 1$ thì $T$ là bao nhiêu?
+\begin{align*}
+	\overline{n} = 1 = \f{1}{\exp(\frac{hc}{500\times 10^{-9} 1.38 \times 10^{-23} T}) - 1} \Rightarrow T = 41562.6 \text{K}.
+\end{align*}
+Với $\lambda = \lambda'$ và để $\overline{n} = 1$ thì $T$ là bao nhiêu?
+\begin{align*}
+	\overline{n} = 1 = \f{1}{\exp(\frac{hc}{10 \times 10^{-6} 1.38 \times 10^{-23} T}) - 1} \Rightarrow T = 2078.13 \text{K}.
+\end{align*}
+\subsubsection*{5.5}
+\subsubsection*{5.8}
+Một chùm tia với thông lượng photon là $\Phi = 1000$ photon s$^{-1}$ tới detector với hiệu suất lượng tử là $\eta = 20 \%$. Nếu khoảng thời gian được sét là $T = 10$s, tính trung bình và độ lệch chuẩn của $N(t)$ trong các trường hợp sau
+\begin{enumerate}
+	\item[(a)] Ánh sáng có thống kê Poissonian
+	\item[(b)] Ánh sáng có Super-Poissonian với độ lệch chuẩn $\Delta n = 2\times \Delta n_{\text{Poissonian}}$
+	\item[(c)] Ánh sáng là trạng thái số photon
+\end{enumerate}
+Giải:
+Số photon trung bình va chạm vào detector:
+\begin{align*}
+	\overline{n} = \Phi T = 10^4
+\end{align*}
+Tốc độ đếm trung bình 
+\begin{align*}
+	\overline{N} = \eta \overline{n} = 2\times 10^3
+\end{align*}
+\begin{enumerate}
+	\item[(a)] Ánh sáng có thống kê Photon, Average photon count number $N(t)$ là
+	\begin{align*}
+		\overline{N}(t) \equiv \overline{n}= \eta \Phi T = 0.2 \times 1000 \times 10 = 2000 \; \text{photon s}^{-1}
+	\end{align*} 
+	Độ lệch chuẩn $(\Delta \overline{N})$ 
+	\begin{align*}
+		(\Delta \overline{N})^2 = \eta \overline{n} = \overline{N} \Rightarrow \Delta \overline{N} = \sqrt{\Delta \overline{N}} = \sqrt{2000}
+	\end{align*}
+	\item[(b)] Ánh sáng có Super-Poissonian\\
+	Số photon trung bình (Average/mean photon count number) là $\overline{N}(t) = 2000$. Ta có
+	\begin{align*}
+		(\Delta \overline{N})^2 
+		&= \eta^2 (\Delta n)^2 + \eta ( 1 - \eta ) \overline{n} \tag{5.56 M.Fox} \\ 
+		&=  \eta^2 \times (2 \times \Delta n_{\text{Poissonian}})^2 + \eta ( 1 - \eta ) \overline{n} \\
+		& = 0.2^2 \times 4 \times \overline{n} + 0.2 \times (1 - 0.2) \times \overline{n} = 3200 \Rightarrow \Delta N = \sqrt{3200} \tag{5.15 M.Fox}
+	\end{align*}
+	trong đó $\Delta N$ là phương sai của photoncount number,
+	\item[(c)]
+	Độ lệch chuẩn $(\Delta \overline{N})$ 
+	\begin{align*}
+		(\Delta \overline{N})^2 = \eta(1-\eta) \overline{n} = \sqrt{1600}
+	\end{align*}
 \end{enumerate}
 
+\subsubsection*{5.9}
+Cường độ dòng photon ($i$) là
+\begin{align*}
+	i = \eta e \f{P}{\hbar \omega} = 0.9 \abs{1.6\times 10^{-19}} \f{10 \times 10^{-3}}{\hbar c / \lambda} = 4.584 \text{A}
+\end{align*}
+noise power đi qua 1 đơn vị băng thông là 
+\begin{align*}
+	P_{\text{noise}} = 2e \times 50 \times 4.584  = 458.4e \; \text{W Hz}^{-1}
+\end{align*}
+\subsubsection*{5.12}
+\subsubsection*{5.13}
+Hiệu suất lượng tử của một bóng đèn LED được định nghĩa là tỉ số giữa số photon phát xạ so với số electron chạy qua máy dò. Một đèn LED phát ra ánh sáng ở tần số 800 nm, được định hướng bởi một ắc quy có điện thế là 9V thông qua điện trở $R = 1000 \, \Omega$. Bóng đèn LED có hiệu suất lượng tử $\eta = 40\%$, và có $80\%$ phát xạ được tập trung vào một máy dò photodiode với hiệu suất lượng tử là 90$\%$.
+\begin{enumerate}
+	\item[(a)] Năng lượng photon là
+	\begin{align*}
+		E_{\text{photon}} = \f{\hbar 2 \pi c}{\lambda} = 1.55eV
+	\end{align*}
+\end{enumerate}
 
 
 
