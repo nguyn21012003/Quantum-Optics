@@ -194,7 +194,7 @@ mà
 \subsubsection*{5.1}
 Ta có bước sóng $\lambda = 633$ nm, với công suất là $P = 0.01$ pW, với hiệu suất lượng tử là $\eta = 30\% $ với khoảng thời gian là $T = 10$ ms
 \begin{enumerate}
-	\item[(a)] Tốc độ đếm $\mathcal{R} = \f{\eta P}{\hbar \omega} = 0.3 \f{0.01^{-12}}{\hbar \frac{2\pi c}{\lambda}} = 9553.174$ count/s.
+	\item[(a)] Tốc độ đếm $\mathcal{R} = \f{\eta P}{\hbar \omega} = 0.3 \f{0.01 \times 10^{-12}}{\hbar \frac{2\pi c}{\lambda}} = 9553.174$ count/s.
 	\item[(b)] Tốc độ đếm trung bình $N(T)= \eta \f{PT}{\hbar \omega} = 0.3 \times \mathcal{R}\times 0.01 =$
 	\item[(c)] Ta đã giả sử rằng photon detected count có thống kê Poissonian, và đã biết là $\overline{n} = N$, do đó $\Delta n = \sqrt{\overline{n}}$.
 \end{enumerate}
@@ -213,7 +213,7 @@ Với $\lambda = \lambda'$ và để $\overline{n} = 1$ thì $T$ là bao nhiêu?
 \end{align*}
 \subsubsection*{5.5}
 \subsubsection*{5.8}
-Một chùm tia với thông lượng photon là $\Phi = 1000$ photon s$^{-1}$ tới detector với hiệu suất lượng tử là $\eta = 20 \%$. Nếu khoảng thời gian được sét là $T = 10$s, tính trung bình và độ lệch chuẩn của $N(t)$ trong các trường hợp sau
+Một chùm tia với thông lượng photon là $\Phi = 1000$ photon s$^{-1}$ tới detector với hiệu suất lượng tử là $\eta = 20 \%$. Nếu khoảng thời gian được xét là $T = 10$s, tính trung bình và độ lệch chuẩn của $N(t)$ trong các trường hợp sau:
 \begin{enumerate}
 	\item[(a)] Ánh sáng có thống kê Poissonian
 	\item[(b)] Ánh sáng có Super-Poissonian với độ lệch chuẩn $\Delta n = 2\times \Delta n_{\text{Poissonian}}$
@@ -235,14 +235,14 @@ Tốc độ đếm trung bình
 	      \end{align*}
 	      Độ lệch chuẩn $(\Delta \overline{N})$
 	      \begin{align*}
-		      (\Delta \overline{N})^2 = \eta \overline{n} = \overline{N} \Rightarrow \Delta \overline{N} = \sqrt{\Delta \overline{N}} = \sqrt{2000}.
+		      (\Delta \overline{N})^2 = \overline{n} = \overline{N} \Rightarrow \Delta \overline{N} = \sqrt{\overline{N}} = \sqrt{2000}.
 	      \end{align*}
 	\item[(b)] Ánh sáng có Super-Poissonian\\
 	      Số photon trung bình (Average/mean photon count number) là $\overline{N}(t) = 2000$. Ta có
 	      \begin{align*}
 		      (\Delta \overline{N})^2
-		       & = \eta^2 (\Delta n)^2 + \eta ( 1 - \eta ) \overline{n} \tag{5.56 M.Fox}                                                                    \\
-		       & =  \eta^2 \times (2 \times \Delta n_{\text{Poissonian}})^2 + \eta ( 1 - \eta ) \overline{n}                                                \\
+		       & = \eta^2 (\Delta n)^2 + \eta ( 1 - \eta ) \overline{n} \tag{5.56 M.Fox}                                                                     \\
+		       & =  \eta^2 \times (2 \times \Delta n_{\text{Poissonian}})^2 + \eta ( 1 - \eta ) \overline{n}                                                 \\
 		       & = 0.2^2 \times 4 \times \overline{n} + 0.2 \times (1 - 0.2) \times \overline{n} = 3200 \Rightarrow \Delta N = \sqrt{3200}. \tag{5.15 M.Fox}
 	      \end{align*}
 	      trong đó $\Delta N$ là phương sai của photoncount number,
@@ -271,19 +271,19 @@ Chứng minh rằng Johson shot noise cho kết quả nhỏ hơn shot noise vớ
 Giải:\\
 Ta có phương sai cường độ dòng điện $\Delta i$ cho shot noise là
 \begin{align*}
-	(\Delta i)_{\text{shot noise}}^2 
-	&= 2e \Delta f \langle i \rangle \\
-	&= 2e \Delta f \f{V}{R} \\
-	&\equiv \langle (\Delta i)^2 \rangle_{\text{shot noise}} \tag{1}
-\end{align*} 
+	(\Delta i)_{\text{shot noise}}^2
+	 & = 2e \Delta f \langle i \rangle                                 \\
+	 & = 2e \Delta f \f{V}{R}                                          \\
+	 & \equiv \langle (\Delta i)^2 \rangle_{\text{shot noise}} \tag{1}
+\end{align*}
 Hệ thức Johnson cho
 \begin{align*}
 	\langle (\Delta i)^2 \rangle_{\text{Johnson}} = 4 k_{B} T \f{\Delta f}{R}. \tag{2}
 \end{align*}
 Để (2) < (1) thì
 \begin{align*}
-	4 k_{B} T \f{\Delta f}{R} &< 2e \Delta f \f{V}{R} \\
-	\Rightarrow V &> \f{2k_B T}{e}  \; \text{ĐPCM}.
+	4 k_{B} T \f{\Delta f}{R} & < 2e \Delta f \f{V}{R}           \\
+	\Rightarrow V             & > \f{2k_B T}{e}  \; \text{ĐPCM}.
 \end{align*}
 Điện thế này tại $T = 300$K
 \begin{align*}
@@ -315,52 +315,54 @@ Hiệu suất lượng tử của một bóng đèn LED được định nghĩa 
 		      i_{1} = I_{R} = 7.45 \text{mA}.
 	      \end{align*}
 	\item[(b)] Ta có $T = 293 K$\\
-	Hệ số $F_{\text{Fano}}$ được cho bởi
-	\begin{align*}
-		F_{\text{Fano}} 
-		&= \f{\text{measured noise}}{\text{shot noise limit}} \\
-		&= \f{(\Delta i)_{\text{Johnson}}^2}{(\Delta i)_{\text{shot noise}}^2} \\
-		&= \f{4 k_B T \Delta f}{2e R \Delta f \langle i \rangle} \\
-		&= 6.77 \times 10^{-3}
-	\end{align*}
+	      Hệ số $F_{\text{Fano}}$ được cho bởi
+	      \begin{align*}
+		      F_{\text{Fano}}
+		       & = \f{\text{measured noise}}{\text{shot noise limit}}                  \\
+		       & = \f{(\Delta i)_{\text{Johnson}}^2}{(\Delta i)_{\text{shot noise}}^2} \\
+		       & = \f{4 k_B T \Delta f}{2e R \Delta f \langle i \rangle}               \\
+		       & = 6.77 \times 10^{-3}
+	      \end{align*}
 	\item[(c)] Dòng photon trung bình được tính bởi
-	\begin{align*}
-		\langle i \rangle_{\text{photon}} = \eta e \Phi \tag{5.58 \text{M.Fox}}
-	\end{align*}
-	trong đó $\eta$ là hiệu suất lượng tử của photodiode detector, và $\Phi$ là thông lượng photon đi tới PD\\
-	\begin{align*}
-		\Phi = \f{P_{\text{LED}}}{E_{\text{photon}}}
-	\end{align*}
-	Ta viết lại (5.58)
-	\begin{align*}
-		\langle i \rangle_{\text{photon}}
-		&= N_{\text{photonelectron}} \times e  \\
-		&= \eta_{\text{Detec}} e \Phi \\
-		&= \eta_{\text{Detec}} e \f{i_{1} V_{\text{nguồn}}}{E_{\text{photon}}} \\
-	\end{align*}
+	      \begin{align*}
+		      \langle i \rangle_{\text{photon}} = \eta e \Phi \tag{5.58 \text{M.Fox}}
+	      \end{align*}
+	      trong đó $\eta$ là hiệu suất lượng tử của photodiode detector, và $\Phi$ là thông lượng photon đi tới PD\\
+	      \begin{align*}
+		      \Phi = \f{P_{\text{LED}}}{E_{\text{photon}}}
+	      \end{align*}
+	      Ta viết lại (5.58)
+	      \begin{align*}
+		      \langle i \rangle_{\text{photon}}
+		       & = N_{\text{photonelectron}} \times e                                  \\
+		       & = \eta_{\text{Detec}} e \Phi                                          \\
+		       & = \eta_{\text{Detec}} e \f{i_{1} V_{\text{nguồn}}}{E_{\text{photon}}} \\
+		       & = \eta_{\text{Detec}} e \f{i_{1}}{e} \eta_{\text{LED}} \eta_{2} \\
+		       & = 2.145 \text{mA}
+	      \end{align*}
 	\item[(d)] Tổng hiệu suất lượng tử
-	\begin{align*}
-		\eta_{\text{tolta}} = \eta_{\text{Detec}} \times \eta_{\text{LED}} \times \eta_{\text{optic}} = 0.288  \tag{*}
-	\end{align*}
-	(*) Bachor, HA., Rottengatter, P. $\&$ Savage, C.M. Correlation effects in light sources with high quantum efficiency. Appl. Phys. B 55, 258–264 (1992).\\ https://doi.org/10.1007/BF00325014 \\
-	Hệ số $F_{\text{Fano}}$ được cho bởi
-	\begin{align*}
-		F_{\text{Fano}} = \eta_{\text{tolta}} F_{\text{drive}} + (1 - \eta_{\text{tolta}}) 
-		&= 0.288 \times 6.77 \times 10^{-3} + (1 - 0.288)\\
-		&= 0.7139
-	\end{align*}
+	      \begin{align*}
+		      \eta_{\text{tolta}} = \eta_{\text{Detec}} \times \eta_{\text{LED}} \times \eta_{\text{optic}} = 0.288  \tag{*}
+	      \end{align*}
+	      (*) Bachor, HA., Rottengatter, P. $\&$ Savage, C.M. Correlation effects in light sources with high quantum efficiency. Appl. Phys. B 55, 258–264 (1992).\\ https://doi.org/10.1007/BF00325014 \\
+	      Hệ số $F_{\text{Fano}}$ được cho bởi
+	      \begin{align*}
+		      F_{\text{Fano}} = \eta_{\text{tolta}} F_{\text{drive}} + (1 - \eta_{\text{tolta}})
+		       & = 0.288 \times 6.77 \times 10^{-3} + (1 - 0.288) \\
+		       & = 0.7139
+	      \end{align*}
 	\item[(e)]
-	\begin{align*}
-		P_{\text{shot noise}} 
-		&= 2 e R_{L} \Delta f \langle i \rangle_{\text{photon}} \\
-		&= 2e \times 50 \times 10 \times 10^{3} \times 2.15 \times 10^{-3} \\
-		&= 3.44 \times 10^{-16} \text{W} \tag{1}
-	\end{align*}
-	\begin{align*}
-		F_{\text{photon}} = \f{P_\text{measured}}{P_{\text{photon}} \equiv P_{\text{shot noise}} } = 0.714 \Rightarrow P_\text{measured} 
-		&= 0.714 \times 3.44 \times 10^{-16}\\
-		&= 2.45 \times 10^{-16} \text{W}
-	\end{align*}
+	      \begin{align*}
+		      P_{\text{shot noise}}
+		       & = 2 e R_{L} \Delta f \langle i \rangle_{\text{photon}}            \\
+		       & = 2e \times 50 \times 10 \times 10^{3} \times 2.15 \times 10^{-3} \\
+		       & = 3.44 \times 10^{-16} \text{W} \tag{1}
+	      \end{align*}
+	      \begin{align*}
+		      F_{\text{photon}} = \f{P_\text{measured}}{P_{\text{photon}} \equiv P_{\text{shot noise}} } = 0.714 \Rightarrow P_\text{measured}
+		       & = 0.714 \times 3.44 \times 10^{-16} \\
+		       & = 2.45 \times 10^{-16} \text{W}
+	      \end{align*}
 \end{enumerate}
 
 
