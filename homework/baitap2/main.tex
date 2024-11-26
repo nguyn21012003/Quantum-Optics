@@ -90,8 +90,8 @@ Giải: \\
 Đặt $x \equiv \exp(-\f{\hbar \omega}{k_B T})$, mà từ công thức (5.20) Mark Fox, ta biết $P(\omega)$ có dạng
 \begin{align*}
 	P_{\omega}(n)
-	 & = \f{\exp(-E_{n} / k_B T)}{\sum_{n = 0}^{\infty}(\exp(-E_{n} / k_B T)}                   \\
-	 & = \f{\exp(-n \hbar \omega / k_B T)}{\sum_{n = 0}^{\infty}(\exp(n \hbar \omega / k_B T)}, \\
+	 & = \f{\exp(-E_{n} / k_B T)}{\sum_{n = 0}^{\infty}(\exp(-E_{n} / k_B T)}                    \\
+	 & = \f{\exp(-n \hbar \omega / k_B T)}{\sum_{n = 0}^{\infty}(\exp(-n \hbar \omega / k_B T)}, \\
 	 & = \f{x^{n}}{\sum_{n = 0}^{\infty} x^{n}}. \tag{1}
 \end{align*}
 Ta xét chuỗi hình học
@@ -146,7 +146,7 @@ Xét số hạng đầu tiên $(1-x)\sum_{n = 0}^{\infty}n^2 x^{n}$, ta có
 	\f{d^2}{dx^2} \left( \sum_{n = 0}^{\infty} x^{n} \right) & = \sum_{n = 0}^{\infty} n(n-1) x^{n-2}                     \\
 	\f{d^2}{dx^2} \left( \sum_{n = 0}^{\infty} x^{n} \right) & = \sum_{n = 0}^{\infty} (n^2-n) x^{n-2}. \tag{7}
 \end{align*}
-Nhân 2 vế của (6) cho $x^2$ ta được
+Nhân 2 vế của (7) cho $x^2$ ta được
 \begin{align*}
 	x^2 \f{d^2}{dx^2} \left( \sum_{n = 0}^{\infty} x^{n} \right)
 	 & = \sum_{n = 0}^{\infty} (n^2-n) x^{n}
@@ -166,6 +166,48 @@ Thay vô (6) ta được
 \end{align*}
 
 \subsection*{Chứng minh rằng $\langle \Delta E^2 \rangle = k_B T^2 \f{\partial \langle E \rangle}{T}$}
+Ta có:
+\begin{align*}
+	\langle \Delta E^2 \rangle = \langle E^2 \rangle - \langle \Delta E \rangle^2.
+\end{align*}
+Xét:
+\begin{align*}
+	\langle E \rangle 
+	&= \sum_{n} p(n) E_{n} \\
+	&= \f{1}{Z} \sum_{n} E_{n} e^{-\beta E_{n}} \\
+	&= \f{1}{Z} \left( -\f{\partial}{\partial \beta} \sum_{n}e^{-\beta E_{n}} 
+	\right)\\
+	&= \f{1}{Z} \left( -\f{\partial}{\partial \beta} Z \right),
+\end{align*}
+với $p(n) = \f{e^{-\beta E_{n}}}{Z}$ là xác suất hệ được tìm thấy ở trạng thái $\ket{n}$. \\
+Xét
+\begin{align*}
+	\langle E^2 \rangle
+	&= \sum_{n} p_{n} E_{n}^{2} \\
+	&= \f{1}{Z} \sum_{n} E_{n}^{2} e^{-\beta E_{n}} \\
+	&= \f{1}{Z} \left( \f{\partial^2}{\partial \beta^2} \sum_{n} E_{n}^{2} \right) \\
+	&= \f{1}{Z} \left( \f{\partial^2}{\partial \beta^2} Z\right),
+\end{align*}
+nên ta có:
+\begin{align*}
+	\langle \Delta E^2 \rangle 
+	&= \langle E^2 \rangle - \langle \Delta E \rangle^2 \\
+	&= \f{1}{Z} \left( \f{\partial^2 Z}{\partial \beta^2} \right) - \f{1}{Z^2} \left( \f{\partial Z}{\partial \beta} \right)^2 \\
+	&= \f{Z^{''}}{Z} - \f{Z^{'2}}{Z^2} \\
+	&= \left(\f{Z^{'}}{Z}\right)^2 \\
+	&= \left[ (\ln Z)^{'} \right]^{'} \\
+	&= \left( \ln Z \right)^{''} \\
+	&= \f{\partial^2}{\partial \beta^2} \ln Z = -\f{\partial \langle E \rangle}{\partial \beta}.
+\end{align*}
+mà
+\begin{align*}
+	\langle E \rangle = -\f{\partial}{\partial Z} \ln Z \quad \quad \text{với}\; \beta = \f{1}{k_{B}T}.
+\end{align*}
+Vậy
+\begin{align*}
+	\langle \Delta E^2 \rangle = -\f{\partial \langle E \rangle}{\partial \left( \f{1}{k_{B}T}\right)} = \f{-\partial \langle E \rangle}{-\frac{k_{B}}{k_{B}T}\partial T} = k_{B} T^2 \f{\partial \langle E \rangle}{\partial T}
+\end{align*}
+
 
 \subsection*{Chứng minh rằng $D(\omega) = \frac{\omega^2}{\pi^2 c^3}$}
 Giải:\\
@@ -182,7 +224,7 @@ số trạng thái trong $d\mathbf{k}$ là
 \end{align*}
 mà
 \begin{align*}
-	D(\omega) D\omega     & = D(k) dk                 \\
+	D(\omega) d\omega     & = D(k) dk                 \\
 	\Rightarrow D(\omega) & = \f{D(k)}{d\omega / dk}.
 \end{align*}
 Đặt $\omega = ck$ ta có được
@@ -337,7 +379,7 @@ Hiệu suất lượng tử của một bóng đèn LED được định nghĩa 
 		       & = N_{\text{photonelectron}} \times e                                  \\
 		       & = \eta_{\text{Detec}} e \Phi                                          \\
 		       & = \eta_{\text{Detec}} e \f{i_{1} V_{\text{nguồn}}}{E_{\text{photon}}} \\
-		       & = \eta_{\text{Detec}} e \f{i_{1}}{e} \eta_{\text{LED}} \eta_{2} \\
+		       & = \eta_{\text{Detec}} e \f{i_{1}}{e} \eta_{\text{LED}} \eta_{2}       \\
 		       & = 2.145 \text{mA}
 	      \end{align*}
 	\item[(d)] Tổng hiệu suất lượng tử
