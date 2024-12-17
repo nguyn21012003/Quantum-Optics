@@ -1,0 +1,260 @@
+\documentclass{report}
+\usepackage[utf8]{vietnam}
+\usepackage[utf8]{inputenc}
+\usepackage{anyfontsize,fontsize}
+\changefontsize[13pt]{13pt}	
+\usepackage{commath}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage{slashed,cancel}
+\usepackage{indentfirst}
+\usepackage{pdfpages}
+\usepackage{graphicx}
+\usepackage{nccmath}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amsmath,systeme}
+\usepackage[thinc]{esdiff}
+\usepackage{hyperref}
+\usepackage{bm,physics,nicematrix}
+\usepackage{fancyhdr}
+%footnote
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}%
+\fancyhf{}%
+\fancyfoot[L]{Vật lý Lý thuyết}%
+\fancyfoot[C]{\hspace{4cm} \thepage}%
+
+
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	total={170mm,257mm},
+	left=20mm,
+	top=20mm,
+}
+
+
+\newcommand{\image}[1]{
+	\begin{center}
+		\includegraphics[width=0.5\textwidth]{pic/#1}
+	\end{center}
+}
+\renewcommand{\l}{\ell}
+\newcommand{\dps}{\displaystyle}
+
+\newcommand{\f}[2]{\dfrac{#1}{#2}}
+\newcommand{\at}[2]{\bigg\rvert_{#1}^{#2} }
+
+
+\renewcommand{\baselinestretch}{2.0}
+
+
+\title{\Huge{Quantum Optics}}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=red,
+	filecolor=magenta,      
+	urlcolor=cyan,
+	pdftitle={QM3},
+	pdfpagemode=FullScreen,
+}
+
+\urlstyle{same}
+
+\begin{document}
+\setlength{\parindent}{20pt}
+\newpage
+\author{TRẦN KHÔI NGUYÊN \\ VẬT LÝ LÝ THUYẾT}
+\maketitle
+
+\subsection*{Bài tập 1}
+\begin{align*}
+	X_{1} (t) &= \left(\f{\omega}{2 \hbar}\right)^{1/2} q(t) \\
+	X_{2} (t) &= \left(\f{1}{2 \hbar \omega}\right)^{1/2} p(t)
+\end{align*}
+ta biểu diễn toạ độ chính tắc và động lượng suy rộng dưới dạng $x$ và $p_{x}$
+\begin{align}
+	\begin{cases}
+		X_{1} (t) &= \left(\f{\omega}{2 \hbar}\right)^{1/2} \sqrt{m} x(t) \\
+		X_{2} (t) &= \left(\f{1}{2 \hbar \omega}\right)^{1/2} \f{1}{\sqrt{m}} p_{x}(t)
+	\end{cases}
+\end{align}	
+ta có 
+\begin{align*}
+	a_{\pm} \equiv \f{1}{\sqrt{2 \hbar m \omega}} \left( \mp i p + m \omega x \right),
+\end{align*}
+và
+\begin{align}
+	\begin{cases}
+		x = \sqrt{\f{\hbar}{2 m \omega}} \left( a_{+} + a_{-} \right)\\
+		p = i \sqrt{\f{\hbar m \omega}{2}} \left( a_{+} - a_{-} \right)
+	\end{cases}
+\end{align}	
+Thay (2) vào (1), ta được
+\begin{align}
+	\begin{cases}
+		X_{1} (t) &= \left(\f{\omega}{2 \hbar}\right)^{1/2} \sqrt{m} \sqrt{\f{\hbar}{2 m \omega}} \left( a_{+} + a_{-} \right) \\
+		X_{2} (t) &= \left(\f{1}{2 \hbar \omega}\right)^{1/2} \f{1}{\sqrt{m}}  i \sqrt{\f{\hbar m \omega}{2}} \left( a_{+} - a_{-} \right)
+	\end{cases}
+	\Rightarrow
+	\begin{cases}
+		X_{1}(t) & = \f{1}{2} \left( a_{+} + a_{-} \right)\\
+		X_{2}(t) & = \f{i}{2} \left( a_{+} - a_{-} \right)
+	\end{cases}
+\end{align}		
+\subsection*{Bài tập 2}
+Ta có
+\begin{align*}
+	\begin{cases}
+		X_{1}(t) & = \f{1}{2} \left( a_{+} + a_{-} \right)\\
+		X_{2}(t) & = \f{i}{2} \left( a_{+} - a_{-} \right)
+	\end{cases}
+\end{align*}
+nên 
+\begin{align*}
+	&\begin{cases}
+		\ev{X_{1}} \propto \bra{n} a_{+} + a_{-} \ket{n} = 0\\
+		\ev{X_{2}} \propto \bra{n} a_{+} - a_{-} \ket{n} = 0
+	\end{cases} \\
+	&\begin{cases}
+		\ev{X_{1}^{2}} \propto \bra{n} a_{+}a_{+} + a_{-}a_{+} + a_{+}a_{-} + a_{-}a_{-} \ket{n} = \f{n}{2} + \f{1}{4}\\
+		\ev{X_{2}^{2}} \propto \bra{n} a_{+}a_{+} - a_{+}a_{-} - a_{-}a_{+} + a_{-}a_{-} \ket{n} =
+		\f{n}{2} + \f{1}{4} 
+	\end{cases}
+\end{align*}
+và
+\begin{align*}
+	\Delta X_{1} &= \sqrt{\ev{X_{1}^{2}} - \ev{X_{1}}^{2}} = \sqrt{\f{n}{2} + \f{1}{4}}\\	
+	\Delta X_{2} &= \sqrt{\ev{X_{2}^{2}} - \ev{X_{2}}^{2}} = \sqrt{\f{n}{2} + \f{1}{4}}	
+\end{align*}
+nên ta có 
+\begin{align*}
+	\Delta X_{1}^{\text{VAC}} &= \sqrt{\ev{X_{1}^{2}} - \ev{X_{1}}^{2}} = \sqrt{\f{n}{2} + \f{1}{4}}\;\at{n = 0}{} = \f{1}{2}\\	
+	\Delta X_{2}^{\text{VAC}} &= \sqrt{\ev{X_{2}^{2}} - \ev{X_{2}}^{2}} = \sqrt{\f{n}{2} + \f{1}{4}} \;\at{n = 0}{} = \f{1}{2}
+\end{align*}
+\subsection*{Bài tập 3}
+Xét trạng thái cohenrent $\ket{\alpha}$ với $\alpha = \abs{\alpha} e^{i \varphi}$. Ta viết lại trạng thái cohenrent dưới dạng $\propto \ket{n}$
+%\begin{align*}
+%	\ket{\alpha} = e^{ -\frac{\alpha^{2}}{2}} \sum_{n = 0}^{\infty} \f{\abs{\alpha}^{n} e^{i n \varphi}}{\sqrt{n !}} \ket{n}
+%\end{align*}	
+\begin{align*}
+	a_{-}\ket{\alpha} = \abs{\alpha} e^{i \varphi}\ket{\alpha}
+\end{align*}	
+%Dẫn tới
+%\begin{align*}
+%	\ev{X_{1}} 
+%	&= \bra{\alpha} X_{1} \ket{\alpha}\\
+%	&= e^{ - ( \alpha^2 + \alpha^2 )/2 } \sum_{n,m = 0}^{\infty} \bra{m} \f{\abs{\alpha}^{n}\abs{\alpha}^{m} e^{i (n - m) \varphi }}{\sqrt{m!} \sqrt{n!}} (a_{+} + a_{-}) \ket{n}\\
+%	&\propto \sum_{n,m = 0}^{\infty}  \f{\abs{\alpha}^{n}\abs{\alpha}^{m} e^{i (n - m) \varphi }}{\sqrt{m!} \sqrt{n!}} \bra{m} (a_{+} + a_{-}) \ket{n}\\
+%	&\propto \sum_{n,m = 0}^{\infty}  \f{\abs{\alpha}^{n}\abs{\alpha}^{m} e^{i (n - m) \varphi }}{\sqrt{m!} \sqrt{n!}} \left(\bra{m} \underbrace{a_{+} \ket{n}}_{\sqrt{n+1} \ket{n + 1}} + \bra{m} \underbrace{a_{-} \ket{n}}_{\sqrt{n}\ket{n-1} }\right) \\
+%	&\propto e^{- i \varphi} \sum_{n = 0} \f{\abs{\alpha}^{2n + 1}}{n!} + e^{i \varphi} \sum_{n = 0} \f{\abs{\alpha}^{2n - 1}}{(n-1)!}
+%\end{align*}
+%đặt n' = n - 1, ta có
+%\begin{align*}
+%	\ev{X_{1}} 
+%	&= \propto  e^{- i \varphi} \sum_{n = 0} \f{\abs{\alpha}^{2n + 1}}{n!} + e^{i \varphi} \sum_{n = 0} \f{\abs{\alpha}^{2n - 1}}{n!}\\
+%	&= \propto 2 \cos \varphi \sum_{n = 0} \f{\abs{\alpha}^{2n + 1} }{n!} \tag{4}
+%\end{align*}
+%đặt $\alpha^{2n} = \alpha $ nên (4) trở thành
+%\begin{align*}
+%	\ev{X_{1}} \propto 2 \abs{\alpha} \cos \varphi e^{\abs{\alpha}^2}
+%\end{align*}
+%Tương tự với $\ev{X_{2}}$
+%\begin{align*}
+%	\ev{X_{1}} \propto 2 \abs{\alpha} \cos \varphi e^{\abs{\alpha}^2}\\
+%	\ev{X_{2}} \propto 2i \abs{\alpha} \sin \varphi e^{\abs{\alpha}^2}
+%\end{align*}	
+Dẫn tới
+\begin{align*}
+	\ev{X_{1}}
+	&= \bra{\alpha} X_{1} \ket{\alpha}\\
+	&\propto \bra{\alpha} a_{+} \ket{\alpha} + \bra{\alpha} a_{-} \ket{\alpha}
+\end{align*}
+ta có $a_{-} \ket{\alpha} = \abs{\alpha} e^{i \varphi}\ket{\alpha} \Leftrightarrow \bra{\alpha} a_{+} = \bra{\alpha}  e^{-i\varphi} \abs{\alpha} $, nên ta có
+\begin{align*}
+	\ev{X_{1}} 
+	&\propto e^{- i \varphi} \abs{\alpha} \bra{\alpha} \ket{\alpha} + e^{i \varphi} \abs{\alpha} \bra{\alpha} \ket{\alpha}\\
+	&\propto 2 \abs{\alpha} \cos \varphi
+\end{align*}
+tương tự
+\begin{align*}
+	\ev{X_{2}} 
+	&\propto e^{- i \varphi} \abs{\alpha} \bra{\alpha} \ket{\alpha} + e^{i \varphi} \abs{\alpha} \bra{\alpha} \ket{\alpha}\\
+	&\propto 2 \abs{\alpha} \sin \varphi
+\end{align*}
+\subsection*{Bài tập 4}
+Ta viết lại toán tử $X_{1}^{2} + X_{2}^{2}$
+\begin{align*}
+	\begin{cases}
+		X_{1}^{2} =\f{1}{4}  \left( a_{+} a_{+} + a_{-} a_{+} + a_{+} a_{-} + a_{-} a_{-}  \right)\\
+		X_{2}^{2} =-\f{1}{4}  \left( a_{+} a_{+} - a_{-} a_{+} - a_{+} a_{-} + a_{-} a_{-}  \right)
+	\end{cases}
+\end{align*}
+ta có
+\begin{align*}
+	X_{1}^{2} + X_{2}^{2} = \f{1}{2} \left(a_{-} a_{+} + a_{+} a_{-}\right)
+\end{align*}	
+nên dẫn ra được
+\begin{align*}
+	\left(X_{1}^{2} + X_{2}^{2}\right) \ket{n} 
+	&= \f{1}{2} \left(a_{-} a_{+} + a_{+} a_{-}\right) \ket{n}\\
+	&= \f{1}{2} a_{-} a_{+}  \ket{n} + \f{1}{2} a_{+} a_{-}  \ket{n} \\
+	&= \f{1}{2} \sqrt{n+1}a_{-} \ket{n+1} + \f{1}{2} \sqrt{n} a_{+} \ket{n-1}\\
+	&= \f{1}{2} (n + 1)\ket{n} + \f{n}{2} \ket{n}\\
+	&= (n + \f{1}{2}) \ket{n}.
+\end{align*}
+nên ta có được ĐPCM.\\
+Đánh giá số photon dựa trên $\Delta X_{1} \Delta X_{2}$.
+\begin{align*}
+	\left[ X_{1} , X_{2} \right] 
+	&= X_{1} X_{2} - X_{2} X_{1}\\
+	&= \f{i}{4} \left[ \left( a_{+} a_{+} + a_{-} a_{+} + a_{+} a_{-} + a_{-} a_{-} \right) + \left( a_{+} a_{+} - a_{-} a_{+} + a_{+} a_{-} - a_{-} a_{-} \right) \right]\\
+	& = \f{i}{2} \left[ a_{-} , a_{+} \right] = \f{i}{2}
+\end{align*}
+nên ta có
+\begin{align*}
+	\Delta X_{1} \Delta X_{2} \geq 1 / 4 
+\end{align*}
+\subsection*{Bài tập 5}
+Ta có
+\begin{align*}
+	&g^{(2)}(\tau) = \f{\ev{a_{3}^{+}(t) a_{4}^{+}(t + \tau) a_{4}^{-}(t + \tau)} a_{3}^{-}(t)}{\ev{a_{3}^{+}(t+ \tau) a_{3}^{-}(t+ \tau)} \ev{a_{4}^{+}(t + \tau) a_{4}^{-}(t+ \tau) }}\\
+	\Rightarrow & g^{(2)}(0) = \f{\ev{a_{+} a_{+} a_{-} a_{-}}}{\ev{a_{+} a_{-}} \ev{a_{+} a_{-}}}
+\end{align*}
+Xét tử số
+\begin{align*}
+	\ev{a_{+} a_{+} a_{-} a_{-}} 
+	&= \bra{\alpha} a_{+} a_{+} a_{-} a_{-} \ket{\alpha}\\
+	&= \bra{\alpha} a_{+} ( a_{-} a_{+} - 1) a_{-} \ket{\alpha}\\
+	&= \bra{\alpha} a_{+} a_{-} a_{+}  a_{-} \ket{\alpha} - \bra{\alpha} a_{+} a_{-} \ket{\alpha}\\
+	&= \abs{\alpha}^{4} - \abs{\alpha}^{2}
+\end{align*}	
+Xét mẫu số
+\begin{align*}
+	\ev{a_{+} a_{-}} = \bra{\alpha} a_{+} a_{-} \ket{\alpha} = \abs{\alpha}^{2}
+\end{align*}	
+nên 
+\begin{align*}
+	g^{(2)}(0)
+	&= \f{\abs{\alpha}^{4} - \abs{\alpha}^{2}}{\abs{\alpha}^{4}}\\
+	&= 1 - \f{1}{\abs{\alpha}^{2}} = 1 ( \alpha \rightarrow \infty)
+\end{align*}	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+\end{document}
