@@ -1,0 +1,518 @@
+\documentclass{report}
+\usepackage[utf8]{vietnam}
+\usepackage[utf8]{inputenc}
+\usepackage{anyfontsize,fontsize}
+\changefontsize[13pt]{13pt}
+\usepackage{commath}
+\usepackage[d]{esvect}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage{slashed,cancel}
+\usepackage{float}
+\usepackage{indentfirst}
+\usepackage{pdfpages}
+\usepackage{graphicx,subcaption}
+\usepackage{upgreek}
+\usepackage{nccmath,nicematrix}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amsmath,systeme}
+\usepackage[thinc]{esdiff}
+\usepackage{hyperref}
+\usepackage{bm,physics,upgreek}
+\usepackage{fancyhdr}
+%footnote
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}%
+\fancyhf{}%
+\fancyfoot[L]{Vật lý Lý thuyết}%
+\fancyfoot[C]{\hspace{6.5cm} \thepage}%
+
+
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	total={170mm,257mm},
+	left=20mm,
+	top=20mm,
+}
+
+
+%\newcommand{\image}[1]{
+%	\begin{center}
+%		\includegraphics[width=0.5\textwidth]{pic/#1}
+%	\end{center}
+%}
+\newcommand{\image}[1]{
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=8.0cm,height=5.0cm]{pic/#1}
+	\label{#1}
+\end{figure}
+}
+\newcommand{\q}[1]{``#1''
+}
+\renewcommand{\l}{\ell}
+\newcommand{\dps}{\displaystyle}
+
+\newcommand{\f}[2]{\dfrac{#1}{#2}}
+\newcommand{\at}[2]{\bigg\rvert_{#1}^{#2} }
+
+
+\renewcommand{\baselinestretch}{2.0}
+
+
+\title{\Huge{Ôn tập quang lượng tử}}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=red,
+	filecolor=magenta,      
+	urlcolor=cyan,
+	pdftitle={QM3},
+	pdfpagemode=FullScreen,
+}
+
+\urlstyle{same}
+
+\begin{document}
+\setlength{\parindent}{20pt}
+\newpage
+\author{TRẦN KHÔI NGUYÊN \\ VẬT LÝ LÝ THUYẾT}
+\maketitle
+\tableofcontents
+\setcounter{chapter}{3}
+\chapter{Buổi 3}
+\section{Chuyển dời bức xạ trong nguyên tử}	
+\subsection{Bức xạ tự phát}
+\image{bucxatuphat.png}
+Khi từ mức năng lượng cao chuyển dời về mức năng lượng thấp $E_{2} > E_{1}$, \q{atom} có xu hướng tự nhiên (tự phát) chuyển từ mức cao hơn (2) đến mức thấp hơn (1) $\rightarrow$ đây chính là hiện tượng phát xạ tự phát.\\
+Phát xạ photon với năng lượng 
+\begin{gather}
+	\hbar \omega = \hbar v_{0} = E_{2} - E_{1}
+\end{gather}
+Mỗi loại atom có phổ phát xạ tự phát đặc trưng được xác định bởi các mức năng lượng của nó theo công thức (1).
+Có thể cho chuyển dời/phân rã theo cách \q{phi bức xạ} có nghĩa là phát xạ mà không cần sự có mặt của ánh sáng nhưng vẫn có cơ chế kìm hãm. Ví dụ là phân rã nguyên tử, cơ chế phonon khi chuyển dời từ năng lượng cao xuống năng lượng thấp phát xạ ra phonon(chuyển động năng thành nhiệt năng) chứ không phải photon.
+\subsection{Hệ số Einstein}
+Hệ số Einstein $A$: cho ta biết xác suất trên đơn vị thời gian mà electron ở mức trên sẽ chuyển xuống mức thấp hơn bằng việc phát xạ 1 photon.\\
+Tốc độ phát xạ photon tỷ lệ thuật với số nguyên tử ở trạng thái kích thích và với hệ số $A$ cho quá trình chuyển dời. Phương trình \textbf{tốc độ phát xạ}(độ dốc) cho $N_{2}(t)$
+\begin{gather}
+	\f{dN_{2}}{dt} = -A_{21} N_{2}
+\end{gather}
+trong đó $N_{2}$ là tốc độ phân rã, chỉ số $21$ là ngụ ý chuyển từ mức năng lượng xuống mức năng lượng 1. Giải phương trình (2) ta được
+\begin{gather}
+	N_{2}(t) = N_{2}(0) \exp(-A_{21}t) \equiv N_{2}(0) \exp(-t/\tau),
+\end{gather}
+trong đó
+\begin{gather}
+	\tau = \f{1}{A_{21}}
+\end{gather}
+được gọi là thời gian sống(bức xạ) của trạng thái kích thích đơn vị nano tới milisecond. Áp dụng trong phương trình Bloch bán dẫn đã giới thiệu $T_{2}$ cũng có liên quan đến thời gian sống. Ý nghĩa thời gian sống: là thời gian tồn tại ở mức năng lượng	2.
+\subsection{Bức xạ hấp thụ}
+Phương trình tốc độ \textbf{phát xạ hấp thụ} được cho bởi
+\begin{gather}
+	\f{dN_{2}}{dt} = -B_{21}^{\omega} N_{1} u(\omega)
+\end{gather}
+Khác với bức xạ, hấp thụ không phải là tự phát. Electron không thể tự nhảy lên trạng thái kích thích trừ khi nó nhận thêm năng lượng từ nguồn photon tới. Phương trình trên gọi là phương trình chuyển dời hấp thụ trên đơn vị thời gian, trong đó $N_{1}$ gọi là số atom ở mức 1 tại thời gian $t$, $B_{12}^{\omega}$ là hệ số B Einstein cho sự chuyển dời, và $u(\omega)$ là mật độ phổ năng lượng của trường điện từ với đơn vị là J m$^{-3}$(rad/s)$^{-1}$ với xung quanh tần số $\omega = \f{E_{2} - E_{1}}{\hbar}$ mới có thể tạo chuyển dời hấp thụ(lý do là nguyên lý bất định theo thời gian $\sigma_{E} = \Delta E \Delta t$). Phổ thực chất là miền các vạch với độ phân giải cao, khi độ phân giải thấp ta thu được một vạch năng lượng. Quy ước đo vạch là bề rộng = $\f{1}{2}$ độ cao. Xung cực ngắn thì bề rộng phổ là cực rộng.
+\subsection{Bức xạ kích thích}
+\image{kichthich.png}
+Quá trình bực xạ kích thích bởi photon(không hấp thụ) tới để tạo ra photon. Đây là một cho những cơ chế cho Laser, cảm ứng cùng pha cùng tần số(giao thoa cộng hưởng), cùng hướng, photon phát xạ có năng lượng bằng photon tới, quá trình tạo ra Laser không có quá trình hấp thụ và tự phát. Phương trình tốc độ \textbf{phát xạ kích thích} được cho bởi phương trình
+\begin{gather}
+	\f{dN_{2}}{dt} = - B_{21}^{\omega} N_{2} u(\omega)
+\end{gather}
+trong đó $N_{2}$ là số atom ở mức 2 tại $t$, $B_{21}$ là hệ số Einstein cho chuyển dời. Phát xạ kích thích là một hiệu ứng coherence quantum dynamics.
+\subsection{Xác suất phá xạ/hấp thụ}
+\begin{gather}
+	\left( \f{dN_{2}}{dt} \right)_{sp} = - A_{21} N_{2}
+\end{gather}
+ta có $N_{n}$ là số nguyên tử trên đơn vị thể đang ở mức năng lượng đã cho tại thời điểm $t$, và nó còn được gọi là phân bố ở mức năng lượng bất kì. Phương trình trên là phương trình tốc độ phân rã = xác suất. Tương tự cho phi bức xạ
+\begin{gather}
+	\left( \f{dN_{2}}{dt} \right)_{nr} =  - N_{2} / \tau_{nr}
+\end{gather}
+
+Tốc độ phát xạ kích thích còn được biểu diễn dưới dạng
+\begin{gather}
+	\f{dN_{2}}{dt} = - B_{21}^{\omega} N_{2} u(\omega) = - W_{21} N_{2}
+\end{gather}
+trong đó $W_{21}$ là độ chuyển dời, $\left[W_{21}\right] = t^{-1}$. Nếu mức năng lượng không suy biến(một mức năng lượng có nhiều hàm sóng/trạng thái) thì $W_{12} = W_{21}$. Nếu suy biến với trọng số $g_{1}, g_{2}$ tương ứng cho mức 1 và 2 thì 
+\begin{gather}
+	g_{1} W_{12} = g_{2} W_{21}
+\end{gather}
+\subsection{Bức xạ vật đen}
+Xét \q{cavity} có chứa atoms, cavity hộp đen có 1 khe đủ nhỏ để khả năng ánh sáng chạy ra khỏi khe đó là cực kì nhỏ sao cho $\approx 0$ và phải không có phản xạ. Bức xạ vật đen đã có cảm ứng quá trình hấp thụ và phát xạ kích, quá trình phát xạ tự phát cũng xảy ra. \\
+Khi xét thời gian đủ dài $\rightarrow$ Atom sẽ cân bằng nhiệt với bức xạ vật đen. Khi đó tốc độ/xác suất chuyển dời lên do hấp thụ phải cân bằng với xác suất chuyển dời xuống do phát xạ tự phát và phát xạ kích thích. Ở cân bằng nhiệt ta có
+\begin{gather}
+	B_{12} u(\omega) N_{1} = A_{12} N_{2} + B_{21} u_{\omega} N_{2}
+\end{gather}
+ta tìm được $u(\omega)$ để từ đó mục tiêu của chúng ta là dẫn ra các hệ số Einstein là $A$ và $B$. Atom cân bằng nhiệt với trường bức xạ ở nhiệt độ $T$ $\rightarrow$ phân bố của atom tuân theo các định luật vật lý nhiệt. Định luật Boltzmann cho tỉ số của phân bố cân bằng ở 1 và 2 tại nhiệt độ $T$
+\begin{gather}
+	N_{1} / N_{2} = \exp[(E_{2} -  E_{1}) / k_{B} T] = \exp(\hbar \omega / k_{B} T)
+\end{gather}
+từ đó ta có thể tính được
+\begin{gather}
+	B_{12} = B_{21} = B\\
+	\f{A_{21}}{B_{21} = \hbar \omega^{3} / \pi^{2} c^{3}}
+\end{gather}
+\section{Tốc độ/xác suất chuyển dời bức xạ}
+\subsection{Fermi's golden rule}
+\begin{gather}
+	\Gamma_{1\rightarrow 2} \equiv W_{1\rightarrow 2} = \f{2\pi}{\hbar} \abs{M_{12}}^{2} g(\hbar \omega) = \f{2\pi}{\hbar} \abs{\bra{2}H^{'}\ket{1}} g(\hbar \omega)
+\end{gather}
+trong đó $H'= e \mathbf{r} \cdot \mathcal{E}$ là thành phần nhiễu loạn, $g$ là mật độ trạng thái đã học trong LTCR, $g dE$ là số trạng thái trong đơn vị thể tích với năng lượng trong miền $E\rightarrow E + dE$.\\
+Tương tác của ánh sáng với atoms qua lưỡng cực điện
+\begin{gather}
+	\bra{2}H'\ket{1} \equiv \boldsymbol{\mu}_{12} \cdot \mathcal{E}
+\end{gather}
+trong đó $\boldsymbol{\mu}_{12} = -e\bra{2} r \ket{1} \mathbf{u}$ là moment lượng cực chuyển dời, r = x,y,z và $\mathbf{u}$ là các vector đơn vị $i,j,k$,.
+\section{Conclusion}
+Sự khác biệt giữa tự phát và cảm ứng
+\begin{itemize}
+	\item \textbf{Tự phát} Nguyên tử phát xạ sóng điện tử không có liên hệ pha xác định với sóng được bức xạ bởi atom khác. Sóng có thể phát xạ theo bất kỳ hướng nào.
+	\item \textbf{Cảm ứng} Được kích thích bởi sóng tới $\rightarrow$ phát xạ của 1 atom thêm vào cùng pha và cùng hướng với sóng tới. Nói cách khác, phát xạ kích thích là một hiệu ứng đồng bộ, kết hợp lượng tử trong đó photon phát xạ phải cùng pha, tần số, cùng hướng, cùng năng lượng với các photon cảm ứng/kích thích chuyển dời. Ngay cả khi bơm vào photon đi vào vẫn có bức xạ tự phát, tuy nhiên laser siêu bền nên ta bơm cùng lúc để tạo ra cường độ mạnh.
+\end{itemize}
+
+\section{Bài tập}
+\subsection{Quy tắc lọc lựa}
+Ma trận lưỡng cực điện được cho bởi phương trình:
+\begin{align}
+	M_{12} = - \boldsymbol{\mu}_{12} \cdot \boldsymbol{{ \mathcal{E} }}_0,
+\end{align}
+với
+\begin{align}
+	\boldsymbol{\mu}_{12} = -e \left( \bra{2}x\ket{1} \hat{\textbf{\textsc{i}}} + \bra{2}y\ket{1} \hat{\textbf{\textsc{j}}} + \bra{2}z\ket{1} \hat{\textbf{\textsc{k}}} \right)
+\end{align}
+là moment lưỡng cực điện của sự chuyển dời từ trạng thái $1\rightarrow 2$. Khi có quá nhiều trạng thái cần phải tính toán, quy tắc lọc lựa sẽ cho phép chúng ta kết luận rằng một số thành phần phần tử ma trận nhất định là bằng \textit{không} mà không cần phải tính toán một cách chính xác.
+
+Quy tắc lọc lựa lưỡng cực điện liên quan tới các bộ số lượng tử $l,m,s$ và $m_s$, được tổng hợp trong bảng dưới.
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{c | c}
+		\hline
+		Số lượng tử  & Quy tắc lọc lựa                      \\ [0.6ex]
+		\hline
+		Tính chẵn/lẻ & Thay đổi                             \\
+		$\l$         & $\Delta \l = \l' - \l = \pm 1$       \\
+		$m$          & $\Delta m = m' - m = 0$ hoặc $\pm 1$ \\
+		$s$          & $\Delta s = s' - s = 0 $             \\
+		$m_s$        & $\Delta m_s = m_s' - m_s = 0$        \\
+		\hline
+	\end{tabular}
+	\caption{Quy tắc lọc lựa lưỡng cực điện cho nguyên tử một electron(hydrogen-like atom).}
+\end{table}
+\newpage
+\noindent Quy tắc:
+\image{selectionrule.png}{Phân rã cho phép cho bốn mức Bohr trong nguyên tử Hydro[Griffiths, David J., and Darrell F. Schroeter. 2018. Introduction to Quantum Mechanics. 3rd ed.]}
+
+Sự chuyển dời tuân theo quy tắc lọc lựa lưỡng cực điện được gọi là \textbf{chuyển dời cho phép}, trong khi những chuyển dời không tuân theo quy tắc thì đươc gọi là \textbf{chuyển dời cấm}.
+
+\subsection{Dáng điệu phổ}
+
+Xét một ``vạch phổ'', như thường được quan sát trong các môn thực nghiệm. Những tưởng ``vạch'' ấy chỉ đơn giản là một vạch theo nghĩa toán học, tức chỉ một giá trị hoàn toàn xác định. Tuy nhiên, thực tế ``vạch'' ấy lại là một tập hợp nhiều giá trị xung quanh một giá trị nào đấy, tạo nên một ``phân bố'' có dạng hình chuông, gọi là hàm ``spectral lineshape'' $g_\omega(\omega)$.
+Ta dễ thấy dạng hình ``quốc dân'' của phân bố Gauss:
+\image{gauss.jpg}{Phân bố Gauss}
+
+hoặc cũng có thể là Lorentz(Hình 3).
+
+Giá trị trung tâm được xác định bởi
+\begin{align*}
+	\hbar\omega_0 = E_2 - E_1.
+\end{align*}
+và được chuẩn hóa:
+\begin{align*}
+	\int_{0}^{\infty}g_\omega(\omega)d\omega = 1.
+\end{align*}
+
+\image{cauchy.png}{Phân bố Lorentz}
+
+Đại lượng quan trọng nhất cần được xác định là Full Width at Half Maximum (FWHM), tức độ rộng tại phân nửa độ cao cực đại, cho ta biết độ rộng của phổ.\\
+Thường có ba nguyên nhân ảnh hưởng đến độ rộng phổ:
+\begin{itemize}
+	\item Thời gian sống (lifetime (natural) broadening)
+	\item Va chạm (collisional (pressure) broadening)
+	\item Doppler
+\end{itemize}
+\subsubsection{Lifetime broadening}
+Ta đã biết liên hệ giữa hệ số Einstein A và thời gian sống $\tau$. Thời gian sống này liên hệ với năng lượng bức xạ (tức sự mở rộng của phổ) qua Bất định Heisenberg $$\Delta E\Delta t \geq \hbar$$
+và $$\Delta E = \hbar\Delta\omega$$
+nên $$\Delta \omega=\frac{\Delta E}{\hbar} \leq \frac{1}{\tau}$$
+Ta có hàm mô tả dạng phổ $$g(\omega) = \frac{\Delta\omega}{2\pi} \frac{1}{(\omega - \omega_0)^2 + (\Delta\omega/2)^2}$$
+và dáng hình của nó:
+\image{g(w).png}{Phân bố Lorentz. Công thức được cho bởi $g(\omega)$.}
+\subsubsection{Collisional broadening}
+Các phân tử có thể va đập, với nhau và với thành bình, khiến thời gian ``sống'' bị giảm đi (năng lượng bị mất nhanh hơn).\\
+Bằng thống kê, ta có: $$\tau_{\text{collision}} \sim \frac{1}{\sigma_s P} \left( \frac{\pi m k_B T}{8} \right)^{1/2}$$ với $\sigma_s$ là tiết diện va chạm và P là áp suất. Khi ấy, collisional broadening còn được gọi là pressure broadening.\\
+Trong trường hợp này, thời gian sống thường là rất ngắn, dẫn đến độ rộng phổ thật lớn so với trường hợp ``natural''.\\
+Vậy nên ta có thể khắc phục bằng cách giảm thiểu áp suất P, đó là lí do ta sử dụng các đèn áp suất thấp trong khảo sát phổ.\\
+\image{pbroad.png}{Cơ chế Dobler broadening.}
+\subsubsection{Doppler broadening}
+Việc các hạt nguyên tử di chuyển lại gần hay ra xa khỏi máy đo cũng ảnh hưởng đến phổ, khi ta xét hiệu ứng Doppler là đáng kể. \\
+Khi hạt di chuyển lại gần máy đo, ta có $$\omega=\omega_0\left(1+\frac{v_x}{c}\right)$$
+Số hạt di chuyển với vận tốc $v_x$ đến $v_x+dv_x$ được cho bởi cơ học thống kê: $$N(v_x) = N_0 \left( \frac{2k_B T}{\pi m} \right)^{1/2} \exp \left( -\frac{m v_x^2}{2k_B T} \right)$$ với FWHM được cho bởi $$\Delta \omega_{\text{Doppler}} = 2 \omega_0 \left( \frac{(2 \ln 2) k_B T}{mc^2} \right)^{1/2} = \frac{4 \pi}{\lambda} \left( \frac{(2 \ln 2) k_B T}{m} \right)^{1/2}$$
+
+\subsection{Laser}(Light Amplification by
+Stimulated Emission of Radiation) \\
+Từ ``laser'' là từ viết tắt của cụm từ ``Light Amplification by Stimulated Emission of Radiation'' (khuếch đại ánh sáng bằng phát xạ kích thích). Laser hoạt động lần đầu tiên được chứng minh vào năm 1960, và từ đó, laser đã trở thành công cụ thiết yếu trong quang học phi tuyến và lượng tử. Trong phần này, chúng ta sẽ đưa ra một cái nhìn tổng quan ngắn gọn về các nguyên lý vật lý cơ bản của hoạt động laser, và sau đó mô tả ngắn gọn các đặc tính chính của các loại laser thường được sử dụng trong phòng thí nghiệm.
+\subsubsection{Phát xạ cưỡng bức (Stimulated Emission)}
+Nếu như một hạt đang ở trạng thái ``cao hơn'', tạm gọi là trạng thái \textit{upper}, được chiếu bởi một nguồn sáng, hạt đó có thể chuyển dời xuống vị trí ``thấp hơn'' - \textit{lower}, xác suất chuyển dời từ \textit{upper} $\rightarrow$ \textit{lower} là như nhau đối với xác suất chuyển dời từ \textit{lower} $\rightarrow$ \textit{upper}. Quá trình này được gọi là \textbf{Phát xạ cưỡng bức} hay \textbf{Phát xạ cảm ứng}.
+\image{stimulatedemission.png}{Phát xạ cưỡng bức [Griffiths, David J., and Darrell F. Schroeter. 2018. Introduction to Quantum Mechanics. 3rd ed.]}
+
+Trường điện từ \textit{nhận} thêm năng lượng $\hbar \omega_0$ từ nguyên tử; chúng ta nói rằng một photon đi và và \textit{hai} photon bị bức ra - photon đi vào cộng với một photon từ quá trình chuyển dời được gây ra bởi photon đi vào(Hình 2). Điều này làm tăng khả năng khuếch đại, nếu như có rất nhiều nguyên tử, tất cả trong số đó đều đang ở trạng thái \textit{upper} được cảm ứng bởi một photon bay tới, một chuỗi phản ứng sẽ xảy ra. Photon bay vào tạo ra hai photon, hai photon đó tạo ra một bốn photon, và cứ thế. Chúng ta sẽ có một lượng lớn photon bay ra, tất cả chúng đều có cùng tần số. Đây chính là nguyên lý đằng sau Laser.
+\subsubsection{Dao động Laser}
+\image{fig4.8.png}{Sơ đồ nguyên lý của máy dao động Laser [Fox, Mark, 2006 Quantum Optics: An Introduction]}
+
+Laser bao gồm một \textbf{buồng cộng hưởng} và hai gương đầu cuối được gọi là \textbf{gương bán mạ} và \textbf{gương phản xạ toàn phần} có độ phản xạ lần lượt là $R_1$ và $R_2$. Ánh sáng bật lại giữa hai gương đầu-cuối và được khuếch đại mỗi khi được truyền qua buồng cộng hưởng.
+
+Khuếch đại ánh sáng xảy ra khi có buồng cộng hưởng được đo bởi hệ số khuếch đại $\gamma(\omega)$ định nghĩa bởi:
+\begin{align}
+	\f{d I}{d z} = \gamma(\omega) I(z),
+\end{align}
+với	$I$ là cường độ quang, $\omega$ là tần số góc của ánh sáng, và $z$ là hướng chuyền của chùm tia. Lấy tích phân của phương trình (3) ta được:
+\begin{align}
+	I(z) = I_0 e^{\gamma z}.
+\end{align}
+Ý nghĩa vật lý: phương trình (4) cho thấy cường độ ánh sáng tăng theo hàm exponential bên trong buồng cộng hưởng.
+
+Xét trường hợp chùm tia sáng là gần cộng hưởng với sự chuyển dời của nguyên tử với tần số góc là $\omega_0$. Chùm tia sẽ cảm ứng với cả hấp thụ và phát xạ cưỡng bức. Để xuất hiện khuếch đại, chúng ta ràng buộc rằng tốc độ phát xạ cưỡng bức phải lớn hơn tốc độ hấp thụ để cho photon trong chùm tia được tăng lên mỗi khi được truyền qua buồng cộng hưởng:
+\begin{align}
+	B_{21}^{\omega} N_2 u(\omega) & > B_{12}^{\omega} N_1 u(\omega) \\
+	\Rightarrow N_2               & > \f{g_2}{g_1}N_1
+\end{align}
+Khi xảy ra cân bằng nhiệt, tỉ lệ giữa $N_2,N_1$ được cho bởi phương trình Boltzmann
+\begin{align*}
+	\f{N_1}{N_2} = e^{\frac{\hbar \omega}{k_B T}},
+\end{align*}
+điều này có nghĩa là sẽ không bao giờ thõa mãn được phương trình (6), và cường độ ánh sáng phân rã bằng cường độ ánh sáng truyền qua bởi vì tốc độ hấp thụ	lớn hơn tốc độ phát xạ cưỡng bức. Từ đó phương trình (6) chỉ đúng khi và chỉ khi điều kiện không cân bằng. Điều này có thể quan sát được bằng cách ``bơm'' năng lượng vào buồng cộng hưởng để kích thích số lượng lớn nguyên tử đạt được trạng thái kích thích.
+
+\subsubsection{Tính chất của Laser}
+Laser được phân ra thành các loại dựa trên chất hóa học bên trong buồng cộng hưởng, đó là laser rắn, laser lỏng, laser khí. Hai đặc điểm chung cho tất cả các loại laser là tính định hướng của chùm tia và độ đơn sắc cao. Ngoài ra còn có cường độ lớn, có tính hợp cao.
+
+\subsection{Bài tập}
+\subsubsection*{Problem 4.2}
+Toán tử chẵn/lẻ:
+\begin{align*}
+	\hat{\Pi} \psi(x) = \psi(-x).
+\end{align*}
+Xét ba chiều:
+\begin{align*}
+	\hat{\Pi} \psi(\mathbf{r}) = \psi(-\mathbf{r}).
+\end{align*}
+Ta biết toán tử moment lưỡng cực $\hat{\textbf{p}}_e$ tỉ lệ với $\mathbf{r}$. Khi tác động toán tử chẵn/lẻ lên $\hat{\textbf{p}}_e$ ta được:
+\begin{align*}
+	\hat{\Pi}^{\dagger} \hat{\textbf{p}}_e \hat{\Pi} = - \hat{\textbf{p}}_e.
+\end{align*}
+Ta viết lại trạng thái $\ket{2},\ket{1}$ dưới dạng bộ số lượng tử và có được:
+\begin{align*}
+	\boldsymbol{\mu}_{12}
+	& = \bra{n'\l'm'} \hat{\textbf{p}}_e \ket{n\l m}                                   \\
+	& =  - \bra{n'\l'm'}  \hat{\Pi}^{\dagger} \hat{\mathbf{p}}_e \hat{\Pi} \ket{n\l m} \\
+	& =  - \bra{n'\l'm'}  (-1)^{\l'} \hat{\mathbf{p}}_e (-1)^{\l} \ket{n\l m}          \\
+	& =(-1)^{\l' + \l + 1} \bra{n'\l'm'}   \hat{\mathbf{p}}_e \ket{n\l m},
+\end{align*}
+dấu ``$=$'' xảy ra khi và chỉ khi $ (-1)^{\l' + \l + 1} = 1 \Rightarrow \l + \l' = odd \Rightarrow \l \neq \l'$ DPCM.
+
+\subsubsection*{Problem 4.3}
+Hàm sóng cho nguyên tử Hydro được viết dưới dạng:
+\begin{align}
+	\psi (r,\theta,\varphi) = F(r,\theta) e^{i m_{\l} \varphi },
+\end{align}
+với $ m_{\l}$ là số lượng tử từ.\\
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|l  l|}
+		\hline
+		$Y_{0}^{0} = \left(\frac{1}{4\pi}\right)^{1/2}$                                  & $Y_{2}^{\pm 2} = \left(\frac{15}{32\pi}\right)^{1/2} \sin^2\theta e^{\pm 2i\varphi}$                     \\
+		$Y_{1}^{0} = \left(\frac{3}{4\pi}\right)^{1/2}\cos\theta$                        & $Y_{2}^{0} = \left(\frac{7}{16\pi}\right)^{1/2} (5\cos^3\theta - 3 \cos\theta)$                          \\
+		$Y_{1}^{\pm1} = \mp\left(\frac{3}{8\pi}\right)^{1/2}\sin\theta e^{\pm i\varphi}$ & $Y_{3}^{\pm 2} = \mp\left(\frac{21}{64\pi}\right)^{1/2} \sin\theta (5\cos^2\theta - 1)e^{\pm 2i\varphi}$ \\
+		$Y_{2}^{0} = \left(\frac{5}{16\pi}\right)^{1/2}(3\cos^2 \theta - 1)$             & $Y_{3}^{\pm3} = \left(\frac{105}{32\pi}\right)^{1/2} \sin^2\theta\cos\theta e^{\pm 3i\varphi}$           \\
+		\hline
+	\end{tabular}
+	\caption{Một số hàm điều hòa cầu $Y_{l}^{m}(\theta,\varphi)$.}
+\end{table}\\
+Từ Bảng 2, ta xây dựng công thức tổng quát cho (7):
+\begin{align}
+	\psi_{l}^{m_{\l}} (r,\theta,\varphi) = F(r,\theta) e^{i m_{\l} \varphi }.
+\end{align}
+Sử dụng toán tử quay $\hat{R}_n(\phi)(n = x, y ,z)$ tác động lên (8), ta có trị riêng của $\hat{R}_z(\phi)$:
+\begin{align*}
+	\hat{R}_z(\phi) \psi_{l}^{m_{\l}} (r,\theta,\varphi) = \psi_{l}^{m_{\l}}(r,\theta,\varphi') = e^{-2i\pi m_\l \phi}\psi_{l}^{m_{\l}}(r,\theta,\varphi),
+\end{align*}
+và
+\begin{align*}
+	& \hat{R}^{\dagger}_z(\phi)\hat{R}_z(\phi) = 1,                                  \\
+	& \hat{R}^{\dagger}_z(\phi) z \hat{R}_z(\phi) = z,                               \\
+	& \hat{R}^{\dagger}_z(\phi) (x\pm iy) \hat{R}_z(\phi) = e^{\mp 2i\pi} (x\pm iy).
+\end{align*}
+Sử dụng kí hiệu Dirac cho hàm sóng (8) và để cho phép tính được gọn gàng ta đặt $\ket{\psi_{l}^{m_{\l}} (r,\theta,\varphi)} = \ket{m_\l}$, tính các thành phần ma trận sau:
+\begin{enumerate}
+	\item[(a)]
+	\begin{align*}
+		\bra{m'_\l} \hat{z} \ket{m_\l}
+		& = \bra{m'_\l} \hat{R}^{\dagger}_z(\phi)\hat{R}_z(\phi) \hat{z} \hat{R}^{\dagger}_z(\phi)\hat{R}_z(\phi)\ket{m_\l} \\
+		& = e^{2i\pi m'_\l \phi} e^{-2i\pi m_\l \phi} \bra{m'_\l} \hat{z} \ket{m_\l}.
+	\end{align*}
+	Để dấu ``='' xảy ra thì $m'_\l - m_\l = 0$  (ĐPCM).
+	\item[(b),(c),(d)]
+	\begin{align*}
+		\bra{m'_\l} \hat{z} \ket{m_\l}
+		& = \bra{m'_\l} \hat{R}^{\dagger}_z(\phi)\hat{R}_z(\phi) (\hat{x} \pm i\hat{y}) \hat{R}^{\dagger}_z(\phi)\hat{R}_z(\phi)\ket{m_\l} \\
+		& = e^{2i\pi m'_\l \phi} e^{-2i\pi m_\l \phi} e^{\mp 2i\pi} \bra{m'_\l} \hat{x} \pm i\hat{y} \ket{m_\l}.
+	\end{align*}
+	Để dấu ``='' xảy ra thì,  $m'_\l - m_\l \mp 1= 0$ (ĐPCM).
+\end{enumerate}
+\subsubsection*{Problem 4.4}
+\begin{enumerate}
+	\item[(a)] Ta có cường độ ánh sáng tỉ lệ với bình phương biên độ của điện trường
+	\begin{align}
+		\langle I \rangle \propto  \langle \mathcal{E}(t)^2 \rangle.
+	\end{align}
+	Từ
+	\begin{align}
+		I(t) = I(0) \exp(-t/\tau),
+	\end{align}
+	chúng ta có thể suy ra rằng
+	\begin{align}
+		\abs{\mathcal{E}(t)}^2 = \abs{\mathcal{E}_0}^2 \exp(-t/\tau).
+	\end{align}
+	Bên cạnh đó, ta có thể khai triển phương trình (11) dưới dạng hàm $\cos$
+	\begin{align}
+		\mathcal{E}(t) = \mathcal{E}_0 \cos(\omega_0 t) \exp(-t/2\tau)
+	\end{align}
+	mà vẫn thỏa mãn điều kiện rằng cường độ $I(t)$ tỉ lệ với bình phương biên độ điện trường.
+	\begin{itemize}
+		\item Với $t<0, \mathcal{E}(t) = 0$, bởi vì chùm tia sáng vẫn chưa được bức xạ ra.
+		\item Với $t \geq 0$, trường điện có công thức là (12), mô tả tính chất dao động của sóng ánh sáng với biên độ giảm dần theo hàm $\exp$, phù hợp với cường độ ánh sáng đã cho. Để tìm phổ phát xạ, chúng ta thực hiện phép biến đổi Fourier của điện trường.
+	\end{itemize}
+	\item[(b)] Trường điện với $t \geq 0$ được cho bởi công thức
+	\begin{align*}
+		\mathcal{E}(t)
+		& = \mathcal{E}_0 \cos(\omega_0 t) \exp(-t/2\tau)        \\
+		& = \f{\mathcal{E}_0}{2} \cos(\omega_0 t) \exp(-t/2\tau)
+	\end{align*}
+	Phép biển đổi Fourier cho $\mathcal{E}(t)$ là
+	\begin{align}
+		\mathcal{E}(\omega) = \f{1}{\sqrt{2}} \int_{-\infty}^{+\infty} \mathcal{E}(t) e^{i\omega t} dt.
+	\end{align}
+	Khi $\mathcal{E}(t) = 0$, với $t < 0$, phương trình (13) trở thành
+	\begin{align}
+		\mathcal{E}(\omega)
+		& = \f{1}{\sqrt{2}} \int_{0}^{+\infty} \left( \f{\mathcal{E}_0}{2} e^{i(\omega_0 - \omega)t - t/2\tau} + \f{\mathcal{E}_0}{2} e^{-i(\omega_0 + \omega)t - t/2\tau} \right) dt \nonumber \\
+		& = \frac{\mathcal{E}_0}{2\sqrt{2\pi}} \left( \frac{1}{1/2\tau - i(\omega_0 - \omega)} + \frac{1}{1/2\tau + i(\omega_0 + \omega)} \right).
+	\end{align}
+	Giả sử rằng $\omega_0 \gg 1/\tau$,
+	\begin{align*}
+		\mathcal{E}(\omega) \approx \frac{\mathcal{E}_0}{2\sqrt{2\pi}} \cdot \frac{1}{1/2\tau - i(\omega_0 - \omega)}.
+	\end{align*}(ĐPCM)
+	\item[(c)]  Cường độ ánh sáng tỉ lệ với bình phương biên độ, nên ta có
+	\begin{align}
+		I(\omega) \propto |\mathcal{E}(\omega)|^2 = \left|\frac{\mathcal{E}_0}{2\sqrt{2\pi}} \cdot \frac{1}{1/2\tau - i(\omega_0 - \omega)}\right|^2.
+	\end{align}
+	Ta có thể nói rằng
+	\begin{align}
+		I(\omega) \propto \f{1}{(\omega - \omega_0)^2 + (1/2\tau)^2},
+	\end{align}
+	điều này hoàn toàn đúng so với công thức được cho.
+\end{enumerate}
+\subsubsection*{Problem 4.6}
+Ta biết khối lượng nguyên tử của $M_{Na} = 23$ và bán kính nguyên tử $r_{Na} \approxeq 0.2nm = 0.2\times 10^{-10}$, tiết diện tán xạ đàn hồi $\sigma_s$ là
+\begin{align}
+	\sigma_s = \pi (r_{Na})^2 = 4\pi \times 10^{-20} (m^2)
+\end{align}
+Ở ĐKTC, $T = 273 K$ và $P = 100k Pa$. Thời gian tán xạ đàn hồi là
+\begin{align*}
+	R_z
+	\tau_{\text{collision}}
+	& = \f{1}{\sigma_s P} \left( \f{\pi m k_{\text{B} T}}{8} \right)^{1/2}                                                                                       \\
+	& = \f{1}{4\pi \times 10^{-20 } \times 100\times10^{3}} \left( \f{\pi \frac{23}{N_A} \times 10^{-3} \times 1.38\times 10^{-23} \times 273 }{8} \right)^{1/2} \\
+	& \approx 5.9 \times 10^{-10} (s)
+\end{align*}
+\chapter{Buổi 4 Thống kê Photon}
+\section{Thống kê photon đếm}
+Giả sử chùm ánh sáng hoàn toàn đồng bộ(coherent), đơn sắc(monochromatic), với tần số $\omega$ và cường độ(intensity) không đổi $I$.\\
+Thông lượng photon(photon flux) $\Phi \equiv$ số photon trung bình đi qua tiết diện ($A$) của chùm tia trong một đơn vị thời gian $\rightarrow$ $\Phi$ bằng năng thông(energy flux)(năng lượng đi qua một diện tích trong đơn vị thời gian) chia cho năng lượng của từng photon
+\begin{gather}
+	\Phi = \f{IA}{\hbar \omega} = \f{P}{\hbar \omega} \text{[photon s}^{-1}]
+\end{gather}
+Hiệu suất lượng tử $\eta$ là tỷ lệ giữa số photon đếm được với số photon tới
+$\Rightarrow$ số lượng đếm trung bình $N$ được máy dò ghi nhận trong thời gian đếm $T$:
+\begin{gather}
+	N(T) = \eta \Phi T = \eta \f{PT}{\hbar \omega}
+\end{gather}
+Tốc độ đếm(count rate) trung bình $R$
+\begin{gather}
+	R = N/T = \eta \f{P}{\hbar \omega} [ \text{count s}^{-1} ]
+\end{gather}
+Dectector cần khoảng thời gian \q{phục hồi} sau mỗi sự kiện đếm $\rightarrow$ thực tế có thời gian chết(dead time) $\approx$ 1 $\mu$s giữa các lần đếm liên tiếp $\rightarrow$ $R$ có giới hạn trên $10^{6}$ count s$^{-1}$. $\eta$ của dectector khoảng 10\%. Bộ đếm photon chỉ phù hợp cho \textbf{chùm ánh sáng yếu} $\approx 10^{-12}$ W. Chùm ánh sáng mạnh hơn cần có cách dò khác. Ta cần chú ý rằng khi đếm photon thì số photon phải là số nguyên trong mỗi đoạn chia.
+\subsection{Coherent light: thống kê Poissonian}
+Xét trường ánh sáng ``coherent'' có biên độ $E_{0}$ với tần số $\omega$ và pha $\phi$ với trường điện là hàm 
+\begin{gather}
+	E(x,t) = E_{0} \sin(kx - \omega t + \phi)
+\end{gather}
+Cường độ $I$ $\propto$ bình phương biên độ và là hằng số nếu $E_0$ và $\phi$ không có phụ thuộc thời gian(coherent hoàn toàn) $\rightarrow$ Do đó sẽ không có thăng giáng cường độ và thông lượng photon là không đổi theo thời gian. Trong thời gian cực ngắn vẫn luôn có thăng giáng thống kê điều này xảy ra là do bản chất \textbf{rời rạc} của photon. \\
+\textbf{Perfectly coherent light} với $I$ không đổi có thống kê Poissonian.\\
+Xét chùm tia công suất không đổi. Số phonon trung bình trong đoạn dài $L$(tức là trong khoảng thời gian $T = L / c$) của chùm tia này được cho bởi
+\begin{gather}
+	\overline{n} = \Phi \f{L}{c}
+\end{gather}
+Giả sử $L$ là đủ lớn, để $\overline{n}$ phải có giá trị nguyên xác định rõ ràng(số photon phải là số nguyên) Chia đoạn $L$ thành $N$ đoạn nhỏ có độ dài $L/N$. Xem $N$ là đủ lớn để xác suất tìm được 1 photon trong đoạn $L/N$ bất kỳ( $p = \overline{n} / N$) là rất nhỏ(Xác suất tìm được 2 hoặc nhiều hơn photon có thể bỏ qua). Ta có
+\begin{gather}
+	\overline{n} = \sum_{n = 1}^{N} p(n) N(n) = p \sum_{n = 1}^{N} 1  \Rightarrow p = \overline{n} / N
+\end{gather}
+Ta tính được xác suất $P(n)$ này tương đương với việc tìm thấy $n$ đonạ bất kì có chứa 1 photon với $N - n$ đoạn trống. Khi có phân bố đều, xác suất này được cho bởi nhị thức Newton
+\begin{equation}
+	\begin{aligned}
+		p 
+		&= \f{\overline{n}}{N}\\
+		&= \f{N!}{n!(N-n)!} p^{n} (1 - p)^{N-n}
+	\end{aligned}
+\end{equation}
+khi $N\rightarrow \infty$ thì
+\begin{gather}
+	P(n) = \f{\overline{n}^{n}}{n!} e^{- \overline{n}}
+\end{gather}
+đây chính là phân bố Poissonian. Phương sai, độ lệch chuẩn được tính như sau
+\begin{gather}
+	Var(n) \equiv (\Delta n)^{2} = \sum_{n} (n - \overline{n})^{2} P(n) = \overline{n} \Rightarrow \Delta n = \sqrt{\overline{n}}
+\end{gather}
+Có tất cả 3 loại thống kê photon, trong đó ánh sáng có perfect coherent với cường độ không đổi là ánh sáng ổn định nhất
+\begin{itemize}
+	\item \textbf{Sub-Poisson}: $\Delta n < \sqrt{\overline{n}}$
+	\item \textbf{Poisson}: $\Delta n = \sqrt{\overline{n}}$
+	\item \textbf{Super-Poisson}: $\Delta n > \sqrt{\overline{n}}$
+\end{itemize}
+Bằng một cách định tính: Ta có thể thấy ngay, so với ánh có cường độ không đổi, ánh sáng với cường độ thăng giáng cổ điển thì thăng giáng số photon, điều này có nghĩa là khi cường độ hoàn toàn ổn định thì ánh sáng cho ra thống kê Poisson, vậy nên tất cả các chùm ánh sáng cổ điển tức là ánh sáng có cường độ thay đổi theo thời gian sẽ có phân bố Super-Poisson. Các loại ánh sáng này sẽ là \q{nhiễu} hơn ánh sáng hoàn toàn kết hợp, theo nghĩa cổ điển là chúng có các biến đổi lớn hơn về cường độ, và theo nghĩa lượng tử là chúng có các biến động số photon lớn hơn.\\
+Ngược lại, ánh sáng có thống kê Sub-Poisson có phân bố hẹp hơn trường hợp Super-Poisson và do đó \q{yên tĩnh} hơn ánh sáng perfectly coherent
+\subsection{Thống kê Super-Poisson}
+Super-Poisson được xác định bởi:
+\begin{gather}
+	\Delta n > \sqrt{\overline{n}}
+\end{gather}
+\subsection{Thermal light}
+Là bức xạ điện từ phát ra từ vật thể được truyền nhiệt(bức xạ vật đen). Bức xạ này có dang động
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
