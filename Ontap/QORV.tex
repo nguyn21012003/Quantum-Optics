@@ -51,8 +51,8 @@
 	\label{#1}
 \end{figure}
 }
-\newcommand{\q}[1]{``#1''
-}
+\newcommand{\q}[1]{``#1''}
+\newcommand{\mean}[1]{\langle{#1}\rangle}
 \renewcommand{\l}{\ell}
 \newcommand{\dps}{\displaystyle}
 
@@ -67,9 +67,9 @@
 
 \hypersetup{
 	colorlinks=true,
-	linkcolor=red,
+	linkcolor=black,
 	filecolor=magenta,      
-	urlcolor=cyan,
+	urlcolor=blue,
 	pdftitle={QM3},
 	pdfpagemode=FullScreen,
 }
@@ -84,11 +84,11 @@
 \tableofcontents
 \setcounter{chapter}{3}
 \chapter{Buổi 3}
-\section{Chuyển dời bức xạ trong nguyên tử}	
+\section{Chuyển dời bức xạ trong nguyên tử}
 \subsection{Bức xạ tự phát}
 \image{bucxatuphat.png}
 Khi từ mức năng lượng cao chuyển dời về mức năng lượng thấp $E_{2} > E_{1}$, \q{atom} có xu hướng tự nhiên (tự phát) chuyển từ mức cao hơn (2) đến mức thấp hơn (1) $\rightarrow$ đây chính là hiện tượng phát xạ tự phát.\\
-Phát xạ photon với năng lượng 
+Phát xạ photon với năng lượng
 \begin{gather}
 	\hbar \omega = \hbar v_{0} = E_{2} - E_{1}
 \end{gather}
@@ -117,12 +117,12 @@ Phương trình tốc độ \textbf{phát xạ hấp thụ} được cho bởi
 Khác với bức xạ, hấp thụ không phải là tự phát. Electron không thể tự nhảy lên trạng thái kích thích trừ khi nó nhận thêm năng lượng từ nguồn photon tới. Phương trình trên gọi là phương trình chuyển dời hấp thụ trên đơn vị thời gian, trong đó $N_{1}$ gọi là số atom ở mức 1 tại thời gian $t$, $B_{12}^{\omega}$ là hệ số B Einstein cho sự chuyển dời, và $u(\omega)$ là mật độ phổ năng lượng của trường điện từ với đơn vị là J m$^{-3}$(rad/s)$^{-1}$ với xung quanh tần số $\omega = \f{E_{2} - E_{1}}{\hbar}$ mới có thể tạo chuyển dời hấp thụ(lý do là nguyên lý bất định theo thời gian $\sigma_{E} = \Delta E \Delta t$). Phổ thực chất là miền các vạch với độ phân giải cao, khi độ phân giải thấp ta thu được một vạch năng lượng. Quy ước đo vạch là bề rộng = $\f{1}{2}$ độ cao. Xung cực ngắn thì bề rộng phổ là cực rộng.
 \subsection{Bức xạ kích thích}
 \image{kichthich.png}
-Quá trình bực xạ kích thích bởi photon(không hấp thụ) tới để tạo ra photon. Đây là một cho những cơ chế cho Laser, cảm ứng cùng pha cùng tần số(giao thoa cộng hưởng), cùng hướng, photon phát xạ có năng lượng bằng photon tới, quá trình tạo ra Laser không có quá trình hấp thụ và tự phát. Phương trình tốc độ \textbf{phát xạ kích thích} được cho bởi phương trình
+Quá trình bức xạ kích thích bởi photon(không hấp thụ) tới để tạo ra photon. Đây là một cho những cơ chế cho Laser, cảm ứng cùng pha cùng tần số(giao thoa cộng hưởng), cùng hướng, photon phát xạ có năng lượng bằng photon tới, quá trình tạo ra Laser không có quá trình hấp thụ và tự phát. Phương trình tốc độ \textbf{phát xạ kích thích} được cho bởi phương trình
 \begin{gather}
 	\f{dN_{2}}{dt} = - B_{21}^{\omega} N_{2} u(\omega)
 \end{gather}
 trong đó $N_{2}$ là số atom ở mức 2 tại $t$, $B_{21}$ là hệ số Einstein cho chuyển dời. Phát xạ kích thích là một hiệu ứng coherence quantum dynamics.
-\subsection{Xác suất phá xạ/hấp thụ}
+\subsection{Xác suất phát xạ/hấp thụ}
 \begin{gather}
 	\left( \f{dN_{2}}{dt} \right)_{sp} = - A_{21} N_{2}
 \end{gather}
@@ -135,7 +135,7 @@ Tốc độ phát xạ kích thích còn được biểu diễn dưới dạng
 \begin{gather}
 	\f{dN_{2}}{dt} = - B_{21}^{\omega} N_{2} u(\omega) = - W_{21} N_{2}
 \end{gather}
-trong đó $W_{21}$ là độ chuyển dời, $\left[W_{21}\right] = t^{-1}$. Nếu mức năng lượng không suy biến(một mức năng lượng có nhiều hàm sóng/trạng thái) thì $W_{12} = W_{21}$. Nếu suy biến với trọng số $g_{1}, g_{2}$ tương ứng cho mức 1 và 2 thì 
+trong đó $W_{21}$ là độ chuyển dời, $\left[W_{21}\right] = t^{-1}$. Nếu mức năng lượng không suy biến(một mức năng lượng có nhiều hàm sóng/trạng thái) thì $W_{12} = W_{21}$. Nếu suy biến với trọng số $g_{1}, g_{2}$ tương ứng cho mức 1 và 2 thì
 \begin{gather}
 	g_{1} W_{12} = g_{2} W_{21}
 \end{gather}
@@ -251,8 +251,7 @@ Việc các hạt nguyên tử di chuyển lại gần hay ra xa khỏi máy đo
 Khi hạt di chuyển lại gần máy đo, ta có $$\omega=\omega_0\left(1+\frac{v_x}{c}\right)$$
 Số hạt di chuyển với vận tốc $v_x$ đến $v_x+dv_x$ được cho bởi cơ học thống kê: $$N(v_x) = N_0 \left( \frac{2k_B T}{\pi m} \right)^{1/2} \exp \left( -\frac{m v_x^2}{2k_B T} \right)$$ với FWHM được cho bởi $$\Delta \omega_{\text{Doppler}} = 2 \omega_0 \left( \frac{(2 \ln 2) k_B T}{mc^2} \right)^{1/2} = \frac{4 \pi}{\lambda} \left( \frac{(2 \ln 2) k_B T}{m} \right)^{1/2}$$
 
-\subsection{Laser}(Light Amplification by
-Stimulated Emission of Radiation) \\
+\subsection{Laser}
 Từ ``laser'' là từ viết tắt của cụm từ ``Light Amplification by Stimulated Emission of Radiation'' (khuếch đại ánh sáng bằng phát xạ kích thích). Laser hoạt động lần đầu tiên được chứng minh vào năm 1960, và từ đó, laser đã trở thành công cụ thiết yếu trong quang học phi tuyến và lượng tử. Trong phần này, chúng ta sẽ đưa ra một cái nhìn tổng quan ngắn gọn về các nguyên lý vật lý cơ bản của hoạt động laser, và sau đó mô tả ngắn gọn các đặc tính chính của các loại laser thường được sử dụng trong phòng thí nghiệm.
 \subsubsection{Phát xạ cưỡng bức (Stimulated Emission)}
 Nếu như một hạt đang ở trạng thái ``cao hơn'', tạm gọi là trạng thái \textit{upper}, được chiếu bởi một nguồn sáng, hạt đó có thể chuyển dời xuống vị trí ``thấp hơn'' - \textit{lower}, xác suất chuyển dời từ \textit{upper} $\rightarrow$ \textit{lower} là như nhau đối với xác suất chuyển dời từ \textit{lower} $\rightarrow$ \textit{upper}. Quá trình này được gọi là \textbf{Phát xạ cưỡng bức} hay \textbf{Phát xạ cảm ứng}.
@@ -305,10 +304,10 @@ Ta biết toán tử moment lưỡng cực $\hat{\textbf{p}}_e$ tỉ lệ với 
 Ta viết lại trạng thái $\ket{2},\ket{1}$ dưới dạng bộ số lượng tử và có được:
 \begin{align*}
 	\boldsymbol{\mu}_{12}
-	& = \bra{n'\l'm'} \hat{\textbf{p}}_e \ket{n\l m}                                   \\
-	& =  - \bra{n'\l'm'}  \hat{\Pi}^{\dagger} \hat{\mathbf{p}}_e \hat{\Pi} \ket{n\l m} \\
-	& =  - \bra{n'\l'm'}  (-1)^{\l'} \hat{\mathbf{p}}_e (-1)^{\l} \ket{n\l m}          \\
-	& =(-1)^{\l' + \l + 1} \bra{n'\l'm'}   \hat{\mathbf{p}}_e \ket{n\l m},
+	 & = \bra{n'\l'm'} \hat{\textbf{p}}_e \ket{n\l m}                                   \\
+	 & =  - \bra{n'\l'm'}  \hat{\Pi}^{\dagger} \hat{\mathbf{p}}_e \hat{\Pi} \ket{n\l m} \\
+	 & =  - \bra{n'\l'm'}  (-1)^{\l'} \hat{\mathbf{p}}_e (-1)^{\l} \ket{n\l m}          \\
+	 & =(-1)^{\l' + \l + 1} \bra{n'\l'm'}   \hat{\mathbf{p}}_e \ket{n\l m},
 \end{align*}
 dấu ``$=$'' xảy ra khi và chỉ khi $ (-1)^{\l' + \l + 1} = 1 \Rightarrow \l + \l' = odd \Rightarrow \l \neq \l'$ DPCM.
 
@@ -340,79 +339,79 @@ Sử dụng toán tử quay $\hat{R}_n(\phi)(n = x, y ,z)$ tác động lên (8)
 \end{align*}
 và
 \begin{align*}
-	& \hat{R}^{\dagger}_z(\phi)\hat{R}_z(\phi) = 1,                                  \\
-	& \hat{R}^{\dagger}_z(\phi) z \hat{R}_z(\phi) = z,                               \\
-	& \hat{R}^{\dagger}_z(\phi) (x\pm iy) \hat{R}_z(\phi) = e^{\mp 2i\pi} (x\pm iy).
+	 & \hat{R}^{\dagger}_z(\phi)\hat{R}_z(\phi) = 1,                                  \\
+	 & \hat{R}^{\dagger}_z(\phi) z \hat{R}_z(\phi) = z,                               \\
+	 & \hat{R}^{\dagger}_z(\phi) (x\pm iy) \hat{R}_z(\phi) = e^{\mp 2i\pi} (x\pm iy).
 \end{align*}
 Sử dụng kí hiệu Dirac cho hàm sóng (8) và để cho phép tính được gọn gàng ta đặt $\ket{\psi_{l}^{m_{\l}} (r,\theta,\varphi)} = \ket{m_\l}$, tính các thành phần ma trận sau:
 \begin{enumerate}
 	\item[(a)]
-	\begin{align*}
-		\bra{m'_\l} \hat{z} \ket{m_\l}
-		& = \bra{m'_\l} \hat{R}^{\dagger}_z(\phi)\hat{R}_z(\phi) \hat{z} \hat{R}^{\dagger}_z(\phi)\hat{R}_z(\phi)\ket{m_\l} \\
-		& = e^{2i\pi m'_\l \phi} e^{-2i\pi m_\l \phi} \bra{m'_\l} \hat{z} \ket{m_\l}.
-	\end{align*}
-	Để dấu ``='' xảy ra thì $m'_\l - m_\l = 0$  (ĐPCM).
+	      \begin{align*}
+		      \bra{m'_\l} \hat{z} \ket{m_\l}
+		       & = \bra{m'_\l} \hat{R}^{\dagger}_z(\phi)\hat{R}_z(\phi) \hat{z} \hat{R}^{\dagger}_z(\phi)\hat{R}_z(\phi)\ket{m_\l} \\
+		       & = e^{2i\pi m'_\l \phi} e^{-2i\pi m_\l \phi} \bra{m'_\l} \hat{z} \ket{m_\l}.
+	      \end{align*}
+	      Để dấu ``='' xảy ra thì $m'_\l - m_\l = 0$  (ĐPCM).
 	\item[(b),(c),(d)]
-	\begin{align*}
-		\bra{m'_\l} \hat{z} \ket{m_\l}
-		& = \bra{m'_\l} \hat{R}^{\dagger}_z(\phi)\hat{R}_z(\phi) (\hat{x} \pm i\hat{y}) \hat{R}^{\dagger}_z(\phi)\hat{R}_z(\phi)\ket{m_\l} \\
-		& = e^{2i\pi m'_\l \phi} e^{-2i\pi m_\l \phi} e^{\mp 2i\pi} \bra{m'_\l} \hat{x} \pm i\hat{y} \ket{m_\l}.
-	\end{align*}
-	Để dấu ``='' xảy ra thì,  $m'_\l - m_\l \mp 1= 0$ (ĐPCM).
+	      \begin{align*}
+		      \bra{m'_\l} \hat{z} \ket{m_\l}
+		       & = \bra{m'_\l} \hat{R}^{\dagger}_z(\phi)\hat{R}_z(\phi) (\hat{x} \pm i\hat{y}) \hat{R}^{\dagger}_z(\phi)\hat{R}_z(\phi)\ket{m_\l} \\
+		       & = e^{2i\pi m'_\l \phi} e^{-2i\pi m_\l \phi} e^{\mp 2i\pi} \bra{m'_\l} \hat{x} \pm i\hat{y} \ket{m_\l}.
+	      \end{align*}
+	      Để dấu ``='' xảy ra thì,  $m'_\l - m_\l \mp 1= 0$ (ĐPCM).
 \end{enumerate}
 \subsubsection*{Problem 4.4}
 \begin{enumerate}
 	\item[(a)] Ta có cường độ ánh sáng tỉ lệ với bình phương biên độ của điện trường
-	\begin{align}
-		\langle I \rangle \propto  \langle \mathcal{E}(t)^2 \rangle.
-	\end{align}
-	Từ
-	\begin{align}
-		I(t) = I(0) \exp(-t/\tau),
-	\end{align}
-	chúng ta có thể suy ra rằng
-	\begin{align}
-		\abs{\mathcal{E}(t)}^2 = \abs{\mathcal{E}_0}^2 \exp(-t/\tau).
-	\end{align}
-	Bên cạnh đó, ta có thể khai triển phương trình (11) dưới dạng hàm $\cos$
-	\begin{align}
-		\mathcal{E}(t) = \mathcal{E}_0 \cos(\omega_0 t) \exp(-t/2\tau)
-	\end{align}
-	mà vẫn thỏa mãn điều kiện rằng cường độ $I(t)$ tỉ lệ với bình phương biên độ điện trường.
-	\begin{itemize}
-		\item Với $t<0, \mathcal{E}(t) = 0$, bởi vì chùm tia sáng vẫn chưa được bức xạ ra.
-		\item Với $t \geq 0$, trường điện có công thức là (12), mô tả tính chất dao động của sóng ánh sáng với biên độ giảm dần theo hàm $\exp$, phù hợp với cường độ ánh sáng đã cho. Để tìm phổ phát xạ, chúng ta thực hiện phép biến đổi Fourier của điện trường.
-	\end{itemize}
+	      \begin{align}
+		      \langle I \rangle \propto  \langle \mathcal{E}(t)^2 \rangle.
+	      \end{align}
+	      Từ
+	      \begin{align}
+		      I(t) = I(0) \exp(-t/\tau),
+	      \end{align}
+	      chúng ta có thể suy ra rằng
+	      \begin{align}
+		      \abs{\mathcal{E}(t)}^2 = \abs{\mathcal{E}_0}^2 \exp(-t/\tau).
+	      \end{align}
+	      Bên cạnh đó, ta có thể khai triển phương trình (11) dưới dạng hàm $\cos$
+	      \begin{align}
+		      \mathcal{E}(t) = \mathcal{E}_0 \cos(\omega_0 t) \exp(-t/2\tau)
+	      \end{align}
+	      mà vẫn thỏa mãn điều kiện rằng cường độ $I(t)$ tỉ lệ với bình phương biên độ điện trường.
+	      \begin{itemize}
+		      \item Với $t<0, \mathcal{E}(t) = 0$, bởi vì chùm tia sáng vẫn chưa được bức xạ ra.
+		      \item Với $t \geq 0$, trường điện có công thức là (12), mô tả tính chất dao động của sóng ánh sáng với biên độ giảm dần theo hàm $\exp$, phù hợp với cường độ ánh sáng đã cho. Để tìm phổ phát xạ, chúng ta thực hiện phép biến đổi Fourier của điện trường.
+	      \end{itemize}
 	\item[(b)] Trường điện với $t \geq 0$ được cho bởi công thức
-	\begin{align*}
-		\mathcal{E}(t)
-		& = \mathcal{E}_0 \cos(\omega_0 t) \exp(-t/2\tau)        \\
-		& = \f{\mathcal{E}_0}{2} \cos(\omega_0 t) \exp(-t/2\tau)
-	\end{align*}
-	Phép biển đổi Fourier cho $\mathcal{E}(t)$ là
-	\begin{align}
-		\mathcal{E}(\omega) = \f{1}{\sqrt{2}} \int_{-\infty}^{+\infty} \mathcal{E}(t) e^{i\omega t} dt.
-	\end{align}
-	Khi $\mathcal{E}(t) = 0$, với $t < 0$, phương trình (13) trở thành
-	\begin{align}
-		\mathcal{E}(\omega)
-		& = \f{1}{\sqrt{2}} \int_{0}^{+\infty} \left( \f{\mathcal{E}_0}{2} e^{i(\omega_0 - \omega)t - t/2\tau} + \f{\mathcal{E}_0}{2} e^{-i(\omega_0 + \omega)t - t/2\tau} \right) dt \nonumber \\
-		& = \frac{\mathcal{E}_0}{2\sqrt{2\pi}} \left( \frac{1}{1/2\tau - i(\omega_0 - \omega)} + \frac{1}{1/2\tau + i(\omega_0 + \omega)} \right).
-	\end{align}
-	Giả sử rằng $\omega_0 \gg 1/\tau$,
-	\begin{align*}
-		\mathcal{E}(\omega) \approx \frac{\mathcal{E}_0}{2\sqrt{2\pi}} \cdot \frac{1}{1/2\tau - i(\omega_0 - \omega)}.
-	\end{align*}(ĐPCM)
+	      \begin{align*}
+		      \mathcal{E}(t)
+		       & = \mathcal{E}_0 \cos(\omega_0 t) \exp(-t/2\tau)        \\
+		       & = \f{\mathcal{E}_0}{2} \cos(\omega_0 t) \exp(-t/2\tau)
+	      \end{align*}
+	      Phép biển đổi Fourier cho $\mathcal{E}(t)$ là
+	      \begin{align}
+		      \mathcal{E}(\omega) = \f{1}{\sqrt{2}} \int_{-\infty}^{+\infty} \mathcal{E}(t) e^{i\omega t} dt.
+	      \end{align}
+	      Khi $\mathcal{E}(t) = 0$, với $t < 0$, phương trình (13) trở thành
+	      \begin{align}
+		      \mathcal{E}(\omega)
+		       & = \f{1}{\sqrt{2}} \int_{0}^{+\infty} \left( \f{\mathcal{E}_0}{2} e^{i(\omega_0 - \omega)t - t/2\tau} + \f{\mathcal{E}_0}{2} e^{-i(\omega_0 + \omega)t - t/2\tau} \right) dt \nonumber \\
+		       & = \frac{\mathcal{E}_0}{2\sqrt{2\pi}} \left( \frac{1}{1/2\tau - i(\omega_0 - \omega)} + \frac{1}{1/2\tau + i(\omega_0 + \omega)} \right).
+	      \end{align}
+	      Giả sử rằng $\omega_0 \gg 1/\tau$,
+	      \begin{align*}
+		      \mathcal{E}(\omega) \approx \frac{\mathcal{E}_0}{2\sqrt{2\pi}} \cdot \frac{1}{1/2\tau - i(\omega_0 - \omega)}.
+	      \end{align*}(ĐPCM)
 	\item[(c)]  Cường độ ánh sáng tỉ lệ với bình phương biên độ, nên ta có
-	\begin{align}
-		I(\omega) \propto |\mathcal{E}(\omega)|^2 = \left|\frac{\mathcal{E}_0}{2\sqrt{2\pi}} \cdot \frac{1}{1/2\tau - i(\omega_0 - \omega)}\right|^2.
-	\end{align}
-	Ta có thể nói rằng
-	\begin{align}
-		I(\omega) \propto \f{1}{(\omega - \omega_0)^2 + (1/2\tau)^2},
-	\end{align}
-	điều này hoàn toàn đúng so với công thức được cho.
+	      \begin{align}
+		      I(\omega) \propto |\mathcal{E}(\omega)|^2 = \left|\frac{\mathcal{E}_0}{2\sqrt{2\pi}} \cdot \frac{1}{1/2\tau - i(\omega_0 - \omega)}\right|^2.
+	      \end{align}
+	      Ta có thể nói rằng
+	      \begin{align}
+		      I(\omega) \propto \f{1}{(\omega - \omega_0)^2 + (1/2\tau)^2},
+	      \end{align}
+	      điều này hoàn toàn đúng so với công thức được cho.
 \end{enumerate}
 \subsubsection*{Problem 4.6}
 Ta biết khối lượng nguyên tử của $M_{Na} = 23$ và bán kính nguyên tử $r_{Na} \approxeq 0.2nm = 0.2\times 10^{-10}$, tiết diện tán xạ đàn hồi $\sigma_s$ là
@@ -423,9 +422,9 @@ Ta biết khối lượng nguyên tử của $M_{Na} = 23$ và bán kính nguyê
 \begin{align*}
 	R_z
 	\tau_{\text{collision}}
-	& = \f{1}{\sigma_s P} \left( \f{\pi m k_{\text{B} T}}{8} \right)^{1/2}                                                                                       \\
-	& = \f{1}{4\pi \times 10^{-20 } \times 100\times10^{3}} \left( \f{\pi \frac{23}{N_A} \times 10^{-3} \times 1.38\times 10^{-23} \times 273 }{8} \right)^{1/2} \\
-	& \approx 5.9 \times 10^{-10} (s)
+	 & = \f{1}{\sigma_s P} \left( \f{\pi m k_{\text{B} T}}{8} \right)^{1/2}                                                                                       \\
+	 & = \f{1}{4\pi \times 10^{-20 } \times 100\times10^{3}} \left( \f{\pi \frac{23}{N_A} \times 10^{-3} \times 1.38\times 10^{-23} \times 273 }{8} \right)^{1/2} \\
+	 & \approx 5.9 \times 10^{-10} (s)
 \end{align*}
 \chapter{Buổi 4 Thống kê Photon}
 \section{Thống kê photon đếm}
@@ -445,7 +444,7 @@ Tốc độ đếm(count rate) trung bình $R$
 \end{gather}
 Dectector cần khoảng thời gian \q{phục hồi} sau mỗi sự kiện đếm $\rightarrow$ thực tế có thời gian chết(dead time) $\approx$ 1 $\mu$s giữa các lần đếm liên tiếp $\rightarrow$ $R$ có giới hạn trên $10^{6}$ count s$^{-1}$. $\eta$ của dectector khoảng 10\%. Bộ đếm photon chỉ phù hợp cho \textbf{chùm ánh sáng yếu} $\approx 10^{-12}$ W. Chùm ánh sáng mạnh hơn cần có cách dò khác. Ta cần chú ý rằng khi đếm photon thì số photon phải là số nguyên trong mỗi đoạn chia.
 \subsection{Coherent light: thống kê Poissonian}
-Xét trường ánh sáng ``coherent'' có biên độ $E_{0}$ với tần số $\omega$ và pha $\phi$ với trường điện là hàm 
+Xét trường ánh sáng ``coherent'' có biên độ $E_{0}$ với tần số $\omega$ và pha $\phi$ với trường điện là hàm
 \begin{gather}
 	E(x,t) = E_{0} \sin(kx - \omega t + \phi)
 \end{gather}
@@ -462,9 +461,9 @@ Giả sử $L$ là đủ lớn, để $\overline{n}$ phải có giá trị nguy�
 Ta tính được xác suất $P(n)$ này tương đương với việc tìm thấy $n$ đonạ bất kì có chứa 1 photon với $N - n$ đoạn trống. Khi có phân bố đều, xác suất này được cho bởi nhị thức Newton
 \begin{equation}
 	\begin{aligned}
-		p 
-		&= \f{\overline{n}}{N}\\
-		&= \f{N!}{n!(N-n)!} p^{n} (1 - p)^{N-n}
+		p
+		 & = \f{\overline{n}}{N}     
+		 = \f{N!}{n!(N-n)!} p^{n} (1 - p)^{N-n}
 	\end{aligned}
 \end{equation}
 khi $N\rightarrow \infty$ thì
@@ -481,15 +480,1647 @@ Có tất cả 3 loại thống kê photon, trong đó ánh sáng có perfect co
 	\item \textbf{Poisson}: $\Delta n = \sqrt{\overline{n}}$
 	\item \textbf{Super-Poisson}: $\Delta n > \sqrt{\overline{n}}$
 \end{itemize}
-Bằng một cách định tính: Ta có thể thấy ngay, so với ánh có cường độ không đổi, ánh sáng với cường độ thăng giáng cổ điển thì thăng giáng số photon, điều này có nghĩa là khi cường độ hoàn toàn ổn định thì ánh sáng cho ra thống kê Poisson, vậy nên tất cả các chùm ánh sáng cổ điển tức là ánh sáng có cường độ thay đổi theo thời gian sẽ có phân bố Super-Poisson. Các loại ánh sáng này sẽ là \q{nhiễu} hơn ánh sáng hoàn toàn kết hợp, theo nghĩa cổ điển là chúng có các biến đổi lớn hơn về cường độ, và theo nghĩa lượng tử là chúng có các biến động số photon lớn hơn.\\
+Bằng một cách định tính: Ta có thể thấy ngay, so với ánh có cường độ không đổi(có dạng bền và ổn định nhất), ánh sáng với cường độ thăng giáng cổ điển thì thăng giáng số photon, điều này có nghĩa là khi cường độ hoàn toàn ổn định thì ánh sáng cho ra thống kê Poisson, vậy nên tất cả các chùm ánh sáng cổ điển tức là ánh sáng có cường độ thay đổi theo thời gian sẽ có phân bố Super-Poisson. Các loại ánh sáng này sẽ là \q{nhiễu} hơn ánh sáng hoàn toàn kết hợp, theo nghĩa cổ điển là chúng có các biến đổi lớn hơn về cường độ, và theo nghĩa lượng tử là chúng có các biến động số photon lớn hơn.\\
 Ngược lại, ánh sáng có thống kê Sub-Poisson có phân bố hẹp hơn trường hợp Super-Poisson và do đó \q{yên tĩnh} hơn ánh sáng perfectly coherent
 \subsection{Thống kê Super-Poisson}
 Super-Poisson được xác định bởi:
 \begin{gather}
 	\Delta n > \sqrt{\overline{n}}
 \end{gather}
-\subsection{Thermal light}
-Là bức xạ điện từ phát ra từ vật thể được truyền nhiệt(bức xạ vật đen). Bức xạ này có dang động
+\subsection{Thermal light(Ánh sáng nhiệt)}
+Là bức xạ điện từ phát ra từ vật thể được truyền nhiệt(bức xạ vật đen). Bức xạ này có dao động
+\begin{gather}
+	\rho(\omega, T) d\omega = \f{\hbar \omega}{\pi^{2} c^{3}} \f{1}{\exp(\hbar \omega / k_{B} T) - 1} d\omega
+\end{gather}
+Có thể xem mỗi mốt là một dạng động điều hoà(giống với lý thuyết của Einstein) với tần số góc $\omega$ và năng lượng đã được lượng tử hoá
+\begin{gather}
+	E_{n} = (n + \frac{1}{2} \hbar \omega)
+\end{gather}
+Xác suất tìm thấy photon ở tần số $\omega$(nhưng chưa chắc đã cùng pha, biên độ như là ánh sáng perfectly coherent) được cho bởi định lý Boltzmann
+\begin{equation}
+	\begin{aligned}
+		P_{\omega}(n)
+		 & = \f{\exp(-E_{n} / k_{B} T)}{\sum_{n = 0}^{\infty} \exp(-E_{n} / k_{B} T)}      \\
+		 & = \f{\exp(-n\hbar \omega)}{\sum_{n = 0}^{\infty} \exp(-n\hbar\omega / k_{B} T)} \\
+		 & = \f{x^{n}}{\sum_{n = 0}^{\infty} x^{n}}                                        \\
+		 & = x^{n}(1-x)
+	\end{aligned}
+\end{equation}
+từ đó, số photon trung bình là
+\begin{equation}
+	\begin{aligned}
+		\overline{n}
+		 & = \sum_{n = 0}^{\infty} n P_{\omega}(n)                                                                              = \sum_{n = 0}^{\infty} n x^{n} (1-x)                                                                                  \\
+		 & = (1 - x) x \f{d}{dx} \left( \sum_{n = 0}^{\infty} x^{n} \right) (\text{Tại vì đạo hàm thì số bậc của $x$ là $n - 1$}) \\
+		 & = (1 - x) x \f{d}{dx} \left(\f{1}{1 - x}\right)                                                                      
+		 = (1 - x) x \f{1}{(1 - x)^2}                                                                                           \\
+		 & = \f{x}{1 - x}                                                                                                         = \f{\exp(-\f{\hbar \omega}{k_B T})}{1 - \exp(-\f{\hbar \omega}{k_B T})} = \f{1}{\exp(\f{\hbar \omega}{k_B T}) - 1} .
+	\end{aligned}
+\end{equation}
+Như vậy, số photon trung bình được tính theo công thức Plank
+\begin{gather}
+	\overline{n} = \f{1}{\exp(\hbar \omega/k_{B}T) - 1}
+\end{gather}
+Thế ngược vào hàm phân bố $P_{\omega}(n)$, ta thấy
+\begin{gather}
+	P_{\omega}(n) = \f{1}{\overline{n} + 1} \left(\f{\overline{n}}{\overline{n} + 1}\right)^{n}
+\end{gather}
+tuân theo phân bố Bose-Einstein, đạt cực đại khi $n =0$ và giảm theo hàm $\exp$.
+\image{BosEin.png}
+Đồ thị trên so sánh phân bố Bose-Einstein của thermal light và phân bố Poisson của ánh sáng perfectly coherent, vì tính chất tự nhiên của ánh sáng nhiệt ta đang xét có năng lương không ổn định mà dao động, \q{nhiễu}. Phân bố B-E cho phương sai $\Delta n$ là luông rộng hơn phân bố Poisson
+\begin{gather}
+	(\Delta n)^{2} = \overline{n} + \overline{n}^{2} 
+\end{gather} 
+rõ ràng là $\Delta n_{\text{B-E}} > \Delta n_{\text{Poisson}}$, điều này hoàn toàn thoả mãn định nghĩa về ánh sáng có \q{Super-Poisson}. Nhắc lại rằng, tuy ta đang xem xét ánh sáng nhiệt, nhưng chỉ xét ở một mode $\omega$, nhưng thực tế, bức xạ vật đen là một chuỗi liên tục nhiều mode dao động với những tần số khác nhau. Khi đó phương sai được cho bời
+\begin{gather}
+	\Delta n_{\text{B-E}} = \overline{n} + \f{\overline{n}^{2}}{N_{m}}
+\end{gather}
+Trong thực tế, khi làm việc với thermal light, nhìn chung, vì rất khó để đo một tần số xác định(có nghĩa là $N_{m} \gg$), nên thống kê nhìn chung là phân bố Poisson. Ngoài ra theo Einstein, ta có
+\begin{equation}
+	\begin{aligned}
+		\mean{\Delta E^{2}} d\omega 
+		&= k_{B} T \f{\partial}{\partial T} (V \rho d\omega)\\	
+		&= k_{B} T^{2} V d\omega \f{\partial \rho}{\partial T} \\	
+		&= \left( \rho \hbar \omega + \f{ \pi^{2} c^{3} }{\omega^{2} \rho^{2} } \right) V d\omega \\
+	\end{aligned}	
+\end{equation}
+trong đó, số hạng thứ nhất là lượng tử hoá năng lượng của trường điện từ, nói cách khác là bản chất photon(hạt) của ánh sáng, trong khi đó số hạng thứ hai ra đời tự sự thăng giáng trong năng lượng của trường điện từ, có bản chất là cổ điển, còn được gọi là \q{wave noise}.
+\subsection{Chaotic light(Ánh sáng hỗn loạn)}
+Chaotic light nhìn chung cũng giống với ánh sáng coherent light, nhưng có cường độ(intensity) $I$ là không ổn định mà thăng giáng theo từng khoảng thời gian[thời gian này gọi là thời gian đồng bộ hay thời gian kết hợp(coherent time)] $\tau_{c} \approx \Delta \omega^{-1}$. Có thể hiểu giống như nguồn phát có công suất không ổn định.\\
+Khi này, tốc độ đếm trong thời gian $T$ được xác định bằng cách lấy tích phân thông lượng trong khoảng thời gian $t \rightarrow t + T$
+\begin{gather}
+	W(T) = \int_{t}^{t + T} \eta \Phi(t') dt'
+\end{gather}
+và \textbf{phương sai của chaotic light} được tính là
+\begin{gather}
+	(\Delta n)_{\text{chaotic light}}^{2} = \mean{W(T)} + \mean{\Delta W(T)^{2}}
+\end{gather}
+Số photon trung bình $\overline{n} = \Phi \f{L}{c}$ trong đoạn dài $L$(tức là trong khoảng thời gian$T = L/c$) chính là $\mean{W(T)}$. 
+Vì $\Phi = \Phi(t)$, tức sự thay đổi trong cường độ ánh sáng trong một khoảng thời gian(nhất là khi nhỏ hơn $\tau_{c}$) là lớn, nên số hạng thứ hai là không đáng kể và có thể xem xét bỏ qua. Khi đó, phân bố sẽ trở thành phân bố Super-Poisson. Tuy nhiên, khi ta xét trên thời gian rất lớn, sự dao động theo $\tau_{c}$ bây giờ sẽ không còn đáng kể, và phân bố sẽ trở về phân bố Poisson.
+\subsection{Sub-Poissonian light}
+Sub-Poisson được xác định bởi
+\begin{gather}
+	\Delta n < \sqrt{\overline{n}}
+\end{gather}
+Từ đồ thị ta thấy rằng, phân bố Sub-Poisson có phân bố còn hẹp hơn cả phân bố Poisson của ánh sáng perfectly coherent. Nói cách khác, thứ ánh sáng này có cường độ ổn định hơn cả coherent light. Nhưng trong thực tế, ánh sáng Sub-Poisson không có đối tượng tương đương trong cổ điển, tức sự khảo sát phân bố này hoàn toàn thuộc về bản chất lượng tử cuả ánh sáng, nhưng không khó để ta tưởng tượng ra hệ tạo nên thứ ánh sáng có cường độ và \q{more coherent} hơn cả ánh sáng có perfectly coherent.\\
+\image{tubephoton.png}
+\noindent Xét một ống chứa photon (a) sao cho khoảng cách giữa các photon là $c\Delta t$ giống hệt nhau. Kết quả đo số photon trong mỗi lần do sẽ là là một số được xác định như sau
+\begin{gather}
+	N = \text{Int}\left(\eta \f{T}{\Delta t}\right)
+\end{gather}
+và thống kê sẽ có dạng như hình (b). Khi đó, $\overline{n} = N$ và ánh sáng khi này là \q{highly Sub-Poisson} với $\Delta n = 0$. Các dòng photon như hình (a) với $\Delta n =0$ được gọi là các \q{trạng thái photon}(photon number states). Nhưng trong thực tế, tạo ra các nguồn phát như vậy là không khó trong phòng thí nghiệm, nhưng để đo được chúng là một câu chuyện khác, bởi vì chúng có những \textbf{sự mất mát quan học} gây ra bởi sự suy giảm thống kê photon. Có các loại ánh sáng Sub-Poisson khác trong đó $\Delta t$ giữa các photon trong chùm tia không hoàn toàn giống nhau, nhưng các $\Delta t$ này cần đều hơn các $\Delta t$ ngẫu nhiên của loại ánh sáng Sub-Poisson. \\
+Như vậy khi nhắc tới ánh sáng Sub-Poisson, thì ta cần quan tâm 2 điều đó là tìm cách nâng cao hiệu suất lượng tử $\eta$, và tạo ra được dòng photon như hình (a)
+\section{Degradation of photon statistics by losses}
+\image{splitBeamer.png}
+Ta xét ánh sáng đi qua \q{môi trường thất thoát}(lossy medium), rồi đến đầu dò. Nếu độ truyền qua của môi trường là $T$, thì chúng ta có thể mô hình hoá sự thất thoát như một \q{bộ tách chùm tia sáng} với tỉ lệ chia là $\frac{T}{1-T}$ như hình (b). Quá trình chia chùm xảy ra ngẫu nhiên ở mức độ photon đơn lẻ, với xác suất là $T$ và $1-T$. Có thể nói rằng môi trường thất thoát này chọn ngẫu nhiên photon từ chùm tia tới với xác suất $T$. Mô hình này tiện lợi trong việc khảo sát các yếu tố khác ảnh hưởng đến hiệu suất đếm của đầu dò, trong đó gồm
+\begin{itemize}
+	\item Thu thập không hiệu quả, khi chỉ có một phần nhỏ ánh sáng từ nguồn được thu thập, quá trình này giống như việc \q{chọn lọc} ngẫu nhiên photon từ nguồn phát.
+	\item Thất thoát do hấp thụ, tán xạ hay phản xạ khỏi bề mặt. Quá trình này đã loại bớt photon khỏi chùm
+	\item Sự kiếm hiệu quả của quá trình thu thập khi sử dụng những đầu dò có hiệu suất lượng tử không cao. Quá trình này chọn lọc ngẫu nhiên photon nào sẽ được đo.
+\end{itemize}
+Trong đó, hai quá trình đầu làm suy giảm thống kê photon \q{tự thân}, còn quá trình cuối làm suy giảm mối liên hệ giữa thống kê photon và photonelectron. Lập luận trên cho ta thấy, ánh sáng Sub-Poisson rất nhạy cảm với những thất, và dẫn đến dễ dàng bị đưa trở về thống kê Poisson.
+\section{Theory of photon dectection}
+Ta khảo sát mối liên hệ giữa thống kê photon được ghi nhận bởi máy dò và thống kê photon thực của chùm tia.
+\subsection{Bán cổ điển}
+Cách tiếp cận bán cổ điển đó là ta xem chùm tia tới là sóng điện từ, những nguyên tử được kích thích(bức xạ) thì được xem như là lượng tử hoá. Tính chất thống kê của thời gian giữa các xung đầu ra có thể được giải thích bằng cách đưa ra ba giả định sau đây về quá trình quang điện
+\begin{itemize}
+	\item Xác suất phát xạ một quang electron trong một khoảng thời gian ngắn $\Delta t$ tỷ lệ thuận với cường độ $I$, diện tích $A$ được chiếu sáng và khoảng thời gian là $\Delta t$
+	\item Nếu $\Delta t$ là đủ nhỏ, xác suất phát xạ hai quang electron là không đáng kể.
+	\item Các sự kiện phát xạ quang điện được ghi nhận trong các khoảng thời gian khác nhau là độc lập thống kê với nhau
+\end{itemize}
+Ta có thể viết xác suất phát xạ một photon trong khoảng thời gian từ $t \rightarrow t + \Delta t$
+\begin{gather}
+	P(1;t,t + \Delta t) = \eta I(t) \Delta t
+\end{gather}
+với $\eta$ tỉ lệ với diện tích được chiếu sáng và bằng xác suất phát xạ trên một đơn vị thời gian trên một đơn vị cường độ. Nếu cường độ $I$ là hằng số, thì số photon đếm trung bình $\overline{n}$ trong khoảng thời gian $0 \rightarrow t$ được cho bởi 
+\begin{gather}
+	\overline{n} = \eta I t \equiv Ct
+\end{gather}
+và xác suất có dạng là
+\begin{gather}
+	P_{n} (t) = \f{\overline{n}^{n}}{n!} e^{- \overline{n}}
+\end{gather}
+cho ta phân bố Poisson.\\
+Phương trình (5.55 M.Fox) chứng minh rằng chúng ta có thể giải thích thống kê đếm photon Poisson khi phát hiện ánh sáng có cường độ không đổi theo thời gian mà không cần đếm khái niệm photon. Tất cả những gì chúng ta cần là việc phát xạ quang electron là một quá trình xác suất được kích hoạt bởi viêc lượng tử năng lượng từ chùm ánh sáng. Do đó, việc phân tích thống kê đếm photon không nhất thiết cho chúng ta biết bất cứ điều gì về thống kê photon cơ bản. Đồng thời ,rõ ràng thống kê Poisson là không thể trong lý thuyết bán cổ điển. Điều này là do chúng ta thu được công thức Poisson nếu cường độ là hằng số, và nếu cường độ thay đổi theo thời gian, có thể chứng minh rằng chúng ta thu được kết quả Super-Poisson như trong phương trình (5.38 M.Fox) Do đó việc quan sát thống kê đếm photon dưới phân bố Poisson là một minh chứng rõ ràng cho thấy cách tiếp cận bán cổ điển là không đầy đủ. Như vậy những thí nghiệm Sub-Poisson chỉ có thể được/hy vọng giải thích bằng cách xử lý lượng tử đầy đủ.
+\subsection{Lượng tử}
+Xét thống kê đếm photon được đo trong khoảng thời gian $T$. Ta có mối liên hệ gữa phương sai của số photon đếm được $(\Delta N)^{2}$ và phương sai của số photon đến máy dò trong cùng khoảng thời gian
+\begin{gather}
+	(\Delta N)^{2} = \eta^{2} (\Delta n)^{2} + \eta(1-\eta) \overline{n}
+\end{gather}
+với $\eta = N / \overline{n}$ là hiệu suất lượng tử.
+Ta thấy
+\begin{itemize}
+	\item Nếu $\eta = 1$, ta có $\Delta N = \Delta n$ và thăng giáng photon đếm tái tạo đúng thăng giáng của dòng photon tới $\Rightarrow$ Ánh sáng tới là Sub-Poisson 
+	\item  Nếu ánh sáng tới có thống kê Poisson với $(\Delta n)^{2} = \overline{n} \rightarrow (\Delta N)^{2} = \eta \overline{n} = \overline{N}$ với mọi giá trị $\eta$. Nói cách khác, thống kê photon đếm được luôn cho phân bố Poisson\\
+	\item  Nếu $\eta \ll 1$, sự thăng giáng của số photon đếm được có xu hướng tiến tới kết quả Poisson với $(\Delta N)^{2} = \eta \overline{n} = \overline{N}$ bất chấp photon tuân theo thống kê nào. 
+\end{itemize}
+Như vậy, để có thể quan sát được Sub-Poisson của photon thì buộc phải có $\eta \approx 1$ tức là hiệu suất gần 100\%.
+\section{Shot noise in photodiodes}
+Cách đếm photon ta vừa khảo sát chỉ phù hợp cho cường độ nhỏ $10^{6}$ photon mỗi giây hoặc ít hơn. Với những chùm mạnh hơn
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
