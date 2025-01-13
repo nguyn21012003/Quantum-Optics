@@ -616,36 +616,454 @@ Ta thấy
 \end{itemize}
 Như vậy, để có thể quan sát được Sub-Poisson của photon thì buộc phải có $\eta \approx 1$ tức là hiệu suất gần 100\%.
 \section{Shot noise in photodiodes}
-Cách đếm photon ta vừa khảo sát chỉ phù hợp cho cường độ nhỏ $10^{6}$ photon mỗi giây hoặc ít hơn. Với những chùm mạnh hơn
+Cách đếm photon ta vừa khảo sát chỉ phù hợp cho cường độ nhỏ $10^{6}$ photon mỗi giây hoặc ít hơn. Với những chùm mạnh hơn, detector không xử lý kịp thì cần phải tìmm cách khác.\\
+Cách thường dùng: \textbf{photodiode detectors}. Photodiode là thiết bị bán dẫn tạo ra dòng điện trong mạch ngoài khi photon kích thích electron từ dải hoá trị lên dải dẫn. Một thông số quan trong của photodiode là hiệu suất lượng tử $\eta$, được đinhj nghĩa trong trường hợp này là tỉ lệ giữa số electrong quang được tạo ra trong mạch ngoài với số photon tới. Do đó, dòng điện được tạo ra trong mạch ngoài cho một dòng photon tới $\phi$, tức là dòng quang điện $i$, được định nghĩa
+\begin{gather}
+	i = \eta e \Phi = \eta e \f{P}{\hbar \omega}
+\end{gather}
+trong đó $e$ là điện tích nguyên tố, $P$ là công suất chùm tia, và $\omega$ là tần số góc. Tỉ số $\f{i}{P} = \f{\eta e}{\hbar \omega}$ được gọi là \textbf{độ nhạy} của photodiode có thứ nguyên là $A/W$. Giá trị của $\eta$ có thể được tính toán từ độ nhạy do được ở bước sóng phát hiện. (Những photodiodes tốt có thể đạt hiệu suất lượng tử $\eta = 90\%$). Nguyên lý đằng sau việc sử dụng các bộ dò photodiode để nghiên cứu các tính chất thống kê của ánh sáng là dòng quang điện được tạo ra bởi chùm sáng sẽ thăng giáng do sự thăng giáng cơ bản trong số lượng photon tới, được phản ánh bằng trong sự thăng giáng của dòng quang điện với độ tin cậy được xác định bởi $\eta$. Sự thăng giáng này được biểu hiện dưới dạng \q{noise} trong dòng photon
+\image{noise.png}
+dòng quang điện($i(t)$) biến thiên theo thời gian có thể được phân tách thành một thành phần dòng điện trung bình không phụ thuộc thời gian là $\mean{i(t)}$ và một thành phần dao động theo thời gian gọi là $\Delta i(t)$ theo đó ta có 
+\begin{gather}
+	i(t) = \mean{i} + \Delta i(t)
+\end{gather}
+Giá trị trung bình của $\Delta i$ tất nhiên là phải bằng không, nhưng giá trị trung bình của bình phương $\Delta i$ cụ thể là $\mean{\left(\Delta i (t)\right)^{2}}$ phải khác không. Vì dòng quang điện chảy qua điện trở tải $R_{L}$, sinh ra năng lượng với tốc độ $i^{2} R_{L}$, nên thuận tiện khi phân tích các dao động dưới dạng công suất nhiễu và biến thiên theo thời gian
+\begin{gather}
+	P_{\text{noise}}(t) = (\Delta i(t))^{2} R_{L}
+\end{gather} 
+Giả sử ta chiếu nguồn laser một mode vào photodiode. Vì ta đang xét nguồn gần như kết hợp hoàn hảo, tuân theo phân bố Poisson. Khi đó, thống kê quang điện tử cũng tuân theo phân bố này, với
+\begin{gather}
+	(\Delta N)^{2} = \mean{N}
+\end{gather}
+vì $i(t)$ tỉ lệ với số quang điện tử được tạo ra mỗi giây, khi đó độ lệch chuẩn của dòng photon thoả
+\begin{gather}
+	(\Delta i)^{2} \propto \mean{\Delta i}
+\end{gather}
+Biến đổi Fourier cho $i(t)$ và độ lệch chuẩn của sự thăng giáng trong dòng photon với độ rộng dải $\Delta f$, ta có
+\begin{gather}
+	(\Delta i)^{2} = 2e \Delta f \mean{i}
+\end{gather}
+từ đó suy ra
+\begin{gather}
+	P_{\text{noise}}(f) = 2 e R_{L} \Delta f \mean{i}
+\end{gather}
+Từ hai phương trình, ta hình dung được đại lượng \textbf{shot noise} với hai tính chất
+\begin{itemize}
+	\item Biến thiên(độ lệch chuẩn) của các dao động dòng điện(hoặc tương đương, công suất nhiễu) tỉ lệ thuận trực tiếp với giá trị trung bình của dòng điện
+	\item Trường hợp khi phổ nhiễu \q{trắng}, tức là không phụ thuộc vào tần số
+\end{itemize}
+Đặc điểm thứ hai là hệ quả của thời gian ngẫu nhiên giữa các photon đến trong một chùm tia có thống kê Poisson. Tính \q{trắng} của nhiễu phụ thuộc vào thơi gian đáp ứng $\tau_D$ của photodiode, trong thực tế shot noise chỉ có thể được phát hiện lên đến tần số tối đa xấp xỉ $\approx \frac{1}{\tau_{D}}$ hình (b). 
+\subsection{Sub-shot-noise photocurrent}
+Ta có thể định lượng shot-noise redution bằng \textbf{nhân tử Fano}
+\begin{gather}
+	F_{\text{Fano}} = \f{\text{measured noise}}{\text{shot noise limit}}
+\end{gather}
+Nếu như tổng hiệu suất của hệ đường chuẩn sang dòng điện từ pin tới quang điện trong mạch detector là $\eta_{\text{total}}$ thì hệ số Fano được mong muốn là
+\begin{gather}
+	F_{\text{Fano}} = \eta_{\text{total}} F_{\text{drive}} + (1 - \eta_{\text{total}})
+\end{gather}
+\section{Bài tập}
+\subsection*{Chứng minh rằng $(\Delta n)^2 = \dps\sum_{n} (n - \overline{n}) P_{\omega}(n) = \overline{n} + \overline{n}^2$}
+Giải: \\
+Đặt $x \equiv \exp(-\f{\hbar \omega}{k_B T})$, mà từ công thức (5.20) Mark Fox, ta biết $P(\omega)$ có dạng
+\begin{align*}
+	P_{\omega}(n)
+	& = \f{\exp(-E_{n} / k_B T)}{\sum_{n = 0}^{\infty}(\exp(-E_{n} / k_B T)}                    \\
+	& = \f{\exp(-n \hbar \omega / k_B T)}{\sum_{n = 0}^{\infty}(\exp(-n \hbar \omega / k_B T)}, \\
+	& = \f{x^{n}}{\sum_{n = 0}^{\infty} x^{n}}. \tag{1}
+\end{align*}
+Ta xét chuỗi hình học
+\begin{align*}
+	\sum_{n = 0}^{\infty} x^{n} = \f{1 - x^n}{1 - x} \tag{2},
+\end{align*}
+khi $x<1$, thì (2) trở thành
+\begin{align*}
+	\sum_{n = 0}^{\infty} x^{n} = \f{1}{1 - x}, \tag{3}
+\end{align*}
+dẫn đến ta có thể viết lại $P_{\omega}(n)$
+\begin{align*}
+	P_{\omega}(n)
+	& = x^{n} (1-x)                                                                               \\
+	& \equiv \left( 1 - \exp(-\hbar \omega / k_B T) \right) \exp(-n\hbar \omega / k_B T). \tag{4}
+\end{align*}
+Số photon trung bình được cho bởi
+\begin{align*}
+	\overline{n}
+	& = \sum_{n = 0}^{\infty} n P_{\omega}(n)                                                                                       \\
+	& = \sum_{n = 0}^{\infty} n x^{n} (1-x)                                                                                         \\
+	& = (1 - x) x \f{d}{dx} \left( \sum_{n = 0}^{\infty} x^{n} \right) (\text{Tại vì đạo hàm thì số bậc của $x$ là $n - 1$})        \\
+	& = (1 - x) x \f{d}{dx} \left(\f{1}{1 - x}\right)                                                                               \\
+	& = (1 - x) x \f{1}{(1 - x)^2}                                                                                                  \\
+	& = \f{x}{1 - x}                                                                                                                \\
+	& = \f{\exp(-\f{\hbar \omega}{k_B T})}{1 - \exp(-\f{\hbar \omega}{k_B T})} = \f{1}{\exp(\f{\hbar \omega}{k_B T}) - 1} . \tag{5}
+\end{align*}
+Phương trình (5) dẫn đến được
+\begin{align*}
+	x = \f{\overline{n}}{\overline{n} + 1},
+\end{align*}
+ta thay vô phương trình $P_{\omega}(n) = x^{n} (1-x)$, và được
+\begin{align*}
+	P_{\omega}(n)
+	& = \left(1 - \f{\overline{n}}{\overline{n} + 1}\right) \left(\f{\overline{n}}{\overline{n} + 1}\right)^{n} \\
+	& = \left(\f{1}{\overline{n} + 1}\right)\left(\f{\overline{n}}{\overline{n} + 1}\right)^{n} .
+\end{align*}
+Phương sai Var($n$) $\equiv \Delta n$
+\begin{align*}
+	(\Delta n)^2
+	& = \sum_{n = 0}^{\infty}(n - \overline{n})^2 P_{\omega}(n)                                                                                                                                                                  \\
+	& = \sum_{n = 0}^{\infty}(n^2 - 2n\overline{n} + \overline{n}^2) x^{n} (1-x)                                                                                                                                                 \\
+	& = \sum_{n = 0}^{\infty}n^2 x^{n} (1-x) - \sum_{n = 0}^{\infty}2n\overline{n} x^{n} (1-x) + \sum_{n = 0}^{\infty}\overline{n}^2 x^{n} (1-x)                                                                                 \\
+	& = (1-x)\sum_{n = 0}^{\infty}n^2 x^{n} - 2\overline{n}(1-x)\underbracket{\sum_{n = 0}^{\infty}n x^{n}}_{\frac{x}{(1 - x)^2}}  +\, \overline{n}^2(1-x) \underbracket{\sum_{n = 0}^{\infty} x^{n}}_{\frac{1}{1 - x}}. \tag{6}
+\end{align*}
+Xét số hạng đầu tiên $(1-x)\sum_{n = 0}^{\infty}n^2 x^{n}$, ta có
+\begin{align*}
+	\f{d}{dx} \left( \sum_{n = 0}^{\infty} x^{n} \right)
+	& = \sum_{n = 0}^{\infty} n x^{n-1}                          \\
+	\Rightarrow \f{d^2}{dx^2} \left( \sum_{n = 0}^{\infty} x^{n} \right)
+	& = \f{d}{dx} \left( \sum_{n = 0}^{\infty} n x^{n-1} \right) \\
+	\f{d^2}{dx^2} \left( \sum_{n = 0}^{\infty} x^{n} \right) & = \sum_{n = 0}^{\infty} n(n-1) x^{n-2}                     \\
+	\f{d^2}{dx^2} \left( \sum_{n = 0}^{\infty} x^{n} \right) & = \sum_{n = 0}^{\infty} (n^2-n) x^{n-2}. \tag{7}
+\end{align*}
+Nhân 2 vế của (7) cho $x^2$ ta được
+\begin{align*}
+	x^2 \f{d^2}{dx^2} \left( \sum_{n = 0}^{\infty} x^{n} \right)
+	& = \sum_{n = 0}^{\infty} (n^2-n) x^{n}
+	= \sum_{n = 0}^{\infty} n^2 x^{n} - \sum_{n = 0}^{\infty} nx^{n}                                                                           \\
+	\Rightarrow \sum_{n = 0}^{\infty} n^2 x^{n}
+	& = x^2 \f{d^2}{dx^2} \left( \sum_{n = 0}^{\infty} x^{n} \right) + \sum_{n = 0}^{\infty} nx^{n}                                           \\
+	& = x^2 \f{d^2}{dx^2} \left( \sum_{n = 0}^{\infty} x^{n} \right) + x \f{d}{dx} \left( \sum_{n = 0}^{\infty} x^{n} \right) .(DPCM) \tag{8}
+\end{align*}
+Thay vô (6) ta được
+\begin{align*}
+	(\Delta n)^2
+	& = (1-x) \left[x^2 \f{d^2}{dx^2} \left( \sum_{n = 0}^{\infty} x^{n} \right) + x \f{d}{dx} \left( \sum_{n = 0}^{\infty} x^{n} \right)\right] - \f{2\overline{n}(1-x)x}{(1 - x)^2} + \overline{n}^2 \\
+	& = (1-x) \left[x^2 \f{d^2}{dx^2} \left( \f{1}{1 - x} \right) + x \f{d}{dx} \left( \f{1}{1 - x} \right)\right] - \f{2\overline{n}(1-x)x}{(1 - x)^2} + \overline{n}^2                               \\
+	& = (1-x) \left[\f{2x^2}{(1-x)^3} + \f{x}{(1 - x)^2}\right] - \f{2\overline{n}(1-x)x}{(1 - x)^2} + \overline{n}^2                                                                                  \\
+	& = \left[2 \overline{n}^2 + \overline{n}\right] - 2 \overline{n}^2 + \overline{n}^2                                                                                                               \\
+	& = \overline{n} + \overline{n}^2 (DPCM).\tag{9}
+\end{align*}
+
+\subsection*{Chứng minh rằng $\langle \Delta E^2 \rangle = k_B T^2 \f{\partial \langle E \rangle}{T}$}
+Ta có:
+\begin{align*}
+	\langle \Delta E^2 \rangle = \langle E^2 \rangle - \langle \Delta E \rangle^2.
+\end{align*}
+Xét:
+\begin{align*}
+	\langle E \rangle 
+	&= \sum_{n} p(n) E_{n} \\
+	&= \f{1}{Z} \sum_{n} E_{n} e^{-\beta E_{n}} \\
+	&= \f{1}{Z} \left( -\f{\partial}{\partial \beta} \sum_{n}e^{-\beta E_{n}} 
+	\right)\\
+	&= \f{1}{Z} \left( -\f{\partial}{\partial \beta} Z \right),
+\end{align*}
+với $p(n) = \f{e^{-\beta E_{n}}}{Z}$ là xác suất hệ được tìm thấy ở trạng thái $\ket{n}$. \\
+Xét
+\begin{align*}
+	\langle E^2 \rangle
+	&= \sum_{n} p_{n} E_{n}^{2} \\
+	&= \f{1}{Z} \sum_{n} E_{n}^{2} e^{-\beta E_{n}} \\
+	&= \f{1}{Z} \left( \f{\partial^2}{\partial \beta^2} \sum_{n} E_{n}^{2} \right) \\
+	&= \f{1}{Z} \left( \f{\partial^2}{\partial \beta^2} Z\right),
+\end{align*}
+nên ta có:
+\begin{align*}
+	\langle \Delta E^2 \rangle 
+	&= \langle E^2 \rangle - \langle \Delta E \rangle^2 \\
+	&= \f{1}{Z} \left( \f{\partial^2 Z}{\partial \beta^2} \right) - \f{1}{Z^2} \left( \f{\partial Z}{\partial \beta} \right)^2 \\
+	&= \f{Z^{''}}{Z} - \f{Z^{'2}}{Z^2} \\
+	&= \left(\f{Z^{'}}{Z}\right)^2 \\
+	&= \left[ (\ln Z)^{'} \right]^{'} \\
+	&= \left( \ln Z \right)^{''} \\
+	&= \f{\partial^2}{\partial \beta^2} \ln Z = -\f{\partial \langle E \rangle}{\partial \beta}.
+\end{align*}
+mà
+\begin{align*}
+	\langle E \rangle = -\f{\partial}{\partial Z} \ln Z \quad \quad \text{với}\; \beta = \f{1}{k_{B}T}.
+\end{align*}
+Vậy
+\begin{align*}
+	\langle \Delta E^2 \rangle = -\f{\partial \langle E \rangle}{\partial \left( \f{1}{k_{B}T}\right)} = \f{-\partial \langle E \rangle}{-\frac{k_{B}}{k_{B}T}\partial T} = k_{B} T^2 \f{\partial \langle E \rangle}{\partial T}
+\end{align*}
 
 
+\subsection*{Chứng minh rằng $D(\omega) = \frac{\omega^2}{\pi^2 c^3}$}
+Giải:\\
+Mỗi trạng thái $\mathbf{k}$ trong mạng có 1 cặp trạng thái 1 hạt.
+\begin{align*}
+	\begin{cases}
+		\text{2 trạng thái chiếm thể tích :} \; \left(\f{2\pi}{L}\right)^3 \\
+		\text{? số trạng thái chiếm thể tích :} \; d\mathbf{k}             \\
+	\end{cases}
+\end{align*}
+số trạng thái trong $d\mathbf{k}$ là
+\begin{align*}
+	D(k)dk = 2  \left(\f{L}{2\pi}\right)^3 d\mathbf{k} = \f{2V}{(2\pi)^3} 4\pi k^2 dk = \f{V}{\pi^2}k^2,
+\end{align*}
+mà
+\begin{align*}
+	D(\omega) d\omega     & = D(k) dk                 \\
+	\Rightarrow D(\omega) & = \f{D(k)}{d\omega / dk}.
+\end{align*}
+Đặt $\omega = ck$ ta có được
+\begin{align*}
+	g(\omega) = \f{\omega^2}{\pi^2 c^3} (DPCM).
+\end{align*}
 
+\subsection*{Bài tập trong Mark Fox}
+\subsubsection*{5.1}
+Ta có bước sóng $\lambda = 633$ nm, với công suất là $P = 0.01$ pW, với hiệu suất lượng tử là $\eta = 30\% $ với khoảng thời gian là $T = 10$ ms
+\begin{enumerate}
+	\item[(a)] Tốc độ đếm $\mathcal{R} = \f{\eta P}{\hbar \omega} = 0.3 \f{0.01 \times 10^{-12}}{\hbar \frac{2\pi c}{\lambda}} = 9553.174$ count/s.
+	\item[(b)] Tốc độ đếm trung bình $N(T)= \eta \f{PT}{\hbar \omega} = 0.3 \times \mathcal{R}\times 0.01 =$
+	\item[(c)] Ta đã giả sử rằng photon detected count có thống kê Poissonian, và đã biết là $\overline{n} = N$, do đó $\Delta n = \sqrt{\overline{n}}$.
+\end{enumerate}
+\subsubsection*{5.4}
+Tính số photon trung bình cho từng mode tại nguồn là đèn Tungsten có bước sóng $\lambda =$ 500 nm, tại $T = $ 2000 K là nhiệt độ cần để có được $\overline{n} = 1$ tại bước sóng $\lambda$. Nhiệt độ tại bước sóng là $\lambda^{'} = 10 \mu$m. Từ công thức Plank
+\begin{align*}
+	\overline{n} = \f{1}{\exp(\frac{\hbar \omega}{k_{B} T}) - 1} = \frac{1}{\exp(\frac{hc}{\lambda k_{B} T}) - 1} = \f{1}{\exp(\frac{hc}{500\times 10^{-9} 1.38 \times 10^{-23} 2000}) - 1} \approx 5.548 \times 10^{-7}. %\text{photon}
+\end{align*}
+Để $\overline{n} = 1$ thì $T$ là bao nhiêu?
+\begin{align*}
+	\overline{n} = 1 = \f{1}{\exp(\frac{hc}{500\times 10^{-9} 1.38 \times 10^{-23} T}) - 1} \Rightarrow T = 41562.6 \text{K}.
+\end{align*}
+Với $\lambda = \lambda'$ và để $\overline{n} = 1$ thì $T$ là bao nhiêu?
+\begin{align*}
+	\overline{n} = 1 = \f{1}{\exp(\frac{hc}{10 \times 10^{-6} 1.38 \times 10^{-23} T}) - 1} \Rightarrow T = 2078.13 \text{K}.
+\end{align*}
+\subsubsection*{5.5}
+\subsubsection*{5.8}
+Một chùm tia với thông lượng photon là $\Phi = 1000$ photon s$^{-1}$ tới detector với hiệu suất lượng tử là $\eta = 20 \%$. Nếu khoảng thời gian được xét là $T = 10$s, tính trung bình và độ lệch chuẩn của $N(t)$ trong các trường hợp sau:
+\begin{enumerate}
+	\item[(a)] Ánh sáng có thống kê Poissonian
+	\item[(b)] Ánh sáng có Super-Poissonian với độ lệch chuẩn $\Delta n = 2\times \Delta n_{\text{Poissonian}}$
+	\item[(c)] Ánh sáng là trạng thái số photon
+\end{enumerate}
+Giải:
+Số photon trung bình va chạm vào detector:
+\begin{align*}
+	\overline{n} = \Phi T = 10^4.
+\end{align*}
+Tốc độ đếm trung bình
+\begin{align*}
+	\overline{N} = \eta \overline{n} = 2\times 10^3.
+\end{align*}
+\begin{enumerate}
+	\item[(a)] Ánh sáng có thống kê Photon, Average photon count number $N(t)$ là
+	\begin{align*}
+		\overline{N}(t) \equiv \overline{n}= \eta \Phi T = 0.2 \times 1000 \times 10 = 2000 \; \text{photon s}^{-1}.
+	\end{align*}
+	Độ lệch chuẩn $(\Delta \overline{N})$
+	\begin{align*}
+		(\Delta \overline{N})^2 = \overline{n} = \overline{N} \Rightarrow \Delta \overline{N} = \sqrt{\overline{N}} = \sqrt{2000}.
+	\end{align*}
+	\item[(b)] Ánh sáng có Super-Poissonian\\
+	Số photon trung bình (Average/mean photon count number) là $\overline{N}(t) = 2000$. Ta có
+	\begin{align*}
+		(\Delta \overline{N})^2
+		& = \eta^2 (\Delta n)^2 + \eta ( 1 - \eta ) \overline{n} \tag{5.56 M.Fox}                                                                     \\
+		& =  \eta^2 \times (2 \times \Delta n_{\text{Poissonian}})^2 + \eta ( 1 - \eta ) \overline{n}                                                 \\
+		& = 0.2^2 \times 4 \times \overline{n} + 0.2 \times (1 - 0.2) \times \overline{n} = 3200 \Rightarrow \Delta N = \sqrt{3200}. \tag{5.15 M.Fox}
+	\end{align*}
+	trong đó $\Delta N$ là phương sai của photoncount number,
+	\item[(c)]
+	Độ lệch chuẩn $(\Delta \overline{N})$
+	\begin{align*}
+		(\Delta \overline{N})^2 = \eta(1-\eta) \overline{n} = \sqrt{1600}.
+	\end{align*}
+\end{enumerate}
 
+\subsubsection*{5.9}
+Cường độ dòng photon ($i$) là
+\begin{align*}
+	i = \eta e \f{P}{\hbar \omega} = 0.9 \abs{1.6\times 10^{-19}} \f{10 \times 10^{-3}}{\hbar c / \lambda} = 4.584 \text{A},
+\end{align*}
+noise power đi qua 1 đơn vị băng thông là
+\begin{align*}
+	P_{\text{noise}} = 2e \times 50 \times 4.584  = 458.4e \; \text{W Hz}^{-1}.
+\end{align*}
+\subsubsection*{5.12}
+Xét dòng điện đi qua điện trở $R$, tại nhiệt độ $T$ K trong mạch điện trở. Sự thăng giáng của dòng điện bên trong giải tần số $\Delta f$ được cho bởi hệ thức Johson noise:
+\begin{align*}
+	\langle (\Delta i)^2 \rangle = 4 k_{B} T \f{\Delta f}{R} .
+\end{align*}
+Chứng minh rằng Johson shot noise cho kết quả nhỏ hơn shot noise với cùng một giá trị trung bình dòng điện được cho bởi điện thế đi qua điện trở là lớn hơn $\f{2k_B T}{e}$, và tính điện thế này với $T = 300$K.\\
+Giải:\\
+Ta có phương sai cường độ dòng điện $\Delta i$ cho shot noise là
+\begin{align*}
+	(\Delta i)_{\text{shot noise}}^2
+	& = 2e \Delta f \langle i \rangle                                 \\
+	& = 2e \Delta f \f{V}{R}                                          \\
+	& \equiv \langle (\Delta i)^2 \rangle_{\text{shot noise}} \tag{1}
+\end{align*}
+Hệ thức Johnson cho
+\begin{align*}
+	\langle (\Delta i)^2 \rangle_{\text{Johnson}} = 4 k_{B} T \f{\Delta f}{R}. \tag{2}
+\end{align*}
+Để (2) < (1) thì
+\begin{align*}
+	4 k_{B} T \f{\Delta f}{R} & < 2e \Delta f \f{V}{R}           \\
+	\Rightarrow V             & > \f{2k_B T}{e}  \; \text{ĐPCM}.
+\end{align*}
+Điện thế này tại $T = 300$K
+\begin{align*}
+	V > \f{2k_B T}{e} = \f{2 \times 1.38 \times 10^{-23} \times 300}{1.6 \times 10^{-19}} = 0.05175 \text{V}.
+\end{align*}
 
+\subsubsection*{5.13}
+Hiệu suất lượng tử của một bóng đèn LED được định nghĩa là tỉ số giữa số photon phát xạ so với số electron chạy qua máy dò. Một đèn LED phát ra ánh sáng ở tần số 800 nm, được định hướng bởi nguồn là một ắc quy có điện thế là 9V thông qua điện trở $R = 1000 \, \Omega$. Bóng đèn LED có hiệu suất lượng tử $\eta_{\text{LED}} = 40\%$, và có $\eta_{1} = \eta_{\text{optic}} = 80\%$ photon phát xạ được tập trung vào một máy dò photodiode với hiệu suất lượng tử là $\eta_{2} =\eta_{\text{Detect}} = 90\%$.
+\begin{enumerate}
+	\item[(a)] Năng lượng photon là
+	\begin{align*}
+		E_{\text{photon}} = \f{\hbar 2 \pi c}{\lambda} = 1.55eV.
+	\end{align*}
+	Biết rằng điện thế lên đèn LED là xấp xỉ với năng lượng photon, tính bằng eV trong điều kiện hoạt động bình thường, nên ta có:
+	\begin{align*}
+		U_{\text{LED}} = 1.55 V.
+	\end{align*}
+	Điện thế đi qua điện trở là:
+	\begin{align*}
+		U_{\text{nguồn}} = U_{\text{LED}} + U_{R} = 9 V \Rightarrow U_{R} = 9 - 1.55 = 7.45 \text{V}.
+	\end{align*}
+	Dòng điện đi qua $U_{R}$
+	\begin{align*}
+		I_{R} = \f{U_{R}}{R} = 7.45 \text{mA}.
+	\end{align*}
+	\image{circuit.png}
+	Do không có sự thăng giáng nên trung bình dòng điện sẽ bằng dòng điện đi qua $U_{R}$
+	\begin{align*}
+		i_{1} = I_{R} = 7.45 \text{mA}.
+	\end{align*}
+	\item[(b)] Ta có $T = 293 K$\\
+	Hệ số $F_{\text{Fano}}$ được cho bởi
+	\begin{align*}
+		F_{\text{Fano}}
+		& = \f{\text{measured noise}}{\text{shot noise limit}}                  \\
+		& = \f{(\Delta i)_{\text{Johnson}}^2}{(\Delta i)_{\text{shot noise}}^2} \\
+		& = \f{4 k_B T \Delta f}{2e R \Delta f \langle i \rangle}               \\
+		& = 6.77 \times 10^{-3}
+	\end{align*}
+	\item[(c)] Dòng photon trung bình được tính bởi
+	\begin{align*}
+		\langle i \rangle_{\text{photon}} = \eta e \Phi \tag{5.58 \text{M.Fox}}
+	\end{align*}
+	trong đó $\eta$ là hiệu suất lượng tử của photodiode detector, và $\Phi$ là thông lượng photon đi tới PD\\
+	\begin{align*}
+		\Phi = \f{P_{\text{LED}}}{E_{\text{photon}}}
+	\end{align*}
+	Ta viết lại (5.58)
+	\begin{align*}
+		\langle i \rangle_{\text{photon}}
+		& = N_{\text{photonelectron}} \times e                                  \\
+		& = \eta_{\text{Detec}} e \Phi                                          \\
+		& = \eta_{\text{Detec}} e \f{i_{1} V_{\text{nguồn}}}{E_{\text{photon}}} \\
+		& = \eta_{\text{Detec}} e \f{i_{1}}{e} \eta_{\text{LED}} \eta_{2}       \\
+		& = 2.145 \text{mA}
+	\end{align*}
+	\item[(d)] Tổng hiệu suất lượng tử
+	\begin{align*}
+		\eta_{\text{tolta}} = \eta_{\text{Detec}} \times \eta_{\text{LED}} \times \eta_{\text{optic}} = 0.288  \tag{*}
+	\end{align*}
+	(*) Bachor, HA., Rottengatter, P. $\&$ Savage, C.M. Correlation effects in light sources with high quantum efficiency. Appl. Phys. B 55, 258–264 (1992).\\ https://doi.org/10.1007/BF00325014 \\
+	Hệ số $F_{\text{Fano}}$ được cho bởi
+	\begin{align*}
+		F_{\text{Fano}} = \eta_{\text{tolta}} F_{\text{drive}} + (1 - \eta_{\text{tolta}})
+		& = 0.288 \times 6.77 \times 10^{-3} + (1 - 0.288) \\
+		& = 0.7139
+	\end{align*}
+	\item[(e)]
+	\begin{align*}
+		P_{\text{shot noise}}
+		& = 2 e R_{L} \Delta f \langle i \rangle_{\text{photon}}            \\
+		& = 2e \times 50 \times 10 \times 10^{3} \times 2.15 \times 10^{-3} \\
+		& = 3.44 \times 10^{-16} \text{W} \tag{1}
+	\end{align*}
+	\begin{align*}
+		F_{\text{photon}} = \f{P_\text{measured}}{P_{\text{photon}} \equiv P_{\text{shot noise}} } = 0.714 \Rightarrow P_\text{measured}
+		& = 0.714 \times 3.44 \times 10^{-16} \\
+		& = 2.45 \times 10^{-16} \text{W}
+	\end{align*}
+\end{enumerate}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\chapter{Chương 7}
+\section{Light waves as classical harmonic oscillators}
+\begin{gather}
+	\text{Light(wave)} \leftrightarrow \text{H.O}
+\end{gather}
+\subsection{Harmonic oscillators}
+\begin{equation}
+	\begin{aligned}
+		&\ddot{x} + \omega^{2} x = 0 \\
+		&\rightarrow x = x_{0} \sin(\omega t)\\
+		&\Rightarrow p_{x}(t) = m \d{x} = p_{0} \cos(\omega t) \quad \text{với}\; p_{0} = m \omega x_{0}
+	\end{aligned}
+\end{equation}
+Đổi sang hệ toạ độ chuẩn tắc: $(x,p_{x}) \rightarrow (q,p)$ với $q \equiv \sqrt{m}x$
+\subsection{Light}
+Ta chọn chiều là theo trục $z$ là chiều truyền của ánh sáng
+\begin{gather}
+	E_{x} (z, t) = E_{0} \sin (kz) \sin (\omega t)
+\end{gather}
+$\rightarrow$ đã chọn pha $\varphi = 0$ $\Rightarrow$ Tổng quát $\sin (\omega t + \varphi)$
+Tổng quát
+\begin{gather}
+	\vv{E}(\vv{r},t) = \vv{\epsilon} \mathcal{E}(t) e^{i \mathbf{k \cdot r}} + c.c
+\end{gather}
+trong đó
+\begin{itemize}
+	\item $\vv{\epsilon}$: Vecto phân cực(vector đơn vị), và vuông góc với $\vv{k}$
+	\item $\mathcal{E}$: là số phức, biên độ phụ thuộc vào $\omega , \varphi$
+\end{itemize}
+từ phương trình Maxwell
+\begin{gather}
+	\f{\partial B_{y}}{\partial z} = \varepsilon_{0} \mu_{0} \f{\partial \mathcal{E}_{x}}{\partial t}
+\end{gather}
+ta có
+\begin{gather}
+	B_{y}(z,t) = B_{0} \cos(k z) \cos (\omega t)
+\end{gather}
+với $B_{0} = \f{E_{0}}{c}$. Mật độ năng lượng
+\begin{gather}
+	U = U_{E} + U_{B} = \f{1}{2}  \left( \epsilon \mathcal{E}^{2} + \f{1}{\mu_{0}B^{2}} \right)
+\end{gather}
+Năng lượng điện trường
+\begin{equation}
+	\begin{aligned}
+		E_{\text{electric}}
+		&= \f{1}{2} \epsilon_{0} A \int_{0}^{L} \mathcal{E}_{0}^{2} \sin^{2} kz \sin^{2} \omega t dz\\
+		&= \f{1}{4} A \mathcal{E}_{0}^{2} \sin^{2} \omega t \int_{0}^{L} (1 - \cos 2 kz)dz\\
+		&= \f{1}{4} \epsilon_{0} V \mathcal{E}_{0}^{2} \sin \omega t
+	\end{aligned}
+\end{equation}
+trong đó $V - LA$, điều kiện biên $\sin kL = 0$. Điều kiện biên chính xác tại các bức tường của buồng cộng hưởng là không quan trọng, vì chúng có thể chỉ bổ sung một hạng tử thay đổi theo $1/L$ khi thực hiện phép tích phân theo $z$, và hạng tử này có thể bị bỏ qua khi $L$ đủ lớn. Việc không nhạy cảm với các điều kiện biên là quan trọng vì chúng ta không muốn bất kỳ kết quả cơ bản nào phụ thuộc vào sự có mặt của buồng cộng hưởng. Năng lượng từ trường
+\begin{gather}
+	E_{\text{magnetic}} = \f{1}{4} \mu_{0} V B_{0}^{2} \cos \omega t
+\end{gather}
+Ta có thể viết năng lượng điện từ thành
+\begin{gather}
+	E = \f{V}{4} (\epsilon \mathcal{E}_{0} \sin^{2} \omega t + \f{ B_{0}^{2} }{ \mu_{0} } \cos^{2} \omega t )
+\end{gather}
+Thay $(E,B) \Rightarrow (q,p)$
+\begin{gather}
+	q(t) = \sqrt{\f{\epsilon_{0} V}{2\omega}} E_{0} \sin \omega t\\
+	p(t) = \sqrt{\f{V}{2 \mu_{0} }} B_{0} \cos \omega t
+\end{gather}
+và ta có
+\begin{gather}
+	p = \dot{q}\\
+	\dot{p} = - \omega^{2} q
+\end{gather}
+Điều này cho ra kết quả tương tự H.O
+\section{Giản đồ pha, trường vuông góc}
+Ta xét thêm thành phần pha(phụ thuộc cách chọn gốc thời gian $t=0$)
+\begin{equation}
+	\begin{aligned}
+		E_{x}(z,t)\\
+		&= E_{0} \sin(kz) \sin(\omega t + \varphi)\\
+		&= E_{1} \sin(\omega t) + E_{2} \cos(\omega t)\\
+		&= E_{1} \cos(\omega t - \f{pi}{2}) + E_{2} \cos(\omega t)
+	\end{aligned}
+\end{equation}
 
 
 
