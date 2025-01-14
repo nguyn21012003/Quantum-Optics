@@ -242,7 +242,7 @@ và dáng hình của nó:
 \image{g(w).png}{Phân bố Lorentz. Công thức được cho bởi $g(\omega)$.}
 \subsubsection{Collisional broadening}
 Các phân tử có thể va đập, với nhau và với thành bình, khiến thời gian ``sống'' bị giảm đi (năng lượng bị mất nhanh hơn).\\
-Bằng thống kê, ta có: $$\tau_{\text{collision}} \sim \frac{1}{\sigma_s P} \left( \frac{\pi m k_B T}{8} \right)^{1/2}$$ với $\sigma_s$ là tiết diện va chạm và P là áp suất. Khi ấy, collisional broadening còn được gọi là pressure broadening.\\
+Bằng thống kê, ta có: $\tau_{\text{collision}} \sim \frac{1}{\sigma_s P} \left( \frac{\pi m k_B T}{8} \right)^{1/2}$ với $\sigma_s$ là tiết diện va chạm và P là áp suất. Khi ấy, collisional broadening còn được gọi là pressure broadening.\\
 Trong trường hợp này, thời gian sống thường là rất ngắn, dẫn đến độ rộng phổ thật lớn so với trường hợp ``natural''.\\
 Vậy nên ta có thể khắc phục bằng cách giảm thiểu áp suất P, đó là lí do ta sử dụng các đèn áp suất thấp trong khảo sát phổ.\\
 \image{pbroad.png}{Cơ chế Dobler broadening.}
@@ -985,7 +985,7 @@ Hiệu suất lượng tử của một bóng đèn LED được định nghĩa 
 	\end{align*}
 \end{enumerate}
 
-\chapter{Chương 7}
+\chapter{Buổi 7}
 \section{Light waves as classical harmonic oscillators}
 \begin{gather}
 	\text{Light(wave)} \leftrightarrow \text{H.O}
@@ -995,7 +995,7 @@ Hiệu suất lượng tử của một bóng đèn LED được định nghĩa 
 	\begin{aligned}
 		&\ddot{x} + \omega^{2} x = 0 \\
 		&\rightarrow x = x_{0} \sin(\omega t)\\
-		&\Rightarrow p_{x}(t) = m \d{x} = p_{0} \cos(\omega t) \quad \text{với}\; p_{0} = m \omega x_{0}
+		&\Rightarrow p_{x}(t) = m \dot{x} = p_{0} \cos(\omega t) \quad \text{với}\; p_{0} = m \omega x_{0}
 	\end{aligned}
 \end{equation}
 Đổi sang hệ toạ độ chuẩn tắc: $(x,p_{x}) \rightarrow (q,p)$ với $q \equiv \sqrt{m}x$
@@ -1045,7 +1045,7 @@ Ta có thể viết năng lượng điện từ thành
 \end{gather}
 Thay $(E,B) \Rightarrow (q,p)$
 \begin{gather}
-	q(t) = \sqrt{\f{\epsilon_{0} V}{2\omega}} E_{0} \sin \omega t\\
+	q(t) = \sqrt{\f{\epsilon_{0} V}{2\omega}} \mathcal{E}_{0} \sin \omega t\\
 	p(t) = \sqrt{\f{V}{2 \mu_{0} }} B_{0} \cos \omega t
 \end{gather}
 và ta có
@@ -1058,35 +1058,305 @@ và ta có
 Ta xét thêm thành phần pha(phụ thuộc cách chọn gốc thời gian $t=0$)
 \begin{equation}
 	\begin{aligned}
-		E_{x}(z,t)\\
-		&= E_{0} \sin(kz) \sin(\omega t + \varphi)\\
-		&= E_{1} \sin(\omega t) + E_{2} \cos(\omega t)\\
-		&= E_{1} \cos(\omega t - \f{pi}{2}) + E_{2} \cos(\omega t)
+		\mathcal{E}_{x}(z,t)
+		&= \mathcal{E}_{0} \sin(kz) \sin(\omega t + \varphi)\\
+		&= \mathcal{E}_{1} \sin(\omega t) + E_{2} \cos(\omega t)\\
+		&= \mathcal{E}_{1} \cos(\omega t - \f{\pi}{2}) + E_{2} \cos(\omega t)
 	\end{aligned}
 \end{equation}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\image{phaseDiag.png}
+trong đó $E_{1}$ và $E_{2}$ được gọi là trường vuông góc do pha lệch nhau góc $\pi / 2$. Ta có thể viết lại phương trình trên thành 
+\begin{gather}
+	\mathcal{E}(z) = \mathcal{E}_{1} + i \mathcal{E}_{2}
+\end{gather}
+trường vuông góc $X_{1}$ và $X_{2}$ được xác định như sau
+\begin{gather}
+	X_{1} = \sqrt{\f{\epsilon_{0} V}{4 \hbar \omega}} \mathcal{E}_{0} \sin (\omega t)\\
+	X_{2} = \sqrt{\f{\epsilon_{0} V}{4 \hbar \omega}} \mathcal{E}_{0} \cos (\omega t)
+\end{gather}
+Điện trường, từ trường được viết theo $X_{1}$ và $X_{2}$ là
+\begin{gather}
+	E_{x}(z, t) = \sqrt{\f{4 \hbar \omega}{\epsilon_{0} V}} \sin kz \left[ \cos \phi X_{1} + \sin \phi X_{2} \right]\\
+	B_{y}(z, t) = \f{1}{c} \sqrt{\f{4 \hbar \omega}{\epsilon_{0} V}} \cos kz \left[ \cos \phi X_{2} - \sin \phi X_{1} \right]
+\end{gather}
+Công thức liên hệ giữa trường vuông và toạ độ, động lượng chính tắc
+\begin{gather}
+	X_{1}(t) = \sqrt{\f{\omega}{2 \hbar}} q(t)\\
+	X_{2}(t) = \sqrt{\f{1}{2\hbar \omega}}p(t)
+\end{gather}
+Thay vì dùng $E,B$ để biểu diễn sóng điện từ, ta biểu diễn thông qua $X_{1}$ và $X_{2}$.
+\section{Xem ánh sáng như là dao động điều hoà lượng tử}
+\begin{itemize}
+	\item Năng lượng được lượng tử hoá theo hệ số $\hbar \omega$ 
+	\begin{gather}
+		E_{n} = \left(n + 1/2\right) \hbar \omega
+	\end{gather}
+	Nhưng nếu $n = 0$($n$ là số photon chứ không phải mức trạng thái), không hề có suất hiện photon nhưng vẫn có năng lượng là $E_{0} = \hbar \omega /2$ $\Rightarrow$ Điều này là không có trong cổ điển.
+	\item Nguyên lý bất định
+	\begin{gather}
+		\Delta x \Delta p \geq \hbar /2
+	\end{gather}
+	Ta có
+	\begin{equation}
+		\begin{aligned}
+			\Delta X_{1} \Delta X_{2}
+			&= \sqrt{\f{\omega}{2 \hbar}} \Delta q \sqrt{\f{1}{2 \hbar \omega}} \Delta p_{x} \\
+			&= \f{1}{2 \hbar} \Delta q \Delta p_{x}\\
+			&= \f{1}{2 \hbar} \f{\Delta x}{\sqrt{m}} \sqrt{m} \Delta p_{x} \geq 1/4
+		\end{aligned}
+	\end{equation}
+	Vì $X_{1},X_{2}$ tuân theo nguyên lý bất định nên cả $X_{1},X_{2}$ sẽ có độ bất định của riêng nó, gộp chung với nhau diễn tả độ bất định của $\Delta X_{1} \Delta X_{2}$. Bất định dẫn tới bất định về pha $\Delta \phi$ liên quan tới số hạt 
+\end{itemize}
+\image{phaseUncer.png}
+\section{Tổng quan}
+\begin{enumerate}
+	\item[1.] \textbf{Cổ điển}\\
+	Xét trường hợp tổng quát của điện trường cổ điển
+	\begin{gather}
+		\vv{E}(\vv{r},t) = \vv{\epsilon} \mathcal{E}(t) e^{i \mathbf{k \cdot r}} + \text{c.c}
+	\end{gather}
+	Thường ta chọn $\mathcal{E}$ có dạng như sau
+	\begin{gather}
+		\mathcal{E} = \mathcal{E}^{1} e^{-i (\omega t + \phi)}
+	\end{gather}
+	trong đó $\mathcal{E}^{1}$ là đơn mode, có nhiều mode khác nhau nhưng ta đang xét 1 mode. Tương tự cho từ trường cổ điện
+	\begin{gather}
+		\vv{B}(\vv{r},t) = \f{\vv{\epsilon} \times \vv{k}}{\omega} \mathcal{E}(t) e^{i \mathbf{k \cdot r}} + \text{c.c}
+	\end{gather}
+\end{enumerate}
+\section{Fock state}
+Là trạng thái có số hạt là xác định $\ket{n}$
+\begin{itemize}
+	\item $\mean{n} = \bra{n} \hat{N} \ket{n} = n$
+	\item $\mean{n^{2}} = \bra{n} \hat{N}^{2} \ket{n} = n^{2}$ 
+	\item $\Delta n = \sqrt{\mean{n^{2}} - \mean{n}^{2}} = 0$ $\Rightarrow$ Trthái Fock có số hạt là xác định
+	\item $\mean{\hat{E}} = \bra{n} \hat{E} \ket{n} = 0$ Dù trạng thái Fock có số photon nhưng trung bình của giá trị vật lý $E$ bằng 0
+	\item  $\mean{\hat{E}^{2}} = \bra{n} \hat{E}^{2} \ket{n} = (\mathcal{E}^{1})^{2}(2n + 1)$
+	\item $\Delta \vv{E} = \sqrt{\mean{\hat{E}}^{2} - \mean{\hat{E}}^{2}} = \mathcal{E}^{1}\sqrt{2n + 1}$: độ thăng giáng của điện trường
+\end{itemize}
+trong đó $\hat{E}$ được định nghĩa là
+\begin{gather}
+	\hat{E}(r,t) = i \vv{\epsilon} \mathcal{E}^{1} \left[ \hat{a} e^{i(kr - \omega t)} - \hat{a}^{\dagger} e^{-i(kr - \omega t)} \right]
+\end{gather}
+Trạng thái Fock có số hạt xác định không mô tả được thông tin cho cổ điển\\
+\textbf{Trạng thái chân không:} $\ket{0}(n = 0)$ Ta có
+\begin{gather}
+	\mean{\hat{N}}_{0} = 0 ; \quad E_{0} = \f{\hbar \omega}{2}\\
+	\mean{\hat{E}}_{0} = 0 ; \quad \Delta \vv{E} = \mathcal{E}^{1}\\
+	\Delta Q \Delta P = \f{1}{2}
+\end{gather}
+Trạng thái chân không là trạng thái có số hạt bằng 0 nhưng có năng lượng và độ thăng giáng. Nó lý giải cho cơ chế phát xạ tự phát, trong chân không tuy không có trường, không có hạt nhưng nó có thăng giáng chân không, nó vẫn có nền(nhiễu), chính cái đó tác động gây ra phát xạ tự phát. Trong trạng thái phát xạ tự phát, trnạg thái $\ket{n}$ có số hạt xác định thì sẽ không rơi xuống, hạt nằm im ở đó, xác định thì không thay đổi nên không có nhảy xuống, nhưng d ợ thăng giáng trong chân không như một nhiễu loạn gây ra sự thay đổi trạng thái. Người ta không thể đo được trực tiếp dao động chân không nhưng gián tiếp ta thấy như thế. Ngoài ra còn giải thích cho dịch chuyển lam và lực Casimir: ta có 2 tấm trung hoà điện nhưng đo thì vẫn có lực, ...
+\section{Trạng thái coherent $\ket{\alpha}$}
+Dùng trạng thái coherent có thể đo được được trường điện. $\alpha$ được xây dựng bởi trường vuông góc $X_{1}$ và $X_{2}$
+\begin{gather}
+	\alpha = X_{1} + i X_{2} = \abs{\alpha} e^{i \phi}
+\end{gather}
+trong đó
+\begin{gather}
+	\abs{\alpha} = \sqrt{X_{1}^{2} + X_{1}^{2}} = \sqrt{\f{\epsilon_{0}V}{4\hbar \omega}} \mathcal{E}_{0}\\
+	X_{1} = \abs{\alpha} \cos \phi ; \quad X_{2} = \abs{\alpha} \sin \phi\\
+	\Delta X_{1} = \Delta X_{2} = \f{1}{2} \rightarrow \text{độ bất định tối thiểu} 
+\end{gather}
+Khi $\mathcal{E}_{0}$ thì rơi vào trường hợp chân không(số hạt).\\
+Trung bình điện trường
+\begin{gather}
+	E_{\text{classical}} = \hbar \omega \abs{\alpha}^{2}\\
+	E_{\text{quantum}} = (\overline{n} + \frac{1}{2}) \hbar \omega
+\end{gather}
+$\rightarrow$ có thể dùng được cho cổ điển
+\subsection{Mối liên hệ giữa trạng thái coherent và trạng thái Fock}
+\begin{gather}
+	\ket{\alpha} = e^{-\frac{\abs{\alpha}^{2}}{2}} \sum_{n = 0}^{\infty} \f{\alpha^{n}}{\sqrt{n!}} \ket{n}
+\end{gather}
+ngoài ra ta có
+\begin{gather}
+	\Delta n = \sqrt{\bra{\alpha}\hat{N}^{2}\ket{\alpha} - \bra{\alpha}\hat{N}\ket{\alpha}^{2}} = \sqrt{\overline{n}} \\
+	\rightarrow \text{Trạng thái coherent, đúng như chờ đợi} \nonumber
+\end{gather}
+\section{Shot noise; bất định về số hạt và số pha}
+Bất định về pha đi chung với số hạt
+\begin{gather}
+	\Delta n \Delta \phi \geq \f{1}{2}
+\end{gather}
+trong chương 5, coherent state cho ta ngưỡng shot noise là đường thẳng ngang, dưới là sub trên là super
+\section{Squeezed states}
+Bàn tới trạng thái bị bóp nén. Về nguyên tắc bóp đều là hình tròn. Một hướng là nén theo pha, một là nén theo biên độ, tuy nhiên diện tích sau khi nén vẫn phải được bảo toàn. Bất định vẫn xảy ra và vẫn phải là tối thiểu để điện tích không đổi.
+\image{phavuong.png}
+(a) là trạng thái chân không nén. (b) ánh sáng bị nén pha. (c) ánh sáng bị nén biên độ. Đường tròn nét đứt trong mỗi biểu đồ cho thấy độ bất định vuông pha của các trạng thái chân không hoặc trạng thái coherent với $\Delta X_{1} = \Delta X_{2} = \f{1}{2}$
+\chapter{Buổi 8}
+\section{Bài tập}
+\subsection*{Bài tập 1}
+\begin{align*}
+	X_{1} (t) &= \left(\f{\omega}{2 \hbar}\right)^{1/2} q(t) \\
+	X_{2} (t) &= \left(\f{1}{2 \hbar \omega}\right)^{1/2} p(t)
+\end{align*}
+ta biểu diễn toạ độ chính tắc và động lượng suy rộng dưới dạng $x$ và $p_{x}$
+\begin{align}
+	\begin{cases}
+		X_{1} (t) &= \left(\f{\omega}{2 \hbar}\right)^{1/2} \sqrt{m} x(t) \\
+		X_{2} (t) &= \left(\f{1}{2 \hbar \omega}\right)^{1/2} \f{1}{\sqrt{m}} p_{x}(t)
+	\end{cases}
+\end{align}	
+ta có 
+\begin{align*}
+	a_{\pm} \equiv \f{1}{\sqrt{2 \hbar m \omega}} \left( \mp i p + m \omega x \right),
+\end{align*}
+và
+\begin{align}
+	\begin{cases}
+		x = \sqrt{\f{\hbar}{2 m \omega}} \left( a_{+} + a_{-} \right)\\
+		p = i \sqrt{\f{\hbar m \omega}{2}} \left( a_{+} - a_{-} \right)
+	\end{cases}
+\end{align}	
+Thay (2) vào (1), ta được
+\begin{align}
+	\begin{cases}
+		X_{1} (t) &= \left(\f{\omega}{2 \hbar}\right)^{1/2} \sqrt{m} \sqrt{\f{\hbar}{2 m \omega}} \left( a_{+} + a_{-} \right) \\
+		X_{2} (t) &= \left(\f{1}{2 \hbar \omega}\right)^{1/2} \f{1}{\sqrt{m}}  i \sqrt{\f{\hbar m \omega}{2}} \left( a_{+} - a_{-} \right)
+	\end{cases}
+	\Rightarrow
+	\begin{cases}
+		X_{1}(t) & = \f{1}{2} \left( a_{+} + a_{-} \right)\\
+		X_{2}(t) & = \f{i}{2} \left( a_{+} - a_{-} \right)
+	\end{cases}
+\end{align}		
+\subsection*{Bài tập 2}
+Ta có
+\begin{align*}
+	\begin{cases}
+		X_{1}(t) & = \f{1}{2} \left( a_{+} + a_{-} \right)\\
+		X_{2}(t) & = \f{i}{2} \left( a_{+} - a_{-} \right)
+	\end{cases}
+\end{align*}
+nên 
+\begin{align*}
+	&\begin{cases}
+		\ev{X_{1}} \propto \bra{n} a_{+} + a_{-} \ket{n} = 0\\
+		\ev{X_{2}} \propto \bra{n} a_{+} - a_{-} \ket{n} = 0
+	\end{cases} \\
+	&\begin{cases}
+		\ev{X_{1}^{2}} \propto \bra{n} a_{+}a_{+} + a_{-}a_{+} + a_{+}a_{-} + a_{-}a_{-} \ket{n} = \f{n}{2} + \f{1}{4}\\
+		\ev{X_{2}^{2}} \propto \bra{n} a_{+}a_{+} - a_{+}a_{-} - a_{-}a_{+} + a_{-}a_{-} \ket{n} =
+		\f{n}{2} + \f{1}{4} 
+	\end{cases}
+\end{align*}
+và
+\begin{align*}
+	\Delta X_{1} &= \sqrt{\ev{X_{1}^{2}} - \ev{X_{1}}^{2}} = \sqrt{\f{n}{2} + \f{1}{4}}\\	
+	\Delta X_{2} &= \sqrt{\ev{X_{2}^{2}} - \ev{X_{2}}^{2}} = \sqrt{\f{n}{2} + \f{1}{4}}	
+\end{align*}
+nên ta có 
+\begin{align*}
+	\Delta X_{1}^{\text{VAC}} &= \sqrt{\ev{X_{1}^{2}} - \ev{X_{1}}^{2}} = \sqrt{\f{n}{2} + \f{1}{4}}\;\at{n = 0}{} = \f{1}{2}\\	
+	\Delta X_{2}^{\text{VAC}} &= \sqrt{\ev{X_{2}^{2}} - \ev{X_{2}}^{2}} = \sqrt{\f{n}{2} + \f{1}{4}} \;\at{n = 0}{} = \f{1}{2}
+\end{align*}
+\subsection*{Bài tập 3}
+Xét trạng thái cohenrent $\ket{\alpha}$ với $\alpha = \abs{\alpha} e^{i \varphi}$. Ta viết lại trạng thái cohenrent dưới dạng $\propto \ket{n}$
+%\begin{align*}
+%	\ket{\alpha} = e^{ -\frac{\alpha^{2}}{2}} \sum_{n = 0}^{\infty} \f{\abs{\alpha}^{n} e^{i n \varphi}}{\sqrt{n !}} \ket{n}
+%\end{align*}	
+\begin{align*}
+	a_{-}\ket{\alpha} = \abs{\alpha} e^{i \varphi}\ket{\alpha}
+\end{align*}	
+%Dẫn tới
+%\begin{align*}
+%	\ev{X_{1}} 
+%	&= \bra{\alpha} X_{1} \ket{\alpha}\\
+%	&= e^{ - ( \alpha^2 + \alpha^2 )/2 } \sum_{n,m = 0}^{\infty} \bra{m} \f{\abs{\alpha}^{n}\abs{\alpha}^{m} e^{i (n - m) \varphi }}{\sqrt{m!} \sqrt{n!}} (a_{+} + a_{-}) \ket{n}\\
+%	&\propto \sum_{n,m = 0}^{\infty}  \f{\abs{\alpha}^{n}\abs{\alpha}^{m} e^{i (n - m) \varphi }}{\sqrt{m!} \sqrt{n!}} \bra{m} (a_{+} + a_{-}) \ket{n}\\
+%	&\propto \sum_{n,m = 0}^{\infty}  \f{\abs{\alpha}^{n}\abs{\alpha}^{m} e^{i (n - m) \varphi }}{\sqrt{m!} \sqrt{n!}} \left(\bra{m} \underbrace{a_{+} \ket{n}}_{\sqrt{n+1} \ket{n + 1}} + \bra{m} \underbrace{a_{-} \ket{n}}_{\sqrt{n}\ket{n-1} }\right) \\
+%	&\propto e^{- i \varphi} \sum_{n = 0} \f{\abs{\alpha}^{2n + 1}}{n!} + e^{i \varphi} \sum_{n = 0} \f{\abs{\alpha}^{2n - 1}}{(n-1)!}
+%\end{align*}
+%đặt n' = n - 1, ta có
+%\begin{align*}
+%	\ev{X_{1}} 
+%	&= \propto  e^{- i \varphi} \sum_{n = 0} \f{\abs{\alpha}^{2n + 1}}{n!} + e^{i \varphi} \sum_{n = 0} \f{\abs{\alpha}^{2n - 1}}{n!}\\
+%	&= \propto 2 \cos \varphi \sum_{n = 0} \f{\abs{\alpha}^{2n + 1} }{n!} \tag{4}
+%\end{align*}
+%đặt $\alpha^{2n} = \alpha $ nên (4) trở thành
+%\begin{align*}
+%	\ev{X_{1}} \propto 2 \abs{\alpha} \cos \varphi e^{\abs{\alpha}^2}
+%\end{align*}
+%Tương tự với $\ev{X_{2}}$
+%\begin{align*}
+%	\ev{X_{1}} \propto 2 \abs{\alpha} \cos \varphi e^{\abs{\alpha}^2}\\
+%	\ev{X_{2}} \propto 2i \abs{\alpha} \sin \varphi e^{\abs{\alpha}^2}
+%\end{align*}	
+Dẫn tới
+\begin{align*}
+	\ev{X_{1}}
+	&= \bra{\alpha} X_{1} \ket{\alpha}\\
+	&\propto \bra{\alpha} a_{+} \ket{\alpha} + \bra{\alpha} a_{-} \ket{\alpha}
+\end{align*}
+ta có $a_{-} \ket{\alpha} = \abs{\alpha} e^{i \varphi}\ket{\alpha} \Leftrightarrow \bra{\alpha} a_{+} = \bra{\alpha}  e^{-i\varphi} \abs{\alpha} $, nên ta có
+\begin{align*}
+	\ev{X_{1}} 
+	&\propto e^{- i \varphi} \abs{\alpha} \bra{\alpha} \ket{\alpha} + e^{i \varphi} \abs{\alpha} \bra{\alpha} \ket{\alpha}\\
+	&\propto 2 \abs{\alpha} \cos \varphi
+\end{align*}
+tương tự
+\begin{align*}
+	\ev{X_{2}} 
+	&\propto e^{- i \varphi} \abs{\alpha} \bra{\alpha} \ket{\alpha} + e^{i \varphi} \abs{\alpha} \bra{\alpha} \ket{\alpha}\\
+	&\propto 2 \abs{\alpha} \sin \varphi
+\end{align*}
+\subsection*{Bài tập 4}
+Ta viết lại toán tử $X_{1}^{2} + X_{2}^{2}$
+\begin{align*}
+	\begin{cases}
+		X_{1}^{2} =\f{1}{4}  \left( a_{+} a_{+} + a_{-} a_{+} + a_{+} a_{-} + a_{-} a_{-}  \right)\\
+		X_{2}^{2} =-\f{1}{4}  \left( a_{+} a_{+} - a_{-} a_{+} - a_{+} a_{-} + a_{-} a_{-}  \right)
+	\end{cases}
+\end{align*}
+ta có
+\begin{align*}
+	X_{1}^{2} + X_{2}^{2} = \f{1}{2} \left(a_{-} a_{+} + a_{+} a_{-}\right)
+\end{align*}	
+nên dẫn ra được
+\begin{align*}
+	\left(X_{1}^{2} + X_{2}^{2}\right) \ket{n} 
+	&= \f{1}{2} \left(a_{-} a_{+} + a_{+} a_{-}\right) \ket{n}\\
+	&= \f{1}{2} a_{-} a_{+}  \ket{n} + \f{1}{2} a_{+} a_{-}  \ket{n} \\
+	&= \f{1}{2} \sqrt{n+1}a_{-} \ket{n+1} + \f{1}{2} \sqrt{n} a_{+} \ket{n-1}\\
+	&= \f{1}{2} (n + 1)\ket{n} + \f{n}{2} \ket{n}\\
+	&= (n + \f{1}{2}) \ket{n}.
+\end{align*}
+nên ta có được ĐPCM.\\
+Đánh giá số photon dựa trên $\Delta X_{1} \Delta X_{2}$.
+\begin{align*}
+	\left[ X_{1} , X_{2} \right] 
+	&= X_{1} X_{2} - X_{2} X_{1}\\
+	&= \f{i}{4} \left[ \left( a_{+} a_{+} + a_{-} a_{+} + a_{+} a_{-} + a_{-} a_{-} \right) + \left( a_{+} a_{+} - a_{-} a_{+} + a_{+} a_{-} - a_{-} a_{-} \right) \right]\\
+	& = \f{i}{2} \left[ a_{-} , a_{+} \right] = \f{i}{2}
+\end{align*}
+nên ta có
+\begin{align*}
+	\Delta X_{1} \Delta X_{2} \geq 1 / 4 
+\end{align*}
+\subsection*{Bài tập 5}
+Ta có
+\begin{align*}
+	&g^{(2)}(\tau) = \f{\ev{a_{3}^{+}(t) a_{4}^{+}(t + \tau) a_{4}^{-}(t + \tau)} a_{3}^{-}(t)}{\ev{a_{3}^{+}(t+ \tau) a_{3}^{-}(t+ \tau)} \ev{a_{4}^{+}(t + \tau) a_{4}^{-}(t+ \tau) }}\\
+	\Rightarrow & g^{(2)}(0) = \f{\ev{a_{+} a_{+} a_{-} a_{-}}}{\ev{a_{+} a_{-}} \ev{a_{+} a_{-}}}
+\end{align*}
+Xét tử số
+\begin{align*}
+	\ev{a_{+} a_{+} a_{-} a_{-}} 
+	&= \bra{\alpha} a_{+} a_{+} a_{-} a_{-} \ket{\alpha}\\
+	&= \bra{\alpha} a_{+} ( a_{-} a_{+} - 1) a_{-} \ket{\alpha}\\
+	&= \bra{\alpha} a_{+} a_{-} a_{+}  a_{-} \ket{\alpha} - \bra{\alpha} a_{+} a_{-} \ket{\alpha}\\
+	&= \abs{\alpha}^{4} - \abs{\alpha}^{2}
+\end{align*}	
+Xét mẫu số
+\begin{align*}
+	\ev{a_{+} a_{-}} = \bra{\alpha} a_{+} a_{-} \ket{\alpha} = \abs{\alpha}^{2}
+\end{align*}	
+nên 
+\begin{align*}
+	g^{(2)}(0)
+	&= \f{\abs{\alpha}^{4} - \abs{\alpha}^{2}}{\abs{\alpha}^{4}}\\
+	&= 1 - \f{1}{\abs{\alpha}^{2}} = 1 ( \alpha \rightarrow \infty)
+\end{align*}
 
 
 
